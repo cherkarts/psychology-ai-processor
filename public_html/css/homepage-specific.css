@@ -1,0 +1,21 @@
+/* Специфичные стили для главной страницы */
+
+@media (min-width: 769px) {
+    .first .wrapper h1 {
+        font-size: 95px !important;
+        line-height: 1em !important;
+        margin: 0 !important;
+        width: 44.5vw !important;
+        text-align: left !important;
+    }
+    
+    .first__content .first__text p {
+        margin: 0 !important;
+        text-align: left !important;
+        width: auto !important;
+    }
+}
+
+.md-main-color-btn {
+    height: 4.21vw !important;
+} 

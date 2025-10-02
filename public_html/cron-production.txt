@@ -1,0 +1,9 @@
+# Автоматическое обновление карты сайта
+# Запускается каждый день в 3:00 утра
+0 3 * * * cd /path/to/website && /usr/bin/php auto-update-sitemap.php >> logs/sitemap-cron.log 2>&1
+
+# Альтернативный вариант (если путь к PHP другой):
+# 0 3 * * * cd /path/to/website && php auto-update-sitemap.php >> logs/sitemap-cron.log 2>&1
+
+# Для тестирования (каждые 5 минут):
+# */5 * * * * cd /path/to/website && /usr/bin/php auto-update-sitemap.php >> logs/sitemap-cron.log 2>&1

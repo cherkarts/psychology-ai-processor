@@ -1,0 +1,1147 @@
+/* Мобильные стили для страницы статьи */
+
+/* Исправление мобильной шапки для страниц статей */
+@media (max-width: 900px) {
+    .header__content {
+        flex-wrap: nowrap !important;
+        gap: 10px !important;
+        justify-content: space-between !important;
+        align-items: center !important;
+    }
+    
+    .header__logo {
+        order: 1 !important;
+        flex-shrink: 0 !important;
+    }
+    
+    .header__mobile-contacts {
+        order: 2 !important;
+        flex-shrink: 0 !important;
+        margin-left: 15px !important;
+    }
+    
+    .header__menu-btn {
+        order: 3 !important;
+        flex-shrink: 0 !important;
+        margin-left: auto !important;
+    }
+    
+    /* Исправление белой области вокруг шапки в темной теме */
+    .dark-mode .header {
+        background: #161b22 !important;
+    }
+    
+    .dark-mode .header__top {
+        background: #161b22 !important;
+    }
+    
+    .dark-mode .header__content {
+        background: #161b22 !important;
+    }
+    
+    .dark-mode .container {
+        background: #161b22 !important;
+    }
+    
+    /* Убираем белый фон из new-homepage.css */
+    body.page .header__top > .container {
+        background: transparent !important;
+        backdrop-filter: none !important;
+        -webkit-backdrop-filter: none !important;
+    }
+    
+    /* Светлый фон для всей страницы на мобильных */
+    body.page {
+        background: #f8f9fa !important;
+        color: #2c3e50 !important;
+    }
+    
+    .dark-mode body.page {
+        background: #0d1117 !important;
+        color: #e6edf3 !important;
+    }
+    
+    /* Переопределение белого фона из new-homepage.css для темной темы */
+    .dark-mode body.page .header__top > .container {
+        background: #161b22 !important;
+        backdrop-filter: none !important;
+        -webkit-backdrop-filter: none !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .header__content {
+        gap: 8px !important;
+    }
+    
+    .header__mobile-contacts {
+        margin-left: 10px !important;
+    }
+    
+    .header__mobile-contact-item {
+        font-size: 10px !important;
+    }
+    
+    .header__mobile-phone a {
+        font-size: 12px !important;
+    }
+}
+
+/* Стили для кнопки unit__cta в сайдбаре статей (мобильная версия) */
+.article-sidebar .unit__cta {
+    background: linear-gradient(135deg, #7a91b7 0%, #a8bad5 100%) !important;
+    color: white !important;
+    border: none !important;
+    padding: 18px 24px !important;
+    border-radius: 12px !important;
+    font-weight: 600 !important;
+    font-size: 1.1rem !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.5px !important;
+    box-shadow: 0 6px 20px rgba(122, 145, 183, 0.3) !important;
+    transition: all 0.3s ease !important;
+    cursor: pointer !important;
+    width: 100% !important;
+    margin-top: 15px !important;
+    position: relative !important;
+    overflow: hidden !important;
+    touch-action: manipulation !important;
+}
+
+.article-sidebar .unit__cta:hover,
+.article-sidebar .unit__cta:focus {
+    background: linear-gradient(135deg, #6a7fa7 0%, #98aac5 100%) !important;
+    transform: translateY(-2px) !important;
+    box-shadow: 0 10px 30px rgba(122, 145, 183, 0.4) !important;
+}
+
+.article-sidebar .unit__cta:active {
+    transform: translateY(0) !important;
+    box-shadow: 0 4px 15px rgba(122, 145, 183, 0.3) !important;
+}
+
+/* Основные мобильные стили */
+@media (max-width: 900px) {
+    .article-single {
+        padding: 100px 0 20px 0; /* Увеличиваю отступ сверху */
+        margin-top: 40px; /* Дополнительный отступ от меню */
+    }
+    
+    .article-layout {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .article-main {
+        padding: 20px;
+        border-radius: 12px;
+        margin: 0 15px;
+        order: 1; /* Статья идет первой */
+    }
+    
+    .article-sidebar {
+        order: 2; /* Боковая колонка идет второй */
+        margin: 0 15px;
+    }
+    
+    .sidebar-block {
+        padding: 20px;
+        margin-bottom: 15px;
+        background: white;
+        border-radius: 16px;
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+        border: 1px solid rgba(122, 145, 183, 0.1);
+        transition: all 0.3s ease;
+        position: relative;
+        overflow: hidden;
+    }
+    
+    .sidebar-block:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 12px 40px rgba(0, 0, 0, 0.12);
+    }
+    
+    .sidebar-block::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 3px;
+        background: linear-gradient(135deg, #7a91b7 0%, #a8bad5 100%);
+    }
+    
+    .sidebar-block h3 {
+        font-size: 1.3rem;
+        font-weight: 700;
+        color: #2c3e50;
+        margin-bottom: 15px;
+        line-height: 1.3;
+    }
+    
+    .sidebar-block p {
+        font-size: 1rem;
+        line-height: 1.6;
+        color: #5a6f8f;
+        margin-bottom: 20px;
+    }
+    
+    /* Улучшенные кнопки для мобильных */
+    .consultation-btn {
+        width: 100%;
+        padding: 16px 20px;
+        background: linear-gradient(135deg, #7a91b7 0%, #a8bad5 100%);
+        color: white;
+        border: none;
+        border-radius: 12px;
+        font-size: 1.1rem;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        box-shadow: 0 6px 20px rgba(122, 145, 183, 0.3);
+        position: relative;
+        overflow: hidden;
+    }
+    
+    .consultation-btn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 10px 30px rgba(122, 145, 183, 0.4);
+        background: linear-gradient(135deg, #6a7fa7 0%, #98aac5 100%);
+    }
+    
+    .telegram-btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 12px;
+        width: 100%;
+        padding: 16px 20px;
+        background: linear-gradient(135deg, #0088cc 0%, #00a8ff 100%);
+        color: white;
+        text-decoration: none;
+        border-radius: 12px;
+        font-size: 1.1rem;
+        font-weight: 600;
+        transition: all 0.3s ease;
+        box-shadow: 0 6px 20px rgba(0, 136, 204, 0.3);
+        position: relative;
+        overflow: hidden;
+    }
+    
+    .telegram-btn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 10px 30px rgba(0, 136, 204, 0.4);
+        background: linear-gradient(135deg, #0077b3 0%, #0099e6 100%);
+        color: white;
+    }
+    
+    .telegram-btn svg {
+        width: 22px;
+        height: 22px;
+        fill: currentColor;
+        transition: transform 0.3s ease;
+    }
+    
+    .telegram-btn:hover svg {
+        transform: scale(1.1);
+    }
+    
+    .article-share-btn--telegram,
+    .article-share-btn--whatsapp,
+    .article-share-btn--vk {
+        flex: 1;
+        min-width: auto;
+        justify-content: center;
+        padding: 12px 16px;
+        font-size: 0.9rem;
+    }
+    
+    /* Специальные стили для кнопки VK */
+    .article-share-btn--vk {
+        border-color: #4c75a3;
+        color: #4c75a3;
+    }
+    
+    .article-share-btn--vk:hover {
+        background: #4c75a3;
+        color: white;
+        border-color: #4c75a3;
+    }
+    
+    .article-share-btn--vk svg {
+        fill: #4c75a3;
+    }
+    
+    .article-share-btn--vk:hover svg {
+        fill: white;
+    }
+}
+
+/* Стили для планшетов */
+@media (max-width: 768px) {
+    .article-title {
+        font-size: 2rem;
+        margin-bottom: 20px;
+        line-height: 1.3;
+    }
+    
+    .article-excerpt {
+        font-size: 1.1rem;
+        margin-bottom: 25px;
+    }
+    
+    .article-meta {
+        flex-direction: column;
+        gap: 15px;
+        align-items: flex-start;
+        padding: 15px 0;
+    }
+    
+    .article-meta__left,
+    .article-meta__right {
+        gap: 15px;
+        width: 100%;
+        justify-content: flex-start;
+    }
+    
+    .article-content {
+        font-size: 1rem;
+        line-height: 1.7;
+    }
+    
+    .article-content h2 {
+        font-size: 1.6rem;
+        margin: 2em 0 0.8em 0;
+    }
+    
+    .article-content h3 {
+        font-size: 1.3rem;
+        margin: 1.5em 0 0.8em 0;
+    }
+    
+    .article-content h4 {
+        font-size: 1.1rem;
+        margin: 1.2em 0 0.6em 0;
+    }
+    
+    .article-content p {
+        margin-bottom: 1.2em;
+        text-align: left; /* Убираем justify на мобильных */
+    }
+    
+    .article-content blockquote {
+        padding: 20px 25px;
+        margin: 1.5em 0;
+        font-size: 1rem;
+    }
+    
+    .article-actions {
+        margin-top: 25px;
+        padding: 20px 0;
+    }
+    
+    .article-actions__main {
+        flex-direction: column;
+        width: 100%;
+        gap: 12px;
+    }
+    
+    .article-like-btn,
+    .article-share-btn {
+        width: 100%;
+        justify-content: center;
+        padding: 14px 20px;
+        font-size: 0.95rem;
+    }
+    
+    .article-share-social {
+        justify-content: center;
+        gap: 10px;
+    }
+    
+    .article-share-btn--telegram,
+    .article-share-btn--whatsapp,
+    .article-share-btn--vk {
+        flex: 1;
+        min-width: auto;
+        justify-content: center;
+        padding: 12px 16px;
+        font-size: 0.9rem;
+    }
+    
+    /* Специальные стили для кнопки VK */
+    .article-share-btn--vk {
+        border-color: #4c75a3;
+        color: #4c75a3;
+    }
+    
+    .article-share-btn--vk:hover {
+        background: #4c75a3;
+        color: white;
+        border-color: #4c75a3;
+    }
+    
+    .article-share-btn--vk svg {
+        fill: #4c75a3;
+    }
+    
+    .article-share-btn--vk:hover svg {
+        fill: white;
+    }
+    
+    .article-tags {
+        margin-bottom: 25px;
+        padding: 15px 0;
+    }
+    
+    .tags-label {
+        margin-bottom: 12px;
+    }
+    
+    .tags-list {
+        gap: 8px;
+    }
+    
+    .article-tag {
+        padding: 8px 14px;
+        font-size: 0.85rem;
+    }
+    
+    .article-image {
+        margin: 20px 0;
+        border-radius: 12px;
+    }
+    
+    .article-image img {
+        border-radius: 12px;
+    }
+}
+
+/* Стили для мобильных телефонов */
+@media (max-width: 480px) {
+    .article-single {
+        padding: 80px 0 15px 0; /* Уменьшаю отступ сверху для маленьких экранов */
+        margin-top: 30px;
+    }
+    
+    .article-main {
+        padding: 15px;
+        border-radius: 8px;
+        margin: 0 10px;
+    }
+    
+    .article-title {
+        font-size: 1.8rem;
+        margin-bottom: 15px;
+    }
+    
+    .article-excerpt {
+        font-size: 1rem;
+        margin-bottom: 20px;
+    }
+    
+    .article-meta {
+        padding: 12px 0;
+        margin-bottom: 20px;
+    }
+    
+    .article-meta__left,
+    .article-meta__right {
+        flex-direction: column;
+        gap: 10px;
+        width: 100%;
+    }
+    
+    .article-category {
+        align-self: flex-start;
+        padding: 6px 12px;
+        font-size: 0.8rem;
+    }
+    
+    .article-read-time,
+    .article-date,
+    .article-author {
+        font-size: 0.85rem;
+    }
+    
+    .article-content {
+        font-size: 0.95rem;
+        line-height: 1.6;
+    }
+    
+    .article-content h2 {
+        font-size: 1.4rem;
+        margin: 1.8em 0 0.7em 0;
+    }
+    
+    .article-content h3 {
+        font-size: 1.2rem;
+        margin: 1.4em 0 0.7em 0;
+    }
+    
+    .article-content h4 {
+        font-size: 1.1rem;
+        margin: 1.1em 0 0.6em 0;
+    }
+    
+    .article-content p {
+        margin-bottom: 1em;
+    }
+    
+    .article-content ul,
+    .article-content ol {
+        margin: 1.2em 0;
+        padding-left: 1.5em;
+    }
+    
+    .article-content li {
+        margin-bottom: 0.6em;
+        line-height: 1.6;
+    }
+    
+    .article-content blockquote {
+        padding: 15px 20px;
+        margin: 1.2em 0;
+        font-size: 0.95rem;
+    }
+    
+    .article-actions {
+        margin-top: 20px;
+        padding: 15px 0;
+    }
+    
+    .article-actions__main {
+        margin-bottom: 15px;
+    }
+    
+    .article-like-btn,
+    .article-share-btn {
+        padding: 12px 16px;
+        font-size: 0.9rem;
+    }
+    
+    .article-share-social {
+        gap: 8px;
+    }
+    
+    .article-share-btn--telegram,
+    .article-share-btn--whatsapp,
+    .article-share-btn--vk {
+        padding: 10px 14px;
+        font-size: 0.85rem;
+    }
+    
+    /* Специальные стили для кнопки VK */
+    .article-share-btn--vk {
+        border-color: #4c75a3;
+        color: #4c75a3;
+    }
+    
+    .article-share-btn--vk:hover {
+        background: #4c75a3;
+        color: white;
+        border-color: #4c75a3;
+    }
+    
+    .article-share-btn--vk svg {
+        fill: #4c75a3;
+    }
+    
+    .article-share-btn--vk:hover svg {
+        fill: white;
+    }
+    
+    .article-tags {
+        margin-bottom: 20px;
+        padding: 12px 0;
+    }
+    
+    .tags-list {
+        gap: 6px;
+    }
+    
+    .article-tag {
+        padding: 6px 12px;
+        font-size: 0.8rem;
+    }
+    
+    .article-image {
+        margin: 15px 0;
+        border-radius: 8px;
+    }
+    
+    .sidebar-block {
+        padding: 15px;
+        margin-bottom: 12px;
+        margin: 0 10px 12px 10px;
+    }
+    
+    .sidebar-block h3 {
+        font-size: 1.2rem;
+        margin-bottom: 15px;
+    }
+    
+    .sidebar-block p {
+        font-size: 0.9rem;
+        margin-bottom: 15px;
+    }
+    
+    .consultation-btn,
+    .telegram-btn {
+        padding: 14px 18px;
+        font-size: 1rem;
+    }
+    
+    .recent-article-image {
+        width: 70px;
+        height: 50px;
+    }
+    
+    .recent-article-info h4 {
+        font-size: 0.9rem;
+    }
+    
+    .recent-article-date {
+        font-size: 0.8rem;
+    }
+}
+
+/* Стили для очень маленьких экранов */
+@media (max-width: 360px) {
+    .article-single {
+        padding: 70px 0 12px 0; /* Еще меньше отступ сверху */
+        margin-top: 25px;
+    }
+    
+    .article-main {
+        padding: 12px;
+        border-radius: 6px;
+        margin: 0 8px;
+    }
+    
+    .article-title {
+        font-size: 1.6rem;
+        margin-bottom: 12px;
+    }
+    
+    .article-excerpt {
+        font-size: 0.95rem;
+        margin-bottom: 18px;
+    }
+    
+    .article-meta {
+        padding: 10px 0;
+        margin-bottom: 15px;
+    }
+    
+    .article-category {
+        padding: 5px 10px;
+        font-size: 0.75rem;
+    }
+    
+    .article-content {
+        font-size: 0.9rem;
+        line-height: 1.5;
+    }
+    
+    .article-content h2 {
+        font-size: 1.3rem;
+    }
+    
+    .article-content h3 {
+        font-size: 1.1rem;
+    }
+    
+    .article-content h4 {
+        font-size: 1rem;
+    }
+    
+    .article-actions {
+        margin-top: 15px;
+        padding: 12px 0;
+    }
+    
+    .article-actions__main {
+        margin-bottom: 15px;
+    }
+    
+    .article-like-btn,
+    .article-share-btn {
+        padding: 10px 14px;
+        font-size: 0.85rem;
+    }
+    
+    .article-share-social {
+        gap: 8px;
+    }
+    
+    .article-share-btn--telegram,
+    .article-share-btn--whatsapp,
+    .article-share-btn--vk {
+        padding: 8px 12px;
+        font-size: 0.8rem;
+    }
+    
+    /* Специальные стили для кнопки VK */
+    .article-share-btn--vk {
+        border-color: #4c75a3;
+        color: #4c75a3;
+    }
+    
+    .article-share-btn--vk:hover {
+        background: #4c75a3;
+        color: white;
+        border-color: #4c75a3;
+    }
+    
+    .article-share-btn--vk svg {
+        fill: #4c75a3;
+    }
+    
+    .article-share-btn--vk:hover svg {
+        fill: white;
+    }
+    
+    .article-tag {
+        padding: 5px 10px;
+        font-size: 0.75rem;
+    }
+    
+    .sidebar-block {
+        padding: 12px;
+        margin: 0 8px 10px 8px;
+    }
+    
+    .sidebar-block h3 {
+        font-size: 1.1rem;
+        margin-bottom: 12px;
+    }
+    
+    .sidebar-block p {
+        font-size: 0.85rem;
+        margin-bottom: 12px;
+    }
+    
+    .consultation-btn,
+    .telegram-btn {
+        padding: 12px 14px;
+        font-size: 0.9rem;
+    }
+    
+    .recent-article-image {
+        width: 60px;
+        height: 45px;
+    }
+    
+    .recent-article-info h4 {
+        font-size: 0.85rem;
+    }
+    
+    .recent-article-date {
+        font-size: 0.75rem;
+    }
+}
+
+/* Стили для ландшафтной ориентации на мобильных */
+@media (max-width: 900px) and (orientation: landscape) {
+    .article-single {
+        padding: 60px 0 10px 0; /* Меньше отступ сверху для ландшафтной ориентации */
+        margin-top: 30px;
+    }
+    
+    .article-main {
+        padding: 15px 20px;
+        margin: 0 10px;
+    }
+    
+    .article-title {
+        font-size: 1.8rem;
+        margin-bottom: 15px;
+    }
+    
+    .article-meta {
+        flex-direction: row;
+        gap: 20px;
+        align-items: center;
+    }
+    
+    .article-meta__left,
+    .article-meta__right {
+        flex-direction: row;
+        gap: 15px;
+        width: auto;
+    }
+    
+    .article-actions__main {
+        flex-direction: row;
+        gap: 10px;
+    }
+    
+    .article-like-btn,
+    .article-share-btn {
+        flex: 1;
+        min-width: auto;
+    }
+    
+    .article-share-social {
+        justify-content: flex-start;
+    }
+    
+    .article-share-btn--telegram,
+    .article-share-btn--whatsapp,
+    .article-share-btn--vk {
+        flex: 0 0 auto;
+        min-width: 100px;
+    }
+    
+    /* Специальные стили для кнопки VK */
+    .article-share-btn--vk {
+        border-color: #4c75a3;
+        color: #4c75a3;
+    }
+    
+    .article-share-btn--vk:hover {
+        background: #4c75a3;
+        color: white;
+        border-color: #4c75a3;
+    }
+    
+    .article-share-btn--vk svg {
+        fill: #4c75a3;
+    }
+    
+    .article-share-btn--vk:hover svg {
+        fill: white;
+    }
+}
+
+/* Улучшенные стили для планшетов */
+@media (min-width: 768px) and (max-width: 1024px) {
+    .article-layout {
+        gap: 25px;
+    }
+    
+    .article-main {
+        padding: 25px;
+        margin: 0 20px;
+    }
+    
+    .article-title {
+        font-size: 2.2rem;
+    }
+    
+    .article-excerpt {
+        font-size: 1.15rem;
+    }
+    
+    .article-content {
+        font-size: 1.05rem;
+    }
+    
+    .sidebar-block {
+        padding: 20px;
+        margin: 0 20px 15px 20px;
+    }
+    
+    .article-actions__main {
+        gap: 12px;
+    }
+    
+    .article-like-btn,
+    .article-share-btn {
+        padding: 12px 20px;
+        font-size: 0.9rem;
+    }
+}
+
+/* Стили для больших мобильных экранов */
+@media (min-width: 480px) and (max-width: 768px) {
+    .article-main {
+        padding: 18px;
+        margin: 0 12px;
+    }
+    
+    .article-title {
+        font-size: 1.9rem;
+    }
+    
+    .article-excerpt {
+        font-size: 1.05rem;
+    }
+    
+    .article-content {
+        font-size: 0.98rem;
+    }
+    
+    .sidebar-block {
+        padding: 18px;
+        margin: 0 12px 15px 12px;
+    }
+}
+
+/* Улучшенные стили для фокуса на мобильных */
+@media (max-width: 900px) {
+    .article-like-btn:focus,
+    .article-share-btn:focus,
+    .consultation-btn:focus,
+    .telegram-btn:focus,
+    .article-tag:focus {
+        outline: 2px solid #7a91b7;
+        outline-offset: 2px;
+    }
+    
+    /* Улучшенные стили для касания */
+    .article-like-btn:active,
+    .article-share-btn:active,
+    .consultation-btn:active,
+    .telegram-btn:active {
+        transform: scale(0.98);
+    }
+    
+    .article-tag:active {
+        transform: scale(0.95);
+    }
+}
+
+/* Стили для улучшения читаемости на мобильных */
+@media (max-width: 900px) {
+    .article-content {
+        /* Улучшенная читаемость на мобильных */
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+        hyphens: auto;
+    }
+    
+    .article-content img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 8px;
+    }
+    
+    .article-content table {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+        border-radius: 8px;
+        margin: 1em 0;
+    }
+    
+    .article-content pre {
+        overflow-x: auto;
+        white-space: pre-wrap;
+        word-wrap: break-word;
+        background: #f8f9fa;
+        padding: 15px;
+        border-radius: 8px;
+        font-size: 0.9rem;
+        line-height: 1.5;
+    }
+    
+    .article-content code {
+        background: #f8f9fa;
+        padding: 2px 6px;
+        border-radius: 4px;
+        font-size: 0.9rem;
+        font-family: 'Courier New', monospace;
+    }
+}
+
+/* Стили для улучшения производительности на мобильных */
+@media (max-width: 900px) {
+    .article-main,
+    .sidebar-block {
+        /* Улучшенная производительность */
+        will-change: transform;
+        backface-visibility: hidden;
+        transform: translateZ(0);
+    }
+    
+    .article-image img {
+        /* Оптимизация изображений */
+        will-change: transform;
+        backface-visibility: hidden;
+    }
+}
+
+/* Дополнительные стили для темной темы на мобильных */
+@media (max-width: 900px) {
+    .dark-mode .floating-theme-toggle {
+        width: 45px;
+        height: 45px;
+        right: 15px;
+    }
+    
+    .dark-mode .article-single {
+        background: #0d1117 !important;
+    }
+    
+    .dark-mode .article-main {
+        background: #161b22 !important;
+        color: #e6edf3 !important;
+        border: 1px solid #30363d !important;
+    }
+    
+    .dark-mode .article-sidebar {
+        background: #161b22 !important;
+    }
+    
+    .dark-mode .sidebar-block {
+        background: #161b22 !important;
+        border: 1px solid #30363d !important;
+        color: #e6edf3 !important;
+    }
+    
+    .dark-mode .sidebar-block h3 {
+        color: #e6edf3 !important;
+    }
+    
+    .dark-mode .sidebar-block p {
+        color: #8b949e !important;
+    }
+    
+    .dark-mode .consultation-btn {
+        background: linear-gradient(135deg, #58a6ff 0%, #79c0ff 100%) !important;
+        color: #0d1117 !important;
+    }
+    
+    .dark-mode .telegram-btn {
+        background: linear-gradient(135deg, #0088cc 0%, #00a8ff 100%) !important;
+    }
+    
+    .dark-mode .unit__cta {
+        background: linear-gradient(135deg, #58a6ff 0%, #79c0ff 100%) !important;
+        color: #0d1117 !important;
+    }
+    
+    /* Стили для блока "Последние статьи" в темной теме на мобильных */
+    .dark-mode .recent-articles-block {
+        background: #161b22 !important;
+        border: 1px solid #30363d !important;
+        color: #e6edf3 !important;
+    }
+    
+    .dark-mode .recent-articles-block h3 {
+        color: #e6edf3 !important;
+    }
+    
+    .dark-mode .recent-articles-block .article-item {
+        background: #21262d !important;
+        border: 1px solid #30363d !important;
+        color: #e6edf3 !important;
+    }
+    
+    .dark-mode .recent-articles-block .article-item:hover {
+        background: #30363d !important;
+        border-color: #58a6ff !important;
+    }
+    
+    .dark-mode .recent-articles-block .article-item img {
+        filter: brightness(0.9) !important;
+    }
+    
+    .dark-mode .recent-articles-block .article-item h4,
+    .dark-mode .recent-articles-block .article-item h4 a {
+        color: #e6edf3 !important;
+    }
+    
+    .dark-mode .recent-articles-block .article-item h4 a:hover {
+        color: #58a6ff !important;
+    }
+    
+    .dark-mode .recent-articles-block .article-item .article-date {
+        color: #8b949e !important;
+    }
+    
+    /* Убираем белый фон у элементов статей в ночном режиме на мобильных */
+    .dark-mode .recent-article-item {
+        background: transparent !important;
+        border: 1px solid #30363d !important;
+    }
+    
+    .dark-mode .recent-article-info h4 {
+        color: #e6edf3 !important;
+    }
+    
+    .dark-mode .recent-article-info h4 a {
+        color: #e6edf3 !important;
+    }
+    
+    .dark-mode .recent-article-info h4 a:hover {
+        color: #58a6ff !important;
+    }
+    
+    .dark-mode .recent-article-date {
+        color: #8b949e !important;
+    }
+    
+    .dark-mode .recent-article-item:hover {
+        border-color: #58a6ff !important;
+        background: rgba(88, 166, 255, 0.05) !important;
+    }
+    
+    /* Стили для светлой темы на мобильных */
+    body.page .recent-article-info h4 {
+        color: #2c3e50 !important;
+    }
+    
+    body.page .recent-article-info h4 a {
+        color: #2c3e50 !important;
+    }
+    
+    body.page .recent-article-info h4 a:hover {
+        color: #7a91b7 !important;
+    }
+    
+    body.page .recent-article-date {
+        color: #666 !important;
+    }
+    
+    body.page .unit__text {
+        color: #2c3e50 !important;
+    }
+    
+    body.page .unit__title {
+        color: #2c3e50 !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .dark-mode .floating-theme-toggle {
+        width: 40px;
+        height: 40px;
+        right: 10px;
+    }
+}
+
+/* Стили для темной темы на мобильных (если поддерживается) */
+@media (max-width: 900px) and (prefers-color-scheme: dark) {
+    .article-main {
+        background: #1a1a1a;
+        color: #ffffff;
+    }
+    
+    .article-title {
+        color: #ffffff;
+    }
+    
+    .article-content {
+        color: #e0e0e0;
+    }
+    
+    .sidebar-block {
+        background: #1a1a1a;
+        color: #ffffff;
+    }
+    
+    .article-meta {
+        border-color: #333;
+    }
+    
+    .article-actions {
+        border-color: #333;
+    }
+    
+    .article-tags {
+        border-color: #333;
+    }
+}

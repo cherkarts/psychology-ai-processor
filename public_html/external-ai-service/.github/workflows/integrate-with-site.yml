@@ -1,0 +1,82 @@
+name: Integrate Articles with Site
+
+on:
+  # Запуск после успешной генерации статей
+  workflow_run:
+    workflows: ['Daily Psychology Article Processor']
+    types: [completed]
+    branches: [main]
+
+  # Ручной запуск
+  workflow_dispatch:
+    inputs:
+      articles_file:
+        description: 'JSON file with articles to integrate'
+        required: false
+        default: ''
+        type: string
+
+jobs:
+  integrate-articles:
+    runs-on: ubuntu-latest
+    if: ${{ github.event.workflow_run.conclusion == 'success' || github.event_name == 'workflow_dispatch' }}
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0 # Полная история для поиска файлов
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.9'
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install requests
+
+      - name: Find latest articles file
+        id: find-file
+        run: |
+          if [ -n "${{ github.event.inputs.articles_file }}" ]; then
+            echo "file=${{ github.event.inputs.articles_file }}" >> $GITHUB_OUTPUT
+          else
+            # Ищем последний файл со статьями
+            latest_file=$(find . -name "psychology_articles_*.json" -type f -printf '%T@ %p\n' | sort -n | tail -1 | cut -d' ' -f2-)
+            if [ -n "$latest_file" ]; then
+              echo "file=$latest_file" >> $GITHUB_OUTPUT
+              echo "Found file: $latest_file"
+            else
+              echo "No articles file found"
+              exit 1
+            fi
+          fi
+
+      - name: Create integration environment
+        run: |
+          cat > .env << EOF
+          SITE_URL=${{ secrets.SITE_URL || 'https://cherkas-therapy.ru' }}
+          ADMIN_API_KEY=${{ secrets.ADMIN_API_KEY }}
+          EOF
+
+      - name: Run integration script
+        run: |
+          python integration_script.py
+
+      - name: Integration summary
+        if: always()
+        run: |
+          echo "## 🔗 Site Integration Summary" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "**Date:** $(date '+%Y-%m-%d %H:%M UTC')" >> $GITHUB_STEP_SUMMARY
+          echo "**Articles File:** \`${{ steps.find-file.outputs.file }}\`" >> $GITHUB_STEP_SUMMARY
+          echo "**Status:** ${{ job.status }}" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+
+          if [ "${{ job.status }}" = "success" ]; then
+            echo "✅ Articles successfully integrated with the site" >> $GITHUB_STEP_SUMMARY
+          else
+            echo "❌ Integration failed" >> $GITHUB_STEP_SUMMARY
+          fi

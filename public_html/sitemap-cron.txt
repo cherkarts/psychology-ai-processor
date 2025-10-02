@@ -1,0 +1,8 @@
+# Cron задача для автообновления sitemap
+# Установка: crontab sitemap-cron.txt
+
+# Обновление карты сайта каждый день в 3:00
+0 3 * * * cd /path/to/your/website && /usr/bin/php auto-update-sitemap.php >> logs/sitemap-cron.log 2>&1
+
+# Проверка каждые 6 часов (альтернативный вариант)
+# 0 */6 * * * cd /path/to/your/website && /usr/bin/php auto-update-sitemap.php >> logs/sitemap-cron.log 2>&1
