@@ -1,0 +1,90 @@
+name: Test Psychology Article Processor
+
+on:
+  push:
+    branches: [main, develop]
+    paths:
+      - 'external-ai-service/**'
+  pull_request:
+    branches: [main]
+    paths:
+      - 'external-ai-service/**'
+
+  # Ручной запуск тестов
+  workflow_dispatch:
+
+jobs:
+  test-processor:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.9'
+
+      - name: Cache pip dependencies
+        uses: actions/cache@v3
+        with:
+          path: ~/.cache/pip
+          key: ${{ runner.os }}-pip-${{ hashFiles('**/requirements.txt') }}
+          restore-keys: |
+            ${{ runner.os }}-pip-
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Create test environment file
+        run: |
+          cat > .env << EOF
+          OPENAI_API_KEY=${{ secrets.OPENAI_API_KEY }}
+          UNSPLASH_ACCESS_KEY=${{ secrets.UNSPLASH_ACCESS_KEY }}
+          MAX_ARTICLES_PER_DAY=1
+          MIN_WORD_COUNT=5000
+          MAX_WORD_COUNT=10000
+          ANALYSIS_MODEL=gpt-3.5-turbo
+          WRITING_MODEL=gpt-3.5-turbo
+          LOG_LEVEL=INFO
+          EOF
+
+      - name: Run tests
+        run: |
+          cd external-ai-service
+          python test_processor.py
+
+      - name: Upload test results
+        uses: actions/upload-artifact@v3
+        if: always()
+        with:
+          name: test-results-${{ github.run_number }}
+          path: |
+            external-ai-service/test_result_*.json
+            external-ai-service/psychology_processor.log
+          retention-days: 7
+
+      - name: Test summary
+        if: always()
+        run: |
+          echo "## 🧪 Test Results" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "**Date:** $(date '+%Y-%m-%d %H:%M UTC')" >> $GITHUB_STEP_SUMMARY
+          echo "**Status:** ${{ job.status }}" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+
+          if ls external-ai-service/test_result_*.json 1> /dev/null 2>&1; then
+            echo "✅ Tests completed successfully" >> $GITHUB_STEP_SUMMARY
+            echo "" >> $GITHUB_STEP_SUMMARY
+            echo "### 📋 Test Files Generated:" >> $GITHUB_STEP_SUMMARY
+            for file in external-ai-service/test_result_*.json; do
+              if [ -f "$file" ]; then
+                echo "- \`$(basename "$file")\`" >> $GITHUB_STEP_SUMMARY
+              fi
+            done
+          else
+            echo "❌ Tests failed or no results generated" >> $GITHUB_STEP_SUMMARY
+          fi
