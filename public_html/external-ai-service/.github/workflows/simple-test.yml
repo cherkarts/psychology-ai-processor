@@ -30,21 +30,24 @@ jobs:
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install -r requirements.txt
+          pip install -r public_html/external-ai-service/requirements.txt
 
       - name: Run offline tests
         if: ${{ github.event.inputs.test_type == 'offline' }}
         run: |
+          cd public_html/external-ai-service
           python test_offline.py
 
       - name: Run publication tests
         if: ${{ github.event.inputs.test_type == 'publication' }}
         run: |
+          cd public_html/external-ai-service
           python test_publication.py
 
       - name: Run demo articles publication
         if: ${{ github.event.inputs.test_type == 'demo' }}
         run: |
+          cd public_html/external-ai-service
           python run_simple_cycle.py
 
       - name: Upload results
@@ -53,8 +56,9 @@ jobs:
         with:
           name: test-results-${{ github.run_number }}
           path: |
-            *.json
-            *.log
+            public_html/external-ai-service/*.json
+            public_html/external-ai-service/*.log
+            public_html/external-ai-service/test_*.log
           retention-days: 7
 
       - name: Create summary
@@ -67,9 +71,9 @@ jobs:
           echo "**Status:** ${{ job.status }}" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
           
-          if [ -f "*.log" ]; then
+          if [ -f "public_html/external-ai-service/*.log" ]; then
             echo "### 📋 Logs" >> $GITHUB_STEP_SUMMARY
             echo '```' >> $GITHUB_STEP_SUMMARY
-            ls -la *.log >> $GITHUB_STEP_SUMMARY
+            ls -la public_html/external-ai-service/*.log >> $GITHUB_STEP_SUMMARY
             echo '```' >> $GITHUB_STEP_SUMMARY
           fi

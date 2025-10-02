@@ -38,10 +38,11 @@ jobs:
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install -r requirements.txt
+          pip install -r public_html/external-ai-service/requirements.txt
 
       - name: Create environment file
         run: |
+          cd public_html/external-ai-service
           cat > .env << EOF
           OPENAI_API_KEY=${{ secrets.OPENAI_API_KEY }}
           UNSPLASH_ACCESS_KEY=${{ secrets.UNSPLASH_ACCESS_KEY }}
@@ -56,6 +57,7 @@ jobs:
 
       - name: Run article processor
         run: |
+          cd public_html/external-ai-service
           python new_ai_processor.py
 
       - name: Upload generated articles
@@ -64,8 +66,8 @@ jobs:
         with:
           name: psychology-articles-${{ github.run_number }}
           path: |
-            psychology_articles_*.json
-            psychology_processor.log
+            public_html/external-ai-service/psychology_articles_*.json
+            public_html/external-ai-service/psychology_processor.log
           retention-days: 30
 
       - name: Commit and push results
@@ -75,8 +77,8 @@ jobs:
           git config --local user.name "GitHub Action"
 
           # Добавляем сгенерированные файлы
-          git add psychology_articles_*.json
-          git add used_links.json
+          git add public_html/external-ai-service/psychology_articles_*.json
+          git add public_html/external-ai-service/used_links.json
 
           # Коммитим, если есть изменения
           if git diff --staged --quiet; then
@@ -96,11 +98,11 @@ jobs:
           echo "" >> $GITHUB_STEP_SUMMARY
 
           # Проверяем, есть ли сгенерированные файлы
-          if ls psychology_articles_*.json 1> /dev/null 2>&1; then
+          if ls public_html/external-ai-service/psychology_articles_*.json 1> /dev/null 2>&1; then
             echo "✅ Articles generated successfully" >> $GITHUB_STEP_SUMMARY
             
             # Подсчитываем количество статей
-            for file in psychology_articles_*.json; do
+            for file in public_html/external-ai-service/psychology_articles_*.json; do
               if [ -f "$file" ]; then
                 count=$(jq '.total_articles' "$file" 2>/dev/null || echo "unknown")
                 echo "- **File:** \`$file\`" >> $GITHUB_STEP_SUMMARY
@@ -113,8 +115,8 @@ jobs:
 
           echo "" >> $GITHUB_STEP_SUMMARY
           echo "### 📋 Logs" >> $GITHUB_STEP_SUMMARY
-          if [ -f "psychology_processor.log" ]; then
+          if [ -f "public_html/external-ai-service/psychology_processor.log" ]; then
             echo '```' >> $GITHUB_STEP_SUMMARY
-            tail -20 psychology_processor.log >> $GITHUB_STEP_SUMMARY
+            tail -20 public_html/external-ai-service/psychology_processor.log >> $GITHUB_STEP_SUMMARY
             echo '```' >> $GITHUB_STEP_SUMMARY
           fi
