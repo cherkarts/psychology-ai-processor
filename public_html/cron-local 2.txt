@@ -1,0 +1,6 @@
+# Локальная версия cron для тестирования
+# Запускается каждые 10 минут для проверки
+*/10 * * * * cd /Users/admin/Desktop/public_html && /usr/bin/php auto-update-sitemap.php >> logs/sitemap-cron.log 2>&1
+
+# Для разработки (каждую минуту):
+# * * * * * cd /Users/admin/Desktop/public_html && /usr/bin/php auto-update-sitemap.php >> logs/sitemap-cron.log 2>&1

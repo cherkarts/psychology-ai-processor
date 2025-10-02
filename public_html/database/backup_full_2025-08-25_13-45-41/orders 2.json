@@ -1,0 +1,59 @@
+{
+  "orders": [
+    {
+      "id": "ORD-001",
+      "date": "2024-08-20",
+      "email": "test@example.com",
+      "status": "completed",
+      "total": 2500,
+      "payment_method": "card",
+      "items": [
+        {
+          "id": "1",
+          "title": "Семинар 'Преодоление тревожности'",
+          "quantity": 1,
+          "price": 2500
+        }
+      ]
+    },
+    {
+      "id": "ORD-002",
+      "date": "2024-08-15",
+      "email": "test@example.com",
+      "status": "delivered",
+      "total": 1800,
+      "payment_method": "card",
+      "items": [
+        {
+          "id": "2",
+          "title": "Книга 'Путь к себе'",
+          "quantity": 1,
+          "price": 1200
+        },
+        {
+          "id": "3",
+          "title": "Курс 'Медитация для начинающих'",
+          "quantity": 1,
+          "price": 600
+        }
+      ]
+    },
+    {
+      "id": "ORD-003",
+      "date": "2024-08-10",
+      "email": "user@example.com",
+      "status": "processing",
+      "total": 3200,
+      "payment_method": "card",
+      "items": [
+        {
+          "id": "4",
+          "title": "Семинар 'Управление стрессом'",
+          "quantity": 1,
+          "price": 3200
+        }
+      ]
+    }
+  ]
+}
+

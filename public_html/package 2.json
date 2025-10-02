@@ -1,0 +1,23 @@
+{
+  "name": "cherkas-therapy-website",
+  "version": "1.0.0",
+  "description": "Сайт психолога Дениса Черкаса",
+  "scripts": {
+    "dev": "echo 'Разработка: используйте оригинальные CSS файлы'",
+    "build": "npm run purge && npm run minify",
+    "purge": "purgecss --css css/main.css css/pages.css css/unified-styles.css --content *.php includes/*.php js/*.js --output css/production/",
+    "minify": "cleancss -o css/production/main.min.css css/production/main.css && cleancss -o css/production/pages.min.css css/production/pages.css && cleancss -o css/production/unified-styles.min.css css/production/unified-styles.css",
+    "watch": "echo 'Следите за изменениями в оригинальных CSS файлах'",
+    "deploy": "npm run build && echo 'Готово к деплою!'"
+  },
+  "devDependencies": {
+    "purgecss": "^5.0.0",
+    "clean-css-cli": "^5.6.0"
+  },
+  "keywords": [
+    "psychology",
+    "website",
+    "therapy"
+  ],
+  "author": "Денис Черкас"
+}

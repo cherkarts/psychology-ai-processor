@@ -1,0 +1,10 @@
+User-agent: *
+Allow: /
+
+Disallow: /admin/
+Disallow: /includes/
+Disallow: /logs/
+Disallow: /vendor/
+
+Sitemap: https://cherkas-therapy.ru/sitemap.xml
+Host: https://cherkas-therapy.ru

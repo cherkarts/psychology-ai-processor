@@ -1,0 +1,133 @@
+/* Принудительное исправление стилей фильтров v2.0 */
+
+/* Принудительно показываем все элементы select в фильтрах */
+.filters-form select {
+    display: block !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    height: auto !important;
+    width: 100% !important;
+    min-width: 250px !important;
+    padding: 1.2vw 1.5vw !important;
+    border: 2px solid #e9ecef !important;
+    border-radius: 8px !important;
+    background: #ffffff !important;
+    color: #333333 !important;
+    font-size: 1rem !important;
+    transition: all 0.3s ease !important;
+    -webkit-appearance: auto !important;
+    -moz-appearance: auto !important;
+    appearance: auto !important;
+    min-height: 50px !important;
+    cursor: pointer !important;
+    padding: 4vw 5vw !important;
+font-size: 1rem !important;
+height: 60px !important;
+min-height: 60px !important;
+}
+
+.filters-form select:focus {
+    outline: none !important;
+    border-color: #6a7e9f !important;
+    box-shadow: 0 0 0 3px rgba(106, 126, 159, 0.1) !important;
+}
+
+/* Улучшенные стили для кнопки "Применить" */
+.filters-form .filter-btn {
+    padding: 1.2vw 2.5vw !important;
+    font-size: 1rem !important;
+    min-width: 140px !important;
+    min-height: 50px !important;
+    background: linear-gradient(135deg, #3c475a 0%, #6a7e9f 100%) !important;
+    color: white !important;
+    border: none !important;
+    border-radius: 8px !important;
+    font-weight: 600 !important;
+    cursor: pointer !important;
+    transition: all 0.3s ease !important;
+}
+
+.filters-form .filter-btn:hover {
+    background: linear-gradient(135deg, #3c475a 0%, #6a7e9f 100%) !important;
+    transform: translateY(-2px) !important;
+    box-shadow: 0 5px 15px rgba(106, 126, 159, 0.3) !important;
+}
+
+/* Улучшенные стили для лейблов */
+.filters-form .filter-group label {
+    font-size: 1rem !important;
+    font-weight: 600 !important;
+    color: #333333 !important;
+    margin-bottom: 0.8vw !important;
+}
+
+/* Мобильные стили для фильтров */
+@media (max-width: 768px) {
+    .filters-form select {
+        padding: 4vw 5vw !important;
+        font-size: 1rem !important;
+        height: 60px !important;
+        min-width: auto !important;
+        min-height: 60px !important;
+    }
+    
+    .filters-form .filter-btn {
+        padding: 4vw 5vw !important;
+        font-size: 1rem !important;
+        height: 60px !important;
+        min-height: 60px !important;
+    }
+    
+    .filters-form .filter-group label {
+        font-size: 1.1rem !important;
+        margin-bottom: 2vw !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .filters-form select {
+        padding: 4vw 5vw !important;
+        font-size: 1rem !important;
+        height: 60px !important;
+        min-height: 60px !important;
+    }
+    
+    .filters-form .filter-btn {
+        padding: 4vw 5vw !important;
+        font-size: 1rem !important;
+        height: 60px !important;
+        min-height: 60px !important;
+    }
+    
+    .filters-form .filter-group label {
+        font-size: 1rem !important;
+        margin-bottom: 2vw !important;
+    }
+}
+
+/* Убираем любые стили, которые могут скрывать элементы */
+.filters-form select[style*="display: none"] {
+    display: block !important;
+}
+
+.filters-form select[style*="opacity: 0"] {
+    opacity: 1 !important;
+}
+
+.filters-form select[style*="visibility: hidden"] {
+    visibility: visible !important;
+}
+
+/* Исправляем стили для nice-select, если он используется */
+.nice-select {
+    display: none !important;
+}
+
+.filters-form .nice-select {
+    display: none !important;
+}
+
+/* Принудительно показываем нативные select */
+.filters-form select:not(.nice-select) {
+    display: block !important;
+} 

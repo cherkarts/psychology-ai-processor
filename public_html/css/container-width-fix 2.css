@@ -1,0 +1,37 @@
+/* Унификация ширины контейнеров на всех страницах */
+
+/* Основная ширина контейнера */
+.wrapper {
+    width: 85vw !important;
+    max-width: 1600px !important;
+    margin: 0 auto !important;
+}
+
+/* Медиа-запросы для адаптивности */
+@media (max-width: 768px) {
+    .wrapper {
+        width: 90vw !important;
+        padding: 0 15px !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .wrapper {
+        width: 95vw !important;
+        padding: 0 10px !important;
+    }
+}
+
+/* Переопределение для страниц, использующих unified-styles.css */
+.page .wrapper {
+    width: 85vw !important;
+    max-width: 1600px !important;
+    margin: 0 auto !important;
+}
+
+/* Переопределение для страниц, использующих main.css */
+body .wrapper {
+    width: 85vw !important;
+    max-width: 1600px !important;
+    margin: 0 auto !important;
+} 

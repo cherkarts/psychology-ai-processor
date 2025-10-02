@@ -1,0 +1,1054 @@
+/* Стили для страницы медитаций */
+
+/* ===== БАЗОВАЯ СЕТКА СТРАНИЦЫ (контейнеры как на остальных страницах) ===== */
+.meditations-hero .wrapper,
+.meditations-categories .wrapper,
+.meditations-list .wrapper,
+.meditations-cta .wrapper {
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 0 16px;
+}
+
+/* Утилита на случай отсутствия глобального класса */
+.text-center { text-align: center !important; }
+
+/* ===== HERO СЕКЦИЯ ===== */
+.meditations-hero {
+    background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+    color: #fff;
+    padding: 120px 0 100px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.meditations-hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('/image/bg-1.jpg') center/cover;
+    opacity: 0.1;
+    z-index: 1;
+}
+
+.meditations-hero__content {
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.meditations-hero__badge {
+    display: inline-block;
+    background: rgba(255, 255, 255, 0.2);
+    padding: 8px 16px;
+    border-radius: 20px;
+    margin-bottom: 20px;
+    backdrop-filter: blur(10px);
+}
+
+.meditations-hero__badge span {
+    font-size: 14px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.meditations-hero__title {
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    line-height: 1.2;
+}
+
+.meditations-hero__title-accent {
+    color: var(--brand-accent);
+    display: block;
+}
+
+.meditations-hero__subtitle {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    margin-bottom: 40px;
+    opacity: 0.9;
+    color: #fff;
+}
+
+.meditations-hero__stats {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.hero-stat {
+    text-align: center;
+}
+
+.hero-stat__number {
+    display: block;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--brand-accent);
+    line-height: 1;
+}
+
+.hero-stat__label {
+    font-size: 0.9rem;
+    opacity: 0.8;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* ===== КАТЕГОРИИ ===== */
+.meditations-categories {
+    padding: 80px 0;
+}
+
+/* Заголовки блоков по центру */
+.meditations-categories .section__header,
+.meditations-list .section__header { text-align: center; }
+
+.meditations-categories .section__title,
+.meditations-list .section__title {
+    margin: 0 auto 8px;
+}
+
+.meditations-categories .section__subtitle,
+.meditations-list .section__subtitle {
+    margin: 0 auto;
+    max-width: 760px;
+}
+
+/* ===== КАРУСЕЛЬ КАТЕГОРИЙ ===== */
+.categories-carousel {
+    position: relative;
+    margin-top: 40px;
+    padding: 0 40px;
+}
+
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 40px;
+    height: 40px;
+    background: var(--brand-white);
+    border: 2px solid var(--brand-gray);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    z-index: 10;
+    color: var(--brand-text);
+    text-align: center;
+}
+
+.carousel-btn:hover {
+    background: var(--brand-primary);
+    border-color: var(--brand-primary);
+    color: var(--brand-white);
+    transform: translateY(-50%) scale(1.1);
+}
+
+.carousel-btn--prev {
+    left: 0;
+}
+
+.carousel-btn--next {
+    right: 0;
+}
+
+.carousel-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    transform: translateY(-50%) scale(1);
+}
+
+.categories-carousel__container {
+    overflow: hidden;
+    border-radius: 16px;
+    cursor: grab;
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    margin-left: 60px;
+    margin-right: 60px;
+    height: 280px;
+}
+
+.categories-carousel__container:active {
+    cursor: grabbing;
+}
+
+.categories-carousel__track {
+    display: flex;
+    transition: transform 0.5s ease;
+    gap: 24px;
+    padding: 0 20px;
+}
+
+.categories-carousel__track .category-card {
+    flex: 0 0 calc(33.333% - 16px);
+    min-width: 260px;
+    margin: 0;
+}
+
+.carousel-dots {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 30px;
+}
+
+.carousel-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: var(--brand-gray);
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.carousel-dot.active {
+    background: var(--brand-primary);
+    transform: scale(1.2);
+}
+
+.carousel-dot:hover {
+    background: var(--brand-primary);
+    transform: scale(1.1);
+}
+
+/* Адаптивность для карусели */
+@media (max-width: 1200px) {
+    .categories-carousel__track .category-card {
+        flex: 0 0 calc(50% - 15px);
+    }
+}
+
+@media (max-width: 768px) {
+    .categories-carousel {
+        padding: 0 50px;
+    }
+    
+    .categories-carousel__container {
+        margin-left: 55px;
+        margin-right: 55px;
+        height: 260px;
+    }
+    
+    .carousel-btn {
+        width: 40px;
+        height: 40px;
+    }
+    
+    .categories-carousel__track .category-card {
+        flex: 0 0 calc(100% - 10px);
+    }
+    
+    .carousel-dots {
+        margin-top: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .categories-carousel {
+        padding: 0 40px;
+    }
+    
+    .categories-carousel__container {
+        margin-left: 50px;
+        margin-right: 50px;
+        height: 240px;
+    }
+    
+    .carousel-btn {
+        width: 36px;
+        height: 36px;
+    }
+    
+    .carousel-btn svg {
+        width: 20px;
+        height: 20px;
+    }
+}
+
+.category-card {
+    background: var(--brand-white);
+    border-radius: 16px;
+    padding: 24px;
+    text-align: center;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+    cursor: pointer;
+    border: 2px solid transparent;
+}
+
+.category-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+    border-color: var(--brand-primary);
+}
+
+.category-card__icon {
+    width: 72px;
+    height: 72px;
+    background: transparent;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 16px;
+    color: var(--brand-primary);
+}
+
+/* Контурные иконки внутри карточек категорий */
+.category-card__icon svg * {
+    fill: none !important;
+    stroke: currentColor;
+    stroke-width: 2px;
+}
+
+.category-card__title {
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: var(--brand-text);
+}
+
+.category-card__description {
+    color: var(--brand-text-light);
+    margin-bottom: 15px;
+    line-height: 1.5;
+}
+
+.category-card__count {
+    display: inline-block;
+    background: var(--brand-light);
+    color: var(--brand-primary);
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 500;
+}
+
+/* ===== ФИЛЬТР ===== */
+.meditations-filter {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 50px;
+    flex-wrap: wrap;
+}
+
+.filter-btn {
+    background: var(--brand-white);
+    border: 2px solid var(--brand-gray);
+    color: var(--brand-text);
+    padding: 10px 20px;
+    border-radius: 25px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.filter-btn:hover,
+.filter-btn.active {
+    background: var(--brand-primary);
+    border-color: var(--brand-primary);
+    color: var(--brand-white);
+}
+
+/* ===== МЕДИТАЦИИ ГРИД ===== */
+.meditations-list {
+    padding: 80px 0;
+}
+
+.meditations-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 350px);
+    gap: 30px;
+    justify-content: center;
+}
+
+.meditation-card {
+    background: var(--brand-white);
+    border-radius: 12px;
+    padding: 16px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+    border: 1px solid var(--brand-gray);
+    display: flex;
+    flex-direction: column;
+    height: 280px; /* Увеличена высота для 130 символов */
+    width: 100%;
+    max-width: 350px; /* Фиксированная ширина */
+}
+
+.meditation-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+}
+
+.meditation-card__header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 12px;
+}
+
+.meditation-card__icon {
+    width: 36px;
+    height: 36px;
+    background: transparent;
+    border-radius: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 12px;
+    color: var(--brand-primary);
+    flex-shrink: 0;
+}
+
+.meditation-card__icon svg {
+    width: 28px;
+    height: 28px;
+}
+
+.meditation-card__icon svg * {
+    fill: none !important;
+    stroke: currentColor;
+    stroke-width: 2px;
+}
+
+/* Цвета иконок по категориям */
+.meditation-card[data-category="stress"] .meditation-card__icon,
+.meditation-card[data-category="anxiety"] .meditation-card__icon { color: #e74c3c; }
+
+.meditation-card[data-category="confidence"] .meditation-card__icon { color: #2ecc71; }
+
+.meditation-card[data-category="self-esteem"] .meditation-card__icon { color: #f39c12; }
+
+.meditation-card[data-category="children"] .meditation-card__icon { color: #3498db; }
+
+.meditation-card[data-category="stories"] .meditation-card__icon { color: #9b59b6; }
+
+.meditation-card[data-category="sleep"] .meditation-card__icon { color: #3a7bd5; }
+
+.meditation-card[data-category="relationships"] .meditation-card__icon { color: #e84393; }
+
+.meditation-card[data-category="gratitude"] .meditation-card__icon { color: #27ae60; }
+
+/* Те же цвета для иконок карточек категорий */
+.category-card[data-category="stress"] .category-card__icon,
+.category-card[data-category="anxiety"] .category-card__icon { color: #e74c3c; }
+
+.category-card[data-category="confidence"] .category-card__icon { color: #2ecc71; }
+
+.category-card[data-category="self-esteem"] .category-card__icon { color: #f39c12; }
+
+.category-card[data-category="children"] .category-card__icon { color: #3498db; }
+
+.category-card[data-category="stories"] .category-card__icon { color: #9b59b6; }
+
+.category-card[data-category="sleep"] .category-card__icon { color: #3a7bd5; }
+
+.category-card[data-category="relationships"] .category-card__icon { color: #e84393; }
+
+.category-card[data-category="gratitude"] .category-card__icon { color: #27ae60; }
+
+.meditation-card__info {
+    flex: 1;
+}
+
+.meditation-card__title {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 3px;
+    color: var(--brand-text);
+}
+
+.meditation-card__meta {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: 4px;
+}
+
+.meditation-card__duration {
+    font-size: 0.85rem;
+    color: var(--brand-text-light);
+    font-weight: 500;
+}
+
+.meditation-card__category {
+    background: var(--brand-red-light);
+    color: var(--brand-red);
+    font-size: 12px;
+    padding: 2px 8px;
+    border-radius: 12px;
+    font-weight: 500;
+    white-space: nowrap;
+}
+
+.meditation-card__player {
+    margin-bottom: 10px;
+}
+
+.audio-player {
+    width: 100%;
+    height: 35px;
+    border-radius: 6px;
+    background: var(--brand-light);
+}
+
+.audio-player::-webkit-media-controls-panel {
+    background: var(--brand-light);
+}
+
+.audio-player::-webkit-media-controls-play-button {
+    background: var(--brand-primary);
+    border-radius: 50%;
+}
+
+.meditation-card__description {
+    color: var(--brand-text-light);
+    font-size: 0.85rem;
+    line-height: 1.4;
+    margin: 0 0 10px 0;
+    flex: 1;
+    overflow: hidden;
+    position: relative;
+    min-height: 80px;
+    max-height: 80px;
+}
+
+.meditation-card__actions {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: auto; /* Прижимаем к низу карточки */
+    padding-top: 8px;
+    border-top: 1px solid var(--brand-gray);
+}
+
+.meditation-card__stats {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+.meditation-card__like-btn,
+.meditation-card__favorite-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    padding: 6px 10px;
+    background: var(--brand-light);
+    color: var(--brand-text-light);
+    border: 1px solid var(--brand-gray);
+    border-radius: 6px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    text-align: center;
+}
+
+.meditation-card__like-btn:hover,
+.meditation-card__favorite-btn:hover {
+    background: var(--brand-primary);
+    color: var(--brand-white);
+    border-color: var(--brand-primary);
+    text-decoration: none;
+}
+
+.meditation-card__like-btn.active {
+    background: #ff4757;
+    color: white;
+    border-color: #ff4757;
+}
+
+.meditation-card__like-btn.active .like-icon {
+    fill: white;
+}
+
+.meditation-card__favorite-btn.active {
+    background: #ffa502;
+    color: white;
+    border-color: #ffa502;
+}
+
+.meditation-card__favorite-btn.active .favorite-icon {
+    fill: white;
+}
+
+.like-count {
+    font-weight: 600;
+    min-width: 16px;
+    text-align: center;
+}
+
+.like-icon,
+.favorite-icon {
+    width: 16px;
+    height: 16px;
+    flex-shrink: 0;
+    transition: all 0.3s ease;
+}
+
+.meditation-card__share-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 8px 16px;
+    background: var(--brand-light);
+    color: var(--brand-primary);
+    border: 1px solid var(--brand-gray);
+    border-radius: 6px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    text-align: center;
+}
+
+.meditation-card__share-btn:hover {
+    background: var(--brand-primary);
+    color: var(--brand-white);
+    border-color: var(--brand-primary);
+    text-decoration: none;
+}
+
+.meditation-card__share-btn svg {
+    width: 16px;
+    height: 16px;
+    flex-shrink: 0;
+}
+
+/* ===== CTA СЕКЦИЯ ===== */
+.meditations-cta {
+    background: linear-gradient(180deg, #f8fbff 0%, #ffffff 100%);
+    color: var(--brand-text);
+    position: relative;
+    overflow: hidden;
+    padding: 80px 0;
+}
+
+.meditations-cta::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('/image/bg-12.jpg') center/cover;
+    opacity: 0.1;
+    z-index: 1;
+}
+
+/* Цветной акцент справа */
+.meditations-cta::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 55%;
+    background: radial-gradient(120% 120% at 85% 50%, rgba(210, 175, 160, 0.35) 0%, rgba(106, 126, 159, 0.22) 45%, rgba(44, 62, 80, 0.12) 100%);
+    z-index: 1;
+    pointer-events: none;
+}
+
+.cta-content {
+    position: relative;
+    z-index: 2;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.cta-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: #2c3e50;
+}
+
+.cta-subtitle {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 30px;
+    opacity: 0.95;
+    color: #6a7e9f;
+}
+
+.cta-buttons {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.btn--white {
+    background: #ffffff;
+    color: #6a7e9f;
+    border: 1px solid rgba(106, 126, 159, 0.25);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    box-shadow: 0 10px 30px rgba(44, 62, 80, 0.08);
+    transition: all 0.3s ease;
+    padding: 13px;
+    border-radius: 20px;
+    text-align: center;
+}
+
+.btn--white:hover {
+    background: #ffffff;
+    color: #6a7e9f;
+    border-color: rgba(106, 126, 159, 0.35);
+    transform: translateY(-2px);
+    box-shadow: 0 14px 36px rgba(44, 62, 80, 0.14);
+    text-decoration: none;
+}
+
+.btn--accent {
+    background: #d2afa0;
+    color: #ffffff;
+    border: none;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    box-shadow: 0 10px 30px rgba(210, 175, 160, 0.35);
+    transition: all 0.3s ease;
+    padding: 13px;
+    border-radius: 20px;
+    text-align: center;
+}
+
+.btn--accent:hover {
+    background: #caa494;
+    color: #2c3e50;
+    border: none;
+    transform: translateY(-2px);
+    box-shadow: 0 14px 36px rgba(210, 175, 160, 0.45);
+    text-decoration: none;
+}
+
+.btn--white svg {
+    flex-shrink: 0;
+}
+
+/* ===== МЕНЮ ШАРИНГА ===== */
+.share-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+}
+
+.share-menu.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.share-menu__overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+}
+
+.share-menu__content {
+    background: white;
+    border-radius: 16px;
+    padding: 0;
+    max-width: 400px;
+    width: 90%;
+    position: relative;
+    transform: translateY(20px) scale(0.95);
+    transition: all 0.3s ease;
+    overflow: hidden;
+}
+
+.share-menu.active .share-menu__content {
+    transform: translateY(0) scale(1);
+}
+
+.share-menu__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 24px;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.share-menu__header h4 {
+    margin: 0;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--brand-text);
+}
+
+.share-menu__close {
+    background: none;
+    border: none;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    cursor: pointer;
+    color: #666;
+    transition: all 0.3s ease;
+}
+
+.share-menu__close:hover {
+    background: #f5f5f5;
+    color: #333;
+}
+
+.share-menu__options {
+    padding: 16px 0;
+}
+
+.share-option {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    width: 100%;
+    padding: 16px 24px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-align: left;
+    font-size: 1rem;
+    color: var(--brand-text);
+}
+
+.share-option:hover {
+    background: #f8f9fa;
+}
+
+.share-option svg {
+    flex-shrink: 0;
+    width: 24px;
+    height: 24px;
+}
+
+/* Адаптивность для меню шаринга */
+@media (max-width: 480px) {
+    .share-menu__content {
+        width: 95%;
+        margin: 20px;
+    }
+    
+    .share-menu__header {
+        padding: 16px 20px;
+    }
+    
+    .share-option {
+        padding: 14px 20px;
+    }
+}
+
+
+
+/* ===== АДАПТИВНОСТЬ ===== */
+@media (max-width: 768px) {
+    .meditations-hero {
+        padding: 80px 0 60px;
+    }
+
+    .meditations-categories {
+        padding: 60px 0;
+    }
+
+    .meditations-list {
+        padding: 60px 0;
+    }
+
+    .meditations-cta {
+        padding: 60px 0;
+    }
+
+    .meditations-hero__title {
+        font-size: 2.5rem;
+    }
+
+    .meditations-hero__subtitle {
+        font-size: 1rem;
+    }
+
+    .meditations-hero__stats {
+        gap: 30px;
+    }
+
+    .hero-stat__number {
+        font-size: 2rem;
+    }
+
+    .categories-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .category-card {
+        padding: 25px;
+    }
+
+    .meditations-filter {
+        gap: 10px;
+    }
+
+    .filter-btn {
+        padding: 8px 16px;
+        font-size: 0.85rem;
+    }
+
+    .meditations-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .meditation-card {
+        padding: 20px;
+    }
+
+    .cta-title {
+        font-size: 2rem;
+    }
+
+    .cta-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .cta-buttons .btn {
+        width: 100%;
+        max-width: 300px;
+    }
+}
+
+@media (max-width: 480px) {
+    .meditations-hero {
+        padding: 60px 0 40px;
+    }
+
+    .meditations-categories {
+        padding: 40px 0;
+    }
+
+    .meditations-list {
+        padding: 40px 0;
+    }
+
+    .meditations-cta {
+        padding: 40px 0;
+    }
+
+    .meditations-hero__title {
+        font-size: 2rem;
+    }
+
+    .meditations-hero__stats {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .category-card__icon {
+        width: 60px;
+        height: 60px;
+    }
+
+    .meditation-card__header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .meditation-card__icon {
+        margin-right: 0;
+        margin-bottom: 15px;
+    }
+
+    .meditation-card__actions {
+        justify-content: center;
+    }
+
+    .meditation-card__share-btn {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+/* ===== АНИМАЦИИ ===== */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.category-card,
+.meditation-card {
+    animation: fadeInUp 0.6s ease forwards;
+}
+
+.category-card:nth-child(1) { animation-delay: 0.1s; }
+.category-card:nth-child(2) { animation-delay: 0.2s; }
+.category-card:nth-child(3) { animation-delay: 0.3s; }
+.category-card:nth-child(4) { animation-delay: 0.4s; }
+.category-card:nth-child(5) { animation-delay: 0.5s; }
+.category-card:nth-child(6) { animation-delay: 0.6s; }
+.category-card:nth-child(7) { animation-delay: 0.7s; }
+.category-card:nth-child(8) { animation-delay: 0.8s; }
+
+/* ===== СКРЫТИЕ/ПОКАЗ КАРТОЧЕК ===== */
+.meditation-card.hidden {
+    display: none;
+}
+
+.meditation-card.visible {
+    display: block;
+    animation: fadeInUp 0.4s ease forwards;
+} 

@@ -1,0 +1,390 @@
+/* ===== СОВРЕМЕННОЕ МЕНЮ ДЛЯ ВСЕГО САЙТА ===== */
+
+/* Основные стили для header */
+.header {
+    position: relative;
+    z-index: 1000;
+}
+
+/* Стили для кнопки бургер меню */
+.header__btn-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.header__btn-wrap p {
+    font-size: 11px;
+    color: #6a7e9f;
+    font-weight: 500;
+    margin: 0;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.header__btn {
+    width: 26px;
+    height: 20px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.header__btn span {
+    display: block;
+    width: 100%;
+    height: 2.5px;
+    background: linear-gradient(135deg, #6a7e9f 0%, #8fa3c4 100%);
+    border-radius: 2px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    transform-origin: center;
+    box-shadow: 0 1px 3px rgba(106, 126, 159, 0.2);
+}
+
+.header__btn:hover span {
+    background: linear-gradient(135deg, #5a6b8a 0%, #7a8fb0 100%);
+    box-shadow: 0 2px 6px rgba(106, 126, 159, 0.3);
+}
+
+/* Анимация бургер меню при открытии */
+.header__btn.open span:first-child {
+    transform: translateY(8.75px) rotate(45deg);
+    background: linear-gradient(135deg, #ff6b6b 0%, #ff8e8e 100%);
+}
+
+.header__btn.open span:nth-child(2) {
+    opacity: 0;
+    transform: scale(0);
+}
+
+.header__btn.open span:last-child {
+    transform: translateY(-8.75px) rotate(-45deg);
+    background: linear-gradient(135deg, #ff6b6b 0%, #ff8e8e 100%);
+}
+
+/* Основная навигация */
+.header__nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(135deg, rgba(106, 126, 159, 0.95) 0%, rgba(143, 163, 196, 0.95) 100%);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    z-index: 9999;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-100%);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.header__nav.open {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+/* Контейнер навигации */
+.nav-wrap {
+    width: 100%;
+    max-width: 600px;
+    padding: 0 20px;
+}
+
+/* Список навигации */
+.nav {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    text-align: center;
+}
+
+/* Элементы навигации */
+.nav-item {
+    position: relative;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.header__nav.open .nav-item {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Анимация появления элементов */
+.header__nav.open .nav-item:nth-child(1) { transition-delay: 0.1s; }
+.header__nav.open .nav-item:nth-child(2) { transition-delay: 0.15s; }
+.header__nav.open .nav-item:nth-child(3) { transition-delay: 0.2s; }
+.header__nav.open .nav-item:nth-child(4) { transition-delay: 0.25s; }
+.header__nav.open .nav-item:nth-child(5) { transition-delay: 0.3s; }
+.header__nav.open .nav-item:nth-child(6) { transition-delay: 0.35s; }
+.header__nav.open .nav-item:nth-child(7) { transition-delay: 0.4s; }
+.header__nav.open .nav-item:nth-child(8) { transition-delay: 0.45s; }
+
+/* Ссылки навигации */
+.nav-link {
+    display: inline-block;
+    font-size: 22px;
+    font-weight: 600;
+    color: white;
+    text-decoration: none;
+    padding: 12px 25px;
+    border-radius: 40px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+    min-width: 160px;
+    text-align: center;
+}
+
+.nav-link::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s ease;
+}
+
+.nav-link:hover::before {
+    left: 100%;
+}
+
+.nav-link:hover {
+    background: rgba(255, 255, 255, 0.2);
+    border-color: rgba(255, 255, 255, 0.4);
+    transform: translateY(-2px) scale(1.03);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+    color: #fff;
+}
+
+.nav-link:active {
+    transform: translateY(-1px) scale(1.01);
+}
+
+/* Иконка дома */
+.nav-item.home .nav-link {
+    background: linear-gradient(135deg, #a5d3a7 0%, #8bc34a 100%);
+    border-color: #a5d3a7;
+    font-size: 20px;
+    padding: 10px 20px;
+}
+
+.nav-item.home .nav-link:hover {
+    background: linear-gradient(135deg, #8bc34a 0%, #689f38 100%);
+    transform: translateY(-2px) scale(1.03);
+}
+
+.nav-item.home .nav-link svg {
+    width: 18px;
+    height: 18px;
+    margin-right: 6px;
+    vertical-align: middle;
+}
+
+/* Кнопка закрытия */
+.nav-close {
+    position: absolute;
+    top: 25px;
+    right: 25px;
+    width: 45px;
+    height: 45px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+.nav-close:hover {
+    background: rgba(255, 255, 255, 0.2);
+    border-color: rgba(255, 255, 255, 0.4);
+    transform: rotate(90deg);
+}
+
+.nav-close::before,
+.nav-close::after {
+    content: '';
+    position: absolute;
+    width: 18px;
+    height: 2.5px;
+    background: white;
+    border-radius: 2px;
+}
+
+.nav-close::before {
+    transform: rotate(45deg);
+}
+
+.nav-close::after {
+    transform: rotate(-45deg);
+}
+
+/* Дополнительная информация в меню */
+.nav-info {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+.nav-info p {
+    margin: 4px 0;
+}
+
+.nav-info a {
+    color: #a5d3a7;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.nav-info a:hover {
+    color: #8bc34a;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .nav-link {
+        font-size: 20px;
+        padding: 10px 18px;
+        min-width: 140px;
+    }
+    
+    .nav-item.home .nav-link {
+        font-size: 18px;
+        padding: 8px 16px;
+    }
+    
+    .nav-close {
+        top: 20px;
+        right: 20px;
+        width: 40px;
+        height: 40px;
+    }
+    
+    .nav-close::before,
+    .nav-close::after {
+        width: 16px;
+        height: 2px;
+    }
+    
+    .nav-info {
+        bottom: 20px;
+        font-size: 12px;
+    }
+    
+    .nav {
+        gap: 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    .nav-link {
+        font-size: 18px;
+        padding: 8px 15px;
+        min-width: 120px;
+    }
+    
+    .nav-item.home .nav-link {
+        font-size: 16px;
+        padding: 7px 14px;
+    }
+    
+    .nav {
+        gap: 10px;
+    }
+    
+    .nav-info {
+        font-size: 11px;
+    }
+}
+
+/* Анимации появления */
+@keyframes slideInFromTop {
+    from {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Эффект пульсации для активных ссылок */
+.nav-link.active {
+    background: linear-gradient(135deg, #ff6b6b 0%, #ff8e8e 100%);
+    border-color: #ff6b6b;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(255, 107, 107, 0.7);
+    }
+    70% {
+        box-shadow: 0 0 0 10px rgba(255, 107, 107, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(255, 107, 107, 0);
+    }
+}
+
+/* Скрытие старого меню на десктопе */
+@media (min-width: 769px) {
+    .header__nav:not(.open) {
+        display: none;
+    }
+}
+
+/* Показ бургер меню на всех устройствах */
+.header__btn-wrap {
+    display: flex !important;
+}
+
+/* Скрытие старого горизонтального меню */
+.nav-wrap .nav {
+    display: none;
+}
+
+.header__nav:not(.open) .nav-wrap .nav {
+    display: none;
+} 

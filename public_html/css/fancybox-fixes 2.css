@@ -1,0 +1,227 @@
+/* Исправления для Fancybox на странице товара */
+
+/* Исправление позиционирования стрелок навигации */
+.fancybox__nav .carousel__button {
+    position: absolute !important;
+    top: 50% !important;
+    transform: translateY(-50%) !important;
+    z-index: 40 !important;
+    background: rgba(255, 255, 255, 0.9) !important;
+    border-radius: 50% !important;
+    width: 48px !important;
+    height: 48px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    color: #333 !important;
+    transition: all 0.3s ease !important;
+}
+
+.fancybox__nav .carousel__button:hover {
+    background: rgba(255, 255, 255, 1) !important;
+    transform: translateY(-50%) scale(1.1) !important;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2) !important;
+}
+
+.fancybox__nav .carousel__button.is-prev {
+    left: 8px !important;
+}
+
+.fancybox__nav .carousel__button.is-next {
+    right: 8px !important;
+}
+
+@media all and (min-width: 1024px) {
+    .fancybox__nav .carousel__button.is-prev {
+        left: 40px !important;
+    }
+    
+    .fancybox__nav .carousel__button.is-next {
+        right: 40px !important;
+    }
+}
+
+/* Исправление для видео в полноэкранном режиме */
+.fancybox__container:fullscreen .fancybox__content {
+    width: 100vw !important;
+    height: 100vh !important;
+    max-width: none !important;
+    max-height: none !important;
+}
+
+.fancybox__container:fullscreen .fancybox__slide.has-video .fancybox__content,
+.fancybox__container:fullscreen .fancybox__slide.has-html5video .fancybox__content {
+    width: 100vw !important;
+    height: 100vh !important;
+    max-width: none !important;
+    max-height: none !important;
+    padding: 0 !important;
+}
+
+/* Очистка после закрытия Fancybox */
+.fancybox__container[aria-hidden="true"] {
+    display: none !important;
+    visibility: hidden !important;
+}
+
+.fancybox__container[aria-hidden="true"] .fancybox__content {
+    display: none !important;
+    visibility: hidden !important;
+}
+
+/* Дополнительные исправления для Fancybox */
+.fancybox__container {
+    z-index: 9999 !important; /* контейнер поверх всего */
+}
+
+.fancybox__backdrop { z-index: 9998 !important; }
+
+/* Исправление для видео элементов */
+.fancybox__slide.has-video .fancybox__content,
+.fancybox__slide.has-html5video .fancybox__content {
+    background: #000 !important;
+    padding: 0 !important;
+}
+
+.fancybox__slide.has-video video,
+.fancybox__slide.has-html5video video {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: contain !important;
+    display: block !important;
+}
+
+/* Исправление для изображений */
+.fancybox__slide.has-image .fancybox__content {
+    padding: 0 !important;
+    background: transparent !important;
+}
+
+.fancybox__slide.has-image .fancybox__image {
+    max-width: 100% !important;
+    max-height: 100% !important;
+    object-fit: contain !important;
+}
+
+/* Исправление для кнопок управления */
+.fancybox__toolbar {
+    z-index: 10000 !important;
+}
+
+.carousel__button.is-close {
+    z-index: 10001 !important;
+}
+
+/* Исправление для миниатюр */
+.fancybox__thumbs {
+    z-index: 9999 !important;
+}
+
+/* Исправление для счетчика */
+.fancybox__counter {
+    z-index: 10000 !important;
+}
+
+/* Исправление для прогресс-бара */
+.fancybox__progress {
+    z-index: 10001 !important;
+}
+
+/* Дополнительные исправления для мобильных устройств */
+@media (max-width: 768px) {
+    .fancybox__nav .carousel__button {
+        width: 40px !important;
+        height: 40px !important;
+    }
+    
+    .fancybox__nav .carousel__button.is-prev {
+        left: 4px !important;
+    }
+    
+    .fancybox__nav .carousel__button.is-next {
+        right: 4px !important;
+    }
+}
+
+/* Исправление для предотвращения остающихся элементов */
+.fancybox__container.is-closing {
+    pointer-events: none !important;
+}
+
+.fancybox__container.is-closing * {
+    pointer-events: none !important;
+}
+
+/* Принудительная очистка при скрытии */
+.fancybox__container[style*="display: none"] {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+}
+
+/* Исправление для предотвращения конфликтов с другими стилями */
+.fancybox__container * {
+    box-sizing: border-box !important;
+}
+
+/* Исправление для корректного отображения видео */
+.fancybox__slide.has-video .fancybox__content,
+.fancybox__slide.has-html5video .fancybox__content {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    min-height: 200px !important;
+}
+
+/* Мобильные фиксы для видео: вписываем по ширине, с сохранением пропорций */
+@media (max-width: 768px) {
+    .fancybox__slide.has-video .fancybox__content,
+    .fancybox__slide.has-html5video .fancybox__content {
+        width: 100vw !important;
+        height: auto !important;
+        max-height: 100vh !important;
+        padding: 0 !important;
+    }
+
+    .fancybox__slide.has-video video,
+    .fancybox__slide.has-html5video video {
+        width: 100% !important;
+        height: auto !important;
+        max-height: 100vh !important;
+        object-fit: contain !important;
+        pointer-events: auto !important; /* позволяем управлять видео */
+    }
+}
+
+/* Исправление для корректного отображения изображений */
+.fancybox__slide.has-image .fancybox__content {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+}
+
+/* Снятие любых затемнений/фильтров с контента */
+.fancybox__content,
+.fancybox__slide,
+.fancybox__carousel,
+.fancybox__viewport,
+.fancybox__image,
+.fancybox__slide.has-video video,
+.fancybox__slide.has-html5video video {
+    background: transparent !important;
+    opacity: 1 !important;
+    filter: none !important;
+    mix-blend-mode: normal !important;
+}
+
+/* Убираем возможные псевдо-элементы затемнения */
+.fancybox__content::before,
+.fancybox__content::after,
+.fancybox__slide::before,
+.fancybox__slide::after {
+    content: none !important;
+    display: none !important;
+}
+
+/* Страховка: сам слайд не затемняется */
+.fancybox__slide { box-shadow: none !important; }

@@ -1,0 +1,37 @@
+# Кэш
+/cache/*.tmp
+/cache/
+
+# Временные файлы
+*.bak
+*.log
+*.tmp
+
+# Логи
+/logs/*.log
+
+# Не нужные файлы для продакшена
+/cleanup/
+index.php.bak
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Конфигурация (содержит пароли)
+config-local.php
+
+# Composer
+/vendor/
+composer.lock
+
+# NPM
+/node_modules/
+package-lock.json
+

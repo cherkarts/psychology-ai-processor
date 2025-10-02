@@ -1,0 +1,170 @@
+/* Унификация отступов шапки на всех страницах */
+
+/* Унифицированный отступ для всех страниц */
+body {
+    padding-top: 0 !important; /* Убираем все padding-top с body */
+}
+
+/* Унифицированный отступ для main контента */
+main,
+.main-content {
+    padding-top: 80px !important; /* Единый отступ для всех страниц */
+}
+
+/* Мобильная версия */
+@media (max-width: 900px) {
+    main,
+    .main-content {
+        padding-top: 72px !important; /* Единый отступ для мобильных */
+    }
+}
+
+/* Унификация высоты шапки */
+.header {
+    height: auto !important;
+    min-height: 80px !important;
+}
+
+@media (max-width: 900px) {
+    .header {
+        min-height: 72px !important;
+    }
+}
+
+/* Унификация отступов в навигации */
+.header__nav {
+    padding-top: 0 !important; /* Убираем padding-top из навигации */
+}
+
+/* Унификация отступов для hero секций */
+.hero,
+.contact-hero,
+.shop-hero,
+.meditations-hero,
+.articles-hero,
+.about-hero,
+.services-hero,
+.prices-hero,
+.reviews-hero {
+    padding-top: 80px !important; /* Единый отступ для hero секций */
+}
+
+@media (max-width: 900px) {
+    .hero,
+    .contact-hero,
+    .shop-hero,
+    .meditations-hero,
+    .articles-hero,
+    .about-hero,
+    .services-hero,
+    .prices-hero,
+    .reviews-hero {
+        padding-top: 72px !important; /* Единый отступ для мобильных */
+    }
+}
+
+/* Унификация отступов для первых секций */
+/* section:first-of-type {
+    padding-top: 0 !important; 
+} */
+
+/* Унификация отступов для контейнеров */
+.container {
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding-left: 15px !important;
+        padding-right: 15px !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding-left: 10px !important;
+        padding-right: 10px !important;
+    }
+}
+
+/* Унификация отступов для wrapper */
+.wrapper {
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+}
+
+@media (max-width: 768px) {
+    .wrapper {
+        padding-left: 15px !important;
+        padding-right: 15px !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .wrapper {
+        padding-left: 10px !important;
+        padding-right: 10px !important;
+    }
+}
+
+/* Унификация отступов для header контейнеров */
+.header__top > .container,
+.header__nav > .container {
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+}
+
+@media (max-width: 768px) {
+    .header__top > .container,
+    .header__nav > .container {
+        padding-left: 15px !important;
+        padding-right: 15px !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .header__top > .container,
+    .header__nav > .container {
+        padding-left: 10px !important;
+        padding-right: 10px !important;
+    }
+}
+
+/* Унификация отступов для мобильного меню */
+@media (max-width: 900px) {
+    .header__nav {
+        padding-top: 0 !important; /* Убираем padding-top из мобильного меню */
+    }
+    
+    .header__nav .nav-wrap {
+        padding-top: 20px !important; /* Добавляем отступ только для контента меню */
+    }
+}
+
+/* Унификация отступов для страниц с фиксированной шапкой */
+body.page main,
+body.shop-page main,
+body.meditations-page main,
+body.articles-page main,
+body.contact-page main,
+body.about-page main,
+body.services-page main,
+body.prices-page main,
+body.reviews-page main {
+    padding-top: 80px !important; /* Единый отступ для всех страниц */
+}
+
+@media (max-width: 900px) {
+    body.page main,
+    body.shop-page main,
+    body.meditations-page main,
+    body.articles-page main,
+    body.contact-page main,
+    body.about-page main,
+    body.services-page main,
+    body.prices-page main,
+    body.reviews-page main {
+        padding-top: 72px !important; /* Единый отступ для мобильных */
+    }
+}

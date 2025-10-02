@@ -1,0 +1,2238 @@
+<!doctype html>
+<html class="no-js" lang="ru">
+
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>Страница не найдена - Конструктор сайтов</title>
+        <meta content="" name="description">
+        <meta content="" name="keywords">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <meta content="telephone=no" name="format-detection">
+        <meta name="HandheldFriendly" content="true">
+        <meta name='robots' content='noindex, nofollow' />
+	<style>img:is([sizes="auto" i], [sizes^="auto," i]) { contain-intrinsic-size: 3000px 1500px }</style>
+	
+	<!-- This site is optimized with the Yoast SEO plugin v23.7 - https://yoast.com/wordpress/plugins/seo/ -->
+	<title>Страница не найдена - Конструктор сайтов</title>
+	<meta property="og:locale" content="ru_RU" />
+	<meta property="og:title" content="Страница не найдена - Конструктор сайтов" />
+	<meta property="og:site_name" content="Конструктор сайтов" />
+	<script type="application/ld+json" class="yoast-schema-graph">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://constructor.paradigma.website/demo/#website","url":"https://constructor.paradigma.website/demo/","name":"Конструктор сайтов","description":"От Paradigma.website","potentialAction":[{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://constructor.paradigma.website/demo/?s={search_term_string}"},"query-input":{"@type":"PropertyValueSpecification","valueRequired":true,"valueName":"search_term_string"}}],"inLanguage":"ru-RU"}]}</script>
+	<!-- / Yoast SEO plugin. -->
+
+
+<link rel='dns-prefetch' href='//cdn.jsdelivr.net' />
+<link href='https://fonts.gstatic.com' crossorigin rel='preconnect' />
+<script type="text/javascript">
+/* <![CDATA[ */
+window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/16.0.1\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/16.0.1\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/constructor.paradigma.website\/demo\/wp-includes\/js\/wp-emoji-release.min.js?ver=6.8.2"}};
+/*! This file is auto-generated */
+!function(s,n){var o,i,e;function c(e){try{var t={supportTests:e,timestamp:(new Date).valueOf()};sessionStorage.setItem(o,JSON.stringify(t))}catch(e){}}function p(e,t,n){e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(t,0,0);var t=new Uint32Array(e.getImageData(0,0,e.canvas.width,e.canvas.height).data),a=(e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(n,0,0),new Uint32Array(e.getImageData(0,0,e.canvas.width,e.canvas.height).data));return t.every(function(e,t){return e===a[t]})}function u(e,t){e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(t,0,0);for(var n=e.getImageData(16,16,1,1),a=0;a<n.data.length;a++)if(0!==n.data[a])return!1;return!0}function f(e,t,n,a){switch(t){case"flag":return n(e,"\ud83c\udff3\ufe0f\u200d\u26a7\ufe0f","\ud83c\udff3\ufe0f\u200b\u26a7\ufe0f")?!1:!n(e,"\ud83c\udde8\ud83c\uddf6","\ud83c\udde8\u200b\ud83c\uddf6")&&!n(e,"\ud83c\udff4\udb40\udc67\udb40\udc62\udb40\udc65\udb40\udc6e\udb40\udc67\udb40\udc7f","\ud83c\udff4\u200b\udb40\udc67\u200b\udb40\udc62\u200b\udb40\udc65\u200b\udb40\udc6e\u200b\udb40\udc67\u200b\udb40\udc7f");case"emoji":return!a(e,"\ud83e\udedf")}return!1}function g(e,t,n,a){var r="undefined"!=typeof WorkerGlobalScope&&self instanceof WorkerGlobalScope?new OffscreenCanvas(300,150):s.createElement("canvas"),o=r.getContext("2d",{willReadFrequently:!0}),i=(o.textBaseline="top",o.font="600 32px Arial",{});return e.forEach(function(e){i[e]=t(o,e,n,a)}),i}function t(e){var t=s.createElement("script");t.src=e,t.defer=!0,s.head.appendChild(t)}"undefined"!=typeof Promise&&(o="wpEmojiSettingsSupports",i=["flag","emoji"],n.supports={everything:!0,everythingExceptFlag:!0},e=new Promise(function(e){s.addEventListener("DOMContentLoaded",e,{once:!0})}),new Promise(function(t){var n=function(){try{var e=JSON.parse(sessionStorage.getItem(o));if("object"==typeof e&&"number"==typeof e.timestamp&&(new Date).valueOf()<e.timestamp+604800&&"object"==typeof e.supportTests)return e.supportTests}catch(e){}return null}();if(!n){if("undefined"!=typeof Worker&&"undefined"!=typeof OffscreenCanvas&&"undefined"!=typeof URL&&URL.createObjectURL&&"undefined"!=typeof Blob)try{var e="postMessage("+g.toString()+"("+[JSON.stringify(i),f.toString(),p.toString(),u.toString()].join(",")+"));",a=new Blob([e],{type:"text/javascript"}),r=new Worker(URL.createObjectURL(a),{name:"wpTestEmojiSupports"});return void(r.onmessage=function(e){c(n=e.data),r.terminate(),t(n)})}catch(e){}c(n=g(i,f,p,u))}t(n)}).then(function(e){for(var t in e)n.supports[t]=e[t],n.supports.everything=n.supports.everything&&n.supports[t],"flag"!==t&&(n.supports.everythingExceptFlag=n.supports.everythingExceptFlag&&n.supports[t]);n.supports.everythingExceptFlag=n.supports.everythingExceptFlag&&!n.supports.flag,n.DOMReady=!1,n.readyCallback=function(){n.DOMReady=!0}}).then(function(){return e}).then(function(){var e;n.supports.everything||(n.readyCallback(),(e=n.source||{}).concatemoji?t(e.concatemoji):e.wpemoji&&e.twemoji&&(t(e.twemoji),t(e.wpemoji)))}))}((window,document),window._wpemojiSettings);
+/* ]]> */
+</script>
+<style id='wp-emoji-styles-inline-css' type='text/css'>
+
+	img.wp-smiley, img.emoji {
+		display: inline !important;
+		border: none !important;
+		box-shadow: none !important;
+		height: 1em !important;
+		width: 1em !important;
+		margin: 0 0.07em !important;
+		vertical-align: -0.1em !important;
+		background: none !important;
+		padding: 0 !important;
+	}
+</style>
+<link rel='stylesheet' id='wp-block-library-css' href='https://constructor.paradigma.website/demo/wp-includes/css/dist/block-library/style.min.css?ver=6.8.2' type='text/css' media='all' />
+<style id='classic-theme-styles-inline-css' type='text/css'>
+/*! This file is auto-generated */
+.wp-block-button__link{color:#fff;background-color:#32373c;border-radius:9999px;box-shadow:none;text-decoration:none;padding:calc(.667em + 2px) calc(1.333em + 2px);font-size:1.125em}.wp-block-file__button{background:#32373c;color:#fff;text-decoration:none}
+</style>
+<style id='global-styles-inline-css' type='text/css'>
+:root{--wp--preset--aspect-ratio--square: 1;--wp--preset--aspect-ratio--4-3: 4/3;--wp--preset--aspect-ratio--3-4: 3/4;--wp--preset--aspect-ratio--3-2: 3/2;--wp--preset--aspect-ratio--2-3: 2/3;--wp--preset--aspect-ratio--16-9: 16/9;--wp--preset--aspect-ratio--9-16: 9/16;--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;--wp--preset--spacing--20: 0.44rem;--wp--preset--spacing--30: 0.67rem;--wp--preset--spacing--40: 1rem;--wp--preset--spacing--50: 1.5rem;--wp--preset--spacing--60: 2.25rem;--wp--preset--spacing--70: 3.38rem;--wp--preset--spacing--80: 5.06rem;--wp--preset--shadow--natural: 6px 6px 9px rgba(0, 0, 0, 0.2);--wp--preset--shadow--deep: 12px 12px 50px rgba(0, 0, 0, 0.4);--wp--preset--shadow--sharp: 6px 6px 0px rgba(0, 0, 0, 0.2);--wp--preset--shadow--outlined: 6px 6px 0px -3px rgba(255, 255, 255, 1), 6px 6px rgba(0, 0, 0, 1);--wp--preset--shadow--crisp: 6px 6px 0px rgba(0, 0, 0, 1);}:where(.is-layout-flex){gap: 0.5em;}:where(.is-layout-grid){gap: 0.5em;}body .is-layout-flex{display: flex;}.is-layout-flex{flex-wrap: wrap;align-items: center;}.is-layout-flex > :is(*, div){margin: 0;}body .is-layout-grid{display: grid;}.is-layout-grid > :is(*, div){margin: 0;}:where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}:where(.wp-block-post-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-post-template.is-layout-grid){gap: 1.25em;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+:where(.wp-block-post-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-post-template.is-layout-grid){gap: 1.25em;}
+:where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}
+:root :where(.wp-block-pullquote){font-size: 1.5em;line-height: 1.6;}
+</style>
+<link rel='stylesheet' id='style-css' href='https://constructor.paradigma.website/demo/wp-content/themes/theme/assets/css/main.css?ver=6.8.2' type='text/css' media='all' />
+<link rel='stylesheet' id='fancybox-css' href='https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css?ver=6.8.2' type='text/css' media='all' />
+<link rel="https://api.w.org/" href="https://constructor.paradigma.website/demo/wp-json/" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://constructor.paradigma.website/demo/xmlrpc.php?rsd" />
+<meta name="generator" content="WordPress 6.8.2" />
+<link rel="icon" href="https://constructor.paradigma.website/demo/wp-content/uploads/2022/10/favicon-32x32-1.png" sizes="32x32" />
+<link rel="icon" href="https://constructor.paradigma.website/demo/wp-content/uploads/2022/10/favicon-32x32-1.png" sizes="192x192" />
+<link rel="apple-touch-icon" href="https://constructor.paradigma.website/demo/wp-content/uploads/2022/10/favicon-32x32-1.png" />
+<meta name="msapplication-TileImage" content="https://constructor.paradigma.website/demo/wp-content/uploads/2022/10/favicon-32x32-1.png" />
+	<!-- Fonts Plugin CSS - https://fontsplugin.com/ -->
+	<style>
+		/* Cached: August 3, 2025 at 1:24pm */
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Raleway';
+  font-style: italic;
+  font-weight: 100;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/raleway/v36/1Ptsg8zYS_SKggPNyCg4QIFqPfE.woff2) format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Raleway';
+  font-style: italic;
+  font-weight: 100;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/raleway/v36/1Ptsg8zYS_SKggPNyCg4SYFqPfE.woff2) format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Raleway';
+  font-style: italic;
+  font-weight: 100;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/raleway/v36/1Ptsg8zYS_SKggPNyCg4QoFqPfE.woff2) format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Raleway';
+  font-style: italic;
+  font-weight: 100;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/raleway/v36/1Ptsg8zYS_SKggPNyCg4Q4FqPfE.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Raleway';
+  font-style: italic;
+  font-weight: 100;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/raleway/v36/1Ptsg8zYS_SKggPNyCg4TYFq.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Raleway';
+  font-style: italic;
+  font-weight: 200;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/raleway/v36/1Ptsg8zYS_SKggPNyCg4QIFqPfE.woff2) format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Raleway';
+  font-style: italic;
+  font-weight: 200;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/raleway/v36/1Ptsg8zYS_SKggPNyCg4SYFqPfE.woff2) format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Raleway';
+  font-style: italic;
+  font-weight: 200;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/raleway/v36/1Ptsg8zYS_SKggPNyCg4QoFqPfE.woff2) format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Raleway';
+  font-style: italic;
+  font-weight: 200;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/raleway/v36/1Ptsg8zYS_SKggPNyCg4Q4FqPfE.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Raleway';
+  font-style: italic;
+  font-weight: 200;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/raleway/v36/1Ptsg8zYS_SKggPNyCg4TYFq.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Raleway';
+  font-style: italic;
+  font-weight: 300;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/raleway/v36/1Ptsg8zYS_SKggPNyCg4QIFqPfE.woff2) format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Raleway';
+  font-style: italic;
+  font-weight: 300;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/raleway/v36/1Ptsg8zYS_SKggPNyCg4SYFqPfE.woff2) format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Raleway';
+  font-style: italic;
+  font-weight: 300;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/raleway/v36/1Ptsg8zYS_SKggPNyCg4QoFqPfE.woff2) format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Raleway';
+  font-style: italic;
+  font-weight: 300;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/raleway/v36/1Ptsg8zYS_SKggPNyCg4Q4FqPfE.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Raleway';
+  font-style: italic;
+  font-weight: 300;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/raleway/v36/1Ptsg8zYS_SKggPNyCg4TYFq.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Raleway';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/raleway/v36/1Ptsg8zYS_SKggPNyCg4QIFqPfE.woff2) format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Raleway';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/raleway/v36/1Ptsg8zYS_SKggPNyCg4SYFqPfE.woff2) format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Raleway';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/raleway/v36/1Ptsg8zYS_SKggPNyCg4QoFqPfE.woff2) format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Raleway';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/raleway/v36/1Ptsg8zYS_SKggPNyCg4Q4FqPfE.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Raleway';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/raleway/v36/1Ptsg8zYS_SKggPNyCg4TYFq.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Raleway';
+  font-style: italic;
+  font-weight: 500;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/raleway/v36/1Ptsg8zYS_SKggPNyCg4QIFqPfE.woff2) format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Raleway';
+  font-style: italic;
+  font-weight: 500;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/raleway/v36/1Ptsg8zYS_SKggPNyCg4SYFqPfE.woff2) format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Raleway';
+  font-style: italic;
+  font-weight: 500;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/raleway/v36/1Ptsg8zYS_SKggPNyCg4QoFqPfE.woff2) format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Raleway';
+  font-style: italic;
+  font-weight: 500;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/raleway/v36/1Ptsg8zYS_SKggPNyCg4Q4FqPfE.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Raleway';
+  font-style: italic;
+  font-weight: 500;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/raleway/v36/1Ptsg8zYS_SKggPNyCg4TYFq.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Raleway';
+  font-style: italic;
+  font-weight: 600;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/raleway/v36/1Ptsg8zYS_SKggPNyCg4QIFqPfE.woff2) format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Raleway';
+  font-style: italic;
+  font-weight: 600;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/raleway/v36/1Ptsg8zYS_SKggPNyCg4SYFqPfE.woff2) format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Raleway';
+  font-style: italic;
+  font-weight: 600;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/raleway/v36/1Ptsg8zYS_SKggPNyCg4QoFqPfE.woff2) format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Raleway';
+  font-style: italic;
+  font-weight: 600;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/raleway/v36/1Ptsg8zYS_SKggPNyCg4Q4FqPfE.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Raleway';
+  font-style: italic;
+  font-weight: 600;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/raleway/v36/1Ptsg8zYS_SKggPNyCg4TYFq.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Raleway';
+  font-style: italic;
+  font-weight: 700;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/raleway/v36/1Ptsg8zYS_SKggPNyCg4QIFqPfE.woff2) format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Raleway';
+  font-style: italic;
+  font-weight: 700;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/raleway/v36/1Ptsg8zYS_SKggPNyCg4SYFqPfE.woff2) format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Raleway';
+  font-style: italic;
+  font-weight: 700;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/raleway/v36/1Ptsg8zYS_SKggPNyCg4QoFqPfE.woff2) format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Raleway';
+  font-style: italic;
+  font-weight: 700;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/raleway/v36/1Ptsg8zYS_SKggPNyCg4Q4FqPfE.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Raleway';
+  font-style: italic;
+  font-weight: 700;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/raleway/v36/1Ptsg8zYS_SKggPNyCg4TYFq.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Raleway';
+  font-style: italic;
+  font-weight: 800;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/raleway/v36/1Ptsg8zYS_SKggPNyCg4QIFqPfE.woff2) format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Raleway';
+  font-style: italic;
+  font-weight: 800;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/raleway/v36/1Ptsg8zYS_SKggPNyCg4SYFqPfE.woff2) format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Raleway';
+  font-style: italic;
+  font-weight: 800;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/raleway/v36/1Ptsg8zYS_SKggPNyCg4QoFqPfE.woff2) format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Raleway';
+  font-style: italic;
+  font-weight: 800;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/raleway/v36/1Ptsg8zYS_SKggPNyCg4Q4FqPfE.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Raleway';
+  font-style: italic;
+  font-weight: 800;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/raleway/v36/1Ptsg8zYS_SKggPNyCg4TYFq.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Raleway';
+  font-style: italic;
+  font-weight: 900;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/raleway/v36/1Ptsg8zYS_SKggPNyCg4QIFqPfE.woff2) format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Raleway';
+  font-style: italic;
+  font-weight: 900;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/raleway/v36/1Ptsg8zYS_SKggPNyCg4SYFqPfE.woff2) format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Raleway';
+  font-style: italic;
+  font-weight: 900;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/raleway/v36/1Ptsg8zYS_SKggPNyCg4QoFqPfE.woff2) format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Raleway';
+  font-style: italic;
+  font-weight: 900;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/raleway/v36/1Ptsg8zYS_SKggPNyCg4Q4FqPfE.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Raleway';
+  font-style: italic;
+  font-weight: 900;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/raleway/v36/1Ptsg8zYS_SKggPNyCg4TYFq.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Raleway';
+  font-style: normal;
+  font-weight: 100;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/raleway/v36/1Ptug8zYS_SKggPNyCAIT5lu.woff2) format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Raleway';
+  font-style: normal;
+  font-weight: 100;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/raleway/v36/1Ptug8zYS_SKggPNyCkIT5lu.woff2) format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Raleway';
+  font-style: normal;
+  font-weight: 100;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/raleway/v36/1Ptug8zYS_SKggPNyCIIT5lu.woff2) format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Raleway';
+  font-style: normal;
+  font-weight: 100;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/raleway/v36/1Ptug8zYS_SKggPNyCMIT5lu.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Raleway';
+  font-style: normal;
+  font-weight: 100;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/raleway/v36/1Ptug8zYS_SKggPNyC0ITw.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Raleway';
+  font-style: normal;
+  font-weight: 200;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/raleway/v36/1Ptug8zYS_SKggPNyCAIT5lu.woff2) format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Raleway';
+  font-style: normal;
+  font-weight: 200;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/raleway/v36/1Ptug8zYS_SKggPNyCkIT5lu.woff2) format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Raleway';
+  font-style: normal;
+  font-weight: 200;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/raleway/v36/1Ptug8zYS_SKggPNyCIIT5lu.woff2) format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Raleway';
+  font-style: normal;
+  font-weight: 200;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/raleway/v36/1Ptug8zYS_SKggPNyCMIT5lu.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Raleway';
+  font-style: normal;
+  font-weight: 200;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/raleway/v36/1Ptug8zYS_SKggPNyC0ITw.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Raleway';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/raleway/v36/1Ptug8zYS_SKggPNyCAIT5lu.woff2) format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Raleway';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/raleway/v36/1Ptug8zYS_SKggPNyCkIT5lu.woff2) format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Raleway';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/raleway/v36/1Ptug8zYS_SKggPNyCIIT5lu.woff2) format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Raleway';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/raleway/v36/1Ptug8zYS_SKggPNyCMIT5lu.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Raleway';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/raleway/v36/1Ptug8zYS_SKggPNyC0ITw.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Raleway';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/raleway/v36/1Ptug8zYS_SKggPNyCAIT5lu.woff2) format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Raleway';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/raleway/v36/1Ptug8zYS_SKggPNyCkIT5lu.woff2) format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Raleway';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/raleway/v36/1Ptug8zYS_SKggPNyCIIT5lu.woff2) format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Raleway';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/raleway/v36/1Ptug8zYS_SKggPNyCMIT5lu.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Raleway';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/raleway/v36/1Ptug8zYS_SKggPNyC0ITw.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Raleway';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/raleway/v36/1Ptug8zYS_SKggPNyCAIT5lu.woff2) format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Raleway';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/raleway/v36/1Ptug8zYS_SKggPNyCkIT5lu.woff2) format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Raleway';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/raleway/v36/1Ptug8zYS_SKggPNyCIIT5lu.woff2) format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Raleway';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/raleway/v36/1Ptug8zYS_SKggPNyCMIT5lu.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Raleway';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/raleway/v36/1Ptug8zYS_SKggPNyC0ITw.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Raleway';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/raleway/v36/1Ptug8zYS_SKggPNyCAIT5lu.woff2) format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Raleway';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/raleway/v36/1Ptug8zYS_SKggPNyCkIT5lu.woff2) format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Raleway';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/raleway/v36/1Ptug8zYS_SKggPNyCIIT5lu.woff2) format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Raleway';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/raleway/v36/1Ptug8zYS_SKggPNyCMIT5lu.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Raleway';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/raleway/v36/1Ptug8zYS_SKggPNyC0ITw.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Raleway';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/raleway/v36/1Ptug8zYS_SKggPNyCAIT5lu.woff2) format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Raleway';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/raleway/v36/1Ptug8zYS_SKggPNyCkIT5lu.woff2) format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Raleway';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/raleway/v36/1Ptug8zYS_SKggPNyCIIT5lu.woff2) format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Raleway';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/raleway/v36/1Ptug8zYS_SKggPNyCMIT5lu.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Raleway';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/raleway/v36/1Ptug8zYS_SKggPNyC0ITw.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Raleway';
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/raleway/v36/1Ptug8zYS_SKggPNyCAIT5lu.woff2) format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Raleway';
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/raleway/v36/1Ptug8zYS_SKggPNyCkIT5lu.woff2) format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Raleway';
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/raleway/v36/1Ptug8zYS_SKggPNyCIIT5lu.woff2) format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Raleway';
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/raleway/v36/1Ptug8zYS_SKggPNyCMIT5lu.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Raleway';
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/raleway/v36/1Ptug8zYS_SKggPNyC0ITw.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Raleway';
+  font-style: normal;
+  font-weight: 900;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/raleway/v36/1Ptug8zYS_SKggPNyCAIT5lu.woff2) format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Raleway';
+  font-style: normal;
+  font-weight: 900;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/raleway/v36/1Ptug8zYS_SKggPNyCkIT5lu.woff2) format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Raleway';
+  font-style: normal;
+  font-weight: 900;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/raleway/v36/1Ptug8zYS_SKggPNyCIIT5lu.woff2) format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Raleway';
+  font-style: normal;
+  font-weight: 900;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/raleway/v36/1Ptug8zYS_SKggPNyCMIT5lu.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Raleway';
+  font-style: normal;
+  font-weight: 900;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/raleway/v36/1Ptug8zYS_SKggPNyC0ITw.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+:root {
+--font-base: Raleway;
+}
+body, #content, .entry-content, .post-content, .page-content, .post-excerpt, .entry-summary, .entry-excerpt, .widget-area, .widget, .sidebar, #sidebar, footer, .footer, #footer, .site-footer {
+font-family: "Raleway";
+ }
+	</style>
+	<!-- Fonts Plugin CSS -->
+	        <link rel="manifest" href="favicon/manifest.json">
+        <meta name="msapplication-TileColor" content="#ffffff">
+        <meta name="msapplication-TileImage" content="favicon/ms-icon-144x144.png">
+        <meta name="theme-color" content="#ffffff">
+
+        <script>
+            (function(H){H.className=H.className.replace(/\bno-js\b/,'js')})(document.documentElement)
+        </script>
+        <style>
+            :root {
+                --main-color: #21b224;
+                --main-color-darken: #21b224; /* для ховер эфектов */
+                --text-main-color: #0a0a0a;
+                --quiz-hover: #32b939;
+                --gradient-process-item: #21b224; /* зелёно-прозрачный градиент */
+                --gradient-articles-item: #21b224;
+                --hit-status-color: #9747FF;
+                --sale-status-color: #F63123;
+                --new-status-color: #F2B644;
+                --product-status-color: #1C1C1C;
+				--brad-regular: 0.6vw;
+            }
+									.header__btn-wrap{
+				display: none;
+			}
+			@media only screen and (max-width: 768px){
+				.header__btn-wrap{
+					display: block;
+					background-color: #fff;
+    padding: 3vw;
+					border-radius: 10vw;
+					box-shadow: 0 0 100px rgb(198 198 198 / 37%);
+				}
+			}
+									        </style>
+			
+    </head>
+
+    <body class="page">
+
+
+    <header class="header">
+        <div class="header__top">
+    <div class="wrapper">
+		
+        <div class="header__logo">
+			            <a href="https://constructor.paradigma.website/demo">
+				                	<img src="https://constructor.paradigma.website/demo/wp-content/uploads/2023/08/logoo.png" alt="">
+								
+            </a>
+			        </div>
+		
+
+<!--[gtranslate]-->
+		
+        <div class="header__text">
+							<b>Строительная компания </b><br />
+полного цикла в Москве					</div>
+        
+        <form
+    class="search-form"
+    role="search"
+    action="https://constructor.paradigma.website/demo/wp-admin/admin-ajax.php"
+    >
+    <input
+        class="search-form__input"
+        type="text"
+        value=""
+        name="s" id="s"
+        placeholder="Поиск по товарам"
+        autocomplete="off"
+    />
+    <button type="submit" id="searchsubmit">
+     <svg width="16" height="17" viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg"><path id="Search icon" fill-rule="evenodd" clip-rule="evenodd" d="M2 7.125C2 4.57068 4.07068 2.5 6.625 2.5C9.17932 2.5 11.25 4.57068 11.25 7.125C11.25 9.67932 9.17932 11.75 6.625 11.75C4.07068 11.75 2 9.67932 2 7.125ZM6.625 0.5C2.96611 0.5 0 3.46611 0 7.125C0 10.7839 2.96611 13.75 6.625 13.75C8.09382 13.75 9.451 13.272 10.5495 12.4631L14.043 15.9566C14.4335 16.3472 15.0667 16.3472 15.4572 15.9566C15.8478 15.5661 15.8478 14.9329 15.4572 14.5424L11.9636 11.0488C12.7722 9.95042 13.25 8.59351 13.25 7.125C13.25 3.46611 10.2839 0.5 6.625 0.5Z" fill="#E3E3E3"/></svg>
+    </button>
+
+    <div class="search-form-results-wrap">
+        <div class="search-form-results"></div>
+    </div>
+</form>		
+		        <div class="header__address">
+            <svg width="20" height="24" viewBox="0 0 20 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M19.9579 11.2388C19.6212 13.5056 18.6111 15.4365 17.0117 17.0317C16.0857 17.8713 15.244 18.7948 14.318 19.6343C12.9712 21.0616 11.6243 22.5728 10.2775 24C7.41545 21.0616 4.6376 18.5429 2.02809 15.7724C0.512897 14.0933 -0.0763465 11.9104 0.00783105 9.64361C0.0920086 4.77419 3.88 0.576418 8.59394 0.0726849C13.8971 -0.515004 18.4427 2.50739 19.7896 7.46077C20.1263 8.46823 19.9579 11.0709 19.9579 11.2388ZM10.025 13.2537C11.7927 13.2537 13.3079 11.8265 13.3079 10.0634C13.3079 8.30032 11.7927 6.78912 10.1091 6.78912C8.42559 6.78912 6.82621 8.30032 6.82621 9.97943C6.82621 11.7425 8.25723 13.2537 10.025 13.2537Z"
+                fill="#31B939" />
+            </svg>
+            <p><b>Адрес офиса:</b><br />
+г. Москва, <br />
+ул.Карьерная, 10 А</p>
+        </div>
+				
+		
+					
+        <div class="header__social">
+			            <p>Мы онлайн, <b>пишите</b></p>
+            <div class="social-links">
+                                <a target="_blank" href="https://wa.me/+79778755881">
+                    <img src="https://constructor.paradigma.website/demo/wp-content/uploads/2022/11/whats-app.png" alt="">
+                </a>
+                                <a target="_blank" href="viber://chat?number=%2B79778755881">
+                    <img src="https://constructor.paradigma.website/demo/wp-content/uploads/2022/11/viber.png" alt="">
+                </a>
+                                <a target="_blank" href="https://t.me/alex_dein">
+                    <img src="https://constructor.paradigma.website/demo/wp-content/uploads/2022/11/telegram.png" alt="">
+                </a>
+                            </div>
+			        </div>
+	
+		
+        <div class="header__contacts">
+			            	<p>Звоните <b>Пн-Пт: <span>9 - 18</span></b></p>
+														<a href="tel:+7(999)999-99-99">+7(999)999-99-99</a>
+										
+			
+			
+	
+            <div class="call-back md-line-dashed" popupOpen="call-back-popup">Заказать звонок сейчас</div>	  
+			
+			
+        </div>
+ 
+		<div class="header__btn-wrap">
+            <p>Меню сайта</p>
+			<div class="header__btn" headerBtn_JS>
+				<span></span><span></span><span></span>
+			</div>
+		</div>	         
+    </div>
+</div>
+	  
+<nav class="header__nav" 	  headerFixed_JS  >
+    <div class="wrapper">
+        <div class="nav-wrap">
+            <form
+    class="search-form"
+    role="search"
+    action="https://constructor.paradigma.website/demo/wp-admin/admin-ajax.php"
+    >
+    <input
+        class="search-form__input"
+        type="text"
+        value=""
+        name="s" id="s"
+        placeholder="Поиск по товарам"
+        autocomplete="off"
+    />
+    <button type="submit" id="searchsubmit">
+     <svg width="16" height="17" viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg"><path id="Search icon" fill-rule="evenodd" clip-rule="evenodd" d="M2 7.125C2 4.57068 4.07068 2.5 6.625 2.5C9.17932 2.5 11.25 4.57068 11.25 7.125C11.25 9.67932 9.17932 11.75 6.625 11.75C4.07068 11.75 2 9.67932 2 7.125ZM6.625 0.5C2.96611 0.5 0 3.46611 0 7.125C0 10.7839 2.96611 13.75 6.625 13.75C8.09382 13.75 9.451 13.272 10.5495 12.4631L14.043 15.9566C14.4335 16.3472 15.0667 16.3472 15.4572 15.9566C15.8478 15.5661 15.8478 14.9329 15.4572 14.5424L11.9636 11.0488C12.7722 9.95042 13.25 8.59351 13.25 7.125C13.25 3.46611 10.2839 0.5 6.625 0.5Z" fill="#E3E3E3"/></svg>
+    </button>
+
+    <div class="search-form-results-wrap">
+        <div class="search-form-results"></div>
+    </div>
+</form>
+            <div class="menu-menyu-v-shapke-container">
+                        <ul class="nav">
+                         
+                        <li class="nav-item  dropdown-item"><a class="nav-link" href="https://constructor.paradigma.website/demo/services/">Услуги</a><span></span>
+<ul class="nav-menu  nav-menu--level-1">
+	<li class="nav-item  dropdown-item"><a class="nav-link" href="https://constructor.paradigma.website/demo/home2/">Главная 2</a><span></span>
+	<ul class="nav-menu  nav-menu--level-2">
+		<li class="nav-item"><a class="nav-link" href="#">Произвольная ссылка 1</a><span></span></li>
+		<li class="nav-item"><a class="nav-link" href="#">Произвольная ссылка 2</a><span></span></li>
+	</ul>
+</li>
+	<li class="nav-item"><a class="nav-link" href="https://constructor.paradigma.website/demo/home4/">Главная 4</a><span></span></li>
+	<li class="nav-item"><a class="nav-link" href="https://constructor.paradigma.website/demo/home5/">Главная 5</a><span></span></li>
+	<li class="nav-item"><a class="nav-link" href="https://constructor.paradigma.website/demo/home6/">Главная 6</a><span></span></li>
+	<li class="nav-item"><a class="nav-link" href="https://constructor.paradigma.website/demo/home7/">Главная 7</a><span></span></li>
+	<li class="nav-item"><a class="nav-link" href="https://constructor.paradigma.website/demo/home8/">Главная 8</a><span></span></li>
+</ul>
+</li>
+<li class="nav-item  dropdown-item"><a class="nav-link" href="https://constructor.paradigma.website/demo/catalog/">Каталог</a><span></span>
+<ul class="nav-menu  nav-menu--level-1">
+	<li class="nav-item  dropdown-item"><a class="nav-link" href="#">Параметр 1</a><span></span>
+	<ul class="nav-menu  nav-menu--level-2">
+		<li class="nav-item"><a class="nav-link" href="https://constructor.paradigma.website/demo/catalogs-cat/catalog-1/">Подкаталог 1</a><span></span></li>
+		<li class="nav-item"><a class="nav-link" href="https://constructor.paradigma.website/demo/catalogs-cat/catalog-2/">Подкаталог 2</a><span></span></li>
+		<li class="nav-item"><a class="nav-link" href="https://constructor.paradigma.website/demo/catalogs-cat/katalog-3/">Подкаталог 3</a><span></span></li>
+		<li class="nav-item"><a class="nav-link" href="https://constructor.paradigma.website/demo/catalogs-cat/katalog-6/">Подкаталог 6</a><span></span></li>
+	</ul>
+</li>
+	<li class="nav-item  dropdown-item"><a class="nav-link" href="#">Параметр 2</a><span></span>
+	<ul class="nav-menu  nav-menu--level-2">
+		<li class="nav-item"><a class="nav-link" href="https://constructor.paradigma.website/demo/catalogs-2/sinij/">Синий</a><span></span></li>
+		<li class="nav-item"><a class="nav-link" href="https://constructor.paradigma.website/demo/catalogs-2/krasnyj/">Красный</a><span></span></li>
+		<li class="nav-item"><a class="nav-link" href="https://constructor.paradigma.website/demo/catalogs-2/zheltyj/">Желтый</a><span></span></li>
+	</ul>
+</li>
+	<li class="nav-item  dropdown-item"><a class="nav-link" href="#">Параметр 3</a><span></span>
+	<ul class="nav-menu  nav-menu--level-2">
+		<li class="nav-item"><a class="nav-link" href="https://constructor.paradigma.website/demo/catalogs-3/beton/">Бетон</a><span></span></li>
+		<li class="nav-item"><a class="nav-link" href="https://constructor.paradigma.website/demo/catalogs-3/kirpich/">Кирпич</a><span></span></li>
+		<li class="nav-item"><a class="nav-link" href="https://constructor.paradigma.website/demo/catalogs-3/blok/">Блок</a><span></span></li>
+	</ul>
+</li>
+</ul>
+</li>
+<li class="nav-item"><a class="nav-link" href="https://constructor.paradigma.website/demo/portfolios/">Портфолио</a><span></span></li>
+<li class="nav-item"><a class="nav-link" href="https://constructor.paradigma.website/demo/discount/">Акции</a><span></span></li>
+<li class="nav-item"><a class="nav-link" href="https://constructor.paradigma.website/demo/blog/">Статьи</a><span></span></li>
+<li class="nav-item"><a class="nav-link" href="https://constructor.paradigma.website/demo/price/">Стоимость</a><span></span></li>
+<li class="nav-item  dropdown-item"><a class="nav-link" href="https://constructor.paradigma.website/demo/about/">О компании</a><span></span>
+<ul class="nav-menu  nav-menu--level-1">
+	<li class="nav-item"><a class="nav-link" href="https://constructor.paradigma.website/demo/vacancy/">Вакансии</a><span></span></li>
+	<li class="nav-item"><a class="nav-link" href="https://constructor.paradigma.website/demo/reviews/">Отзывы</a><span></span></li>
+	<li class="nav-item"><a class="nav-link" href="https://constructor.paradigma.website/demo/certificates/">Сертификаты</a><span></span></li>
+</ul>
+</li>
+<li class="nav-item  dropdown-item"><a class="nav-link" href="https://constructor.paradigma.website/demo/about/">Информация</a><span></span>
+<ul class="nav-menu  nav-menu--level-1">
+	<li class="nav-item"><a class="nav-link" href="https://constructor.paradigma.website/demo/credit/">Кредит и рассрочка</a><span></span></li>
+	<li class="nav-item"><a class="nav-link" href="https://constructor.paradigma.website/demo/delivery/">Доставка</a><span></span></li>
+	<li class="nav-item"><a class="nav-link" href="https://constructor.paradigma.website/demo/lid-magnit/">Лид магнит</a><span></span></li>
+	<li class="nav-item"><a class="nav-link" href="https://constructor.paradigma.website/demo/spasibo/">Спасибо</a><span></span></li>
+	<li class="nav-item"><a class="nav-link" href="https://constructor.paradigma.website/demo/quiz/">Квиз-сайт</a><span></span></li>
+	<li class="nav-item"><a class="nav-link" href="https://constructor.paradigma.website/demo/demo-stranicza/">Демо-страница</a><span></span></li>
+</ul>
+</li>
+<li class="nav-item"><a class="nav-link" href="https://constructor.paradigma.website/demo/contacts/">Контакты</a><span></span></li>
+<li class="nav-item"><a class="nav-link" href="#about-company">Якорь</a><span></span></li>
+
+                        </ul>
+                    </div>
+        </div>
+    </div>
+</nav>
+           </header>
+        <section class="first md-error-page">
+            <div class="first__bg">
+                <img src="https://constructor.paradigma.website/demo/wp-content/uploads/2023/03/404.jpg" alt="" class="main-bg">
+            </div>
+            <div class="wrapper">
+                <div class="first__content">
+                    <h1 class="first__title" >Такой страницы<br />
+<b>не существует</b></h1>
+                    <div class="first__text">
+                        <div class="dots">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+                        <p>Ошибка 404</p>
+                    </div>
+                    <div class="first__buttons">
+                        <a href="" class="first__buttons-btn md-main-color-btn">
+                            <span>На главную</span>
+                            <img src="https://constructor.paradigma.website/demo/wp-content/themes/theme/assets/img/general/arrow-top-right.svg" alt="">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+
+        <footer class="footer">
+            <div class="wrapper">
+                                <div class="footer__top">
+                    <div class="footer__top-main">
+						                        <div class="footer__logo">
+                            <a href="https://constructor.paradigma.website/demo">
+                                <img src="https://constructor.paradigma.website/demo/wp-content/uploads/2023/08/logoo.png" alt="">
+                               
+                            </a>
+                        </div>
+												                        <div class="footer__social">
+                            <p><b>Мы в социальных сетях</b>
+                            </p>
+                            <div>
+                                                                <a href="" target="_blank">
+                                    <img src="https://constructor.paradigma.website/demo/wp-content/uploads/2022/11/facebook.png" alt="">
+                                </a>
+                                                                <a href="" target="_blank">
+                                    <img src="https://constructor.paradigma.website/demo/wp-content/uploads/2022/11/instagram.png" alt="">
+                                </a>
+                                                                <a href="" target="_blank">
+                                    <img src="https://constructor.paradigma.website/demo/wp-content/uploads/2022/11/vk.png" alt="">
+                                </a>
+                                                            </div>
+                        </div>
+						                    </div>
+					
+                    <div class="footer__top-container">
+						                        <div class="footer__top-item">
+                            <div class="footer-title">Меню</div>
+                            <nav class="menu-container">
+                                <div class="menu-menyu-v-podvale-container">
+                                            <ul class="footer-list">
+                                            
+                                            <li class="nav-item"><a class="nav-link" href="https://constructor.paradigma.website/demo/services/">Услуги</a><span></span></li>
+<li class="nav-item"><a class="nav-link" href="https://constructor.paradigma.website/demo/portfolios/">Портфолио</a><span></span></li>
+<li class="nav-item"><a class="nav-link" href="https://constructor.paradigma.website/demo/contacts/">Контакты</a><span></span></li>
+<li class="nav-item"><a class="nav-link" href="https://constructor.paradigma.website/demo/about/">О компании</a><span></span></li>
+<li class="nav-item"><a class="nav-link" href="https://constructor.paradigma.website/demo/credit/">Рассрочка и кредит</a><span></span></li>
+
+                                            </ul>
+                                        </div>                            </nav>
+                        </div>
+												                        <div class="footer__top-item">
+                            <div class="footer-title">Услуги</div>
+                            <nav class="menu-container">
+                                <div class="menu-uslugi-v-podvale-container">
+                                            <ul class="footer-list">
+                                            
+                                            <li class="nav-item"><a class="nav-link" href="https://constructor.paradigma.website/demo/vacancy/">Вакансии</a><span></span></li>
+<li class="nav-item"><a class="nav-link" href="https://constructor.paradigma.website/demo/delivery/">Доставка</a><span></span></li>
+
+                                            </ul>
+                                        </div>                            </nav>
+                        </div>
+												                        <div class="footer__top-item">
+                            <div class="footer-title">Преимущества</div>
+                            <ul class="footer-list">
+                               <!-- <li>
+                                    <svg width="12" height="9" viewBox="0 0 12 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M11.7861 1.24419L10.7287 0.209302C10.5861 0.0697674 10.4079 0 10.2059 0C10.004 0 9.82574 0.0697674 9.68317 0.209302L4.59802 5.18605L2.32871 2.95349C2.18614 2.81395 2.00792 2.74419 1.80594 2.74419C1.60396 2.74419 1.42574 2.81395 1.28317 2.95349L0.225743 3.98837C0.0712871 4.12791 0 4.30233 0 4.5C0 4.69767 0.0712871 4.87209 0.213861 5.01163L3.01782 7.75581L4.07525 8.7907C4.21782 8.93023 4.39604 9 4.59802 9C4.8 9 4.97822 8.93023 5.12079 8.7907L6.17822 7.75581L11.7861 2.26744C11.9287 2.12791 12 1.95349 12 1.75581C12 1.55814 11.9287 1.38372 11.7861 1.24419Z"
+                                        fill="white" />
+                                    </svg>
+                                    <span>Один подрядчик на все виды работ</span>
+                                </li>-->
+                                                                <li>
+                                    <svg width="12" height="9" viewBox="0 0 12 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M11.7861 1.24419L10.7287 0.209302C10.5861 0.0697674 10.4079 0 10.2059 0C10.004 0 9.82574 0.0697674 9.68317 0.209302L4.59802 5.18605L2.32871 2.95349C2.18614 2.81395 2.00792 2.74419 1.80594 2.74419C1.60396 2.74419 1.42574 2.81395 1.28317 2.95349L0.225743 3.98837C0.0712871 4.12791 0 4.30233 0 4.5C0 4.69767 0.0712871 4.87209 0.213861 5.01163L3.01782 7.75581L4.07525 8.7907C4.21782 8.93023 4.39604 9 4.59802 9C4.8 9 4.97822 8.93023 5.12079 8.7907L6.17822 7.75581L11.7861 2.26744C11.9287 2.12791 12 1.95349 12 1.75581C12 1.55814 11.9287 1.38372 11.7861 1.24419Z"
+                                        fill="white" />
+                                    </svg>
+                                    <span>Один подрядчик на все виды работ1</span>
+                                </li>
+                                                                <li>
+                                    <svg width="12" height="9" viewBox="0 0 12 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M11.7861 1.24419L10.7287 0.209302C10.5861 0.0697674 10.4079 0 10.2059 0C10.004 0 9.82574 0.0697674 9.68317 0.209302L4.59802 5.18605L2.32871 2.95349C2.18614 2.81395 2.00792 2.74419 1.80594 2.74419C1.60396 2.74419 1.42574 2.81395 1.28317 2.95349L0.225743 3.98837C0.0712871 4.12791 0 4.30233 0 4.5C0 4.69767 0.0712871 4.87209 0.213861 5.01163L3.01782 7.75581L4.07525 8.7907C4.21782 8.93023 4.39604 9 4.59802 9C4.8 9 4.97822 8.93023 5.12079 8.7907L6.17822 7.75581L11.7861 2.26744C11.9287 2.12791 12 1.95349 12 1.75581C12 1.55814 11.9287 1.38372 11.7861 1.24419Z"
+                                        fill="white" />
+                                    </svg>
+                                    <span>От проекта до сдачи объекта под ключ</span>
+                                </li>
+                                                                <li>
+                                    <svg width="12" height="9" viewBox="0 0 12 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M11.7861 1.24419L10.7287 0.209302C10.5861 0.0697674 10.4079 0 10.2059 0C10.004 0 9.82574 0.0697674 9.68317 0.209302L4.59802 5.18605L2.32871 2.95349C2.18614 2.81395 2.00792 2.74419 1.80594 2.74419C1.60396 2.74419 1.42574 2.81395 1.28317 2.95349L0.225743 3.98837C0.0712871 4.12791 0 4.30233 0 4.5C0 4.69767 0.0712871 4.87209 0.213861 5.01163L3.01782 7.75581L4.07525 8.7907C4.21782 8.93023 4.39604 9 4.59802 9C4.8 9 4.97822 8.93023 5.12079 8.7907L6.17822 7.75581L11.7861 2.26744C11.9287 2.12791 12 1.95349 12 1.75581C12 1.55814 11.9287 1.38372 11.7861 1.24419Z"
+                                        fill="white" />
+                                    </svg>
+                                    <span>Разрабатываем сметную документацию</span>
+                                </li>
+                                                                <li>
+                                    <svg width="12" height="9" viewBox="0 0 12 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M11.7861 1.24419L10.7287 0.209302C10.5861 0.0697674 10.4079 0 10.2059 0C10.004 0 9.82574 0.0697674 9.68317 0.209302L4.59802 5.18605L2.32871 2.95349C2.18614 2.81395 2.00792 2.74419 1.80594 2.74419C1.60396 2.74419 1.42574 2.81395 1.28317 2.95349L0.225743 3.98837C0.0712871 4.12791 0 4.30233 0 4.5C0 4.69767 0.0712871 4.87209 0.213861 5.01163L3.01782 7.75581L4.07525 8.7907C4.21782 8.93023 4.39604 9 4.59802 9C4.8 9 4.97822 8.93023 5.12079 8.7907L6.17822 7.75581L11.7861 2.26744C11.9287 2.12791 12 1.95349 12 1.75581C12 1.55814 11.9287 1.38372 11.7861 1.24419Z"
+                                        fill="white" />
+                                    </svg>
+                                    <span>Фиксированная цена в договоре</span>
+                                </li>
+                                                                <li>
+                                    <svg width="12" height="9" viewBox="0 0 12 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M11.7861 1.24419L10.7287 0.209302C10.5861 0.0697674 10.4079 0 10.2059 0C10.004 0 9.82574 0.0697674 9.68317 0.209302L4.59802 5.18605L2.32871 2.95349C2.18614 2.81395 2.00792 2.74419 1.80594 2.74419C1.60396 2.74419 1.42574 2.81395 1.28317 2.95349L0.225743 3.98837C0.0712871 4.12791 0 4.30233 0 4.5C0 4.69767 0.0712871 4.87209 0.213861 5.01163L3.01782 7.75581L4.07525 8.7907C4.21782 8.93023 4.39604 9 4.59802 9C4.8 9 4.97822 8.93023 5.12079 8.7907L6.17822 7.75581L11.7861 2.26744C11.9287 2.12791 12 1.95349 12 1.75581C12 1.55814 11.9287 1.38372 11.7861 1.24419Z"
+                                        fill="white" />
+                                    </svg>
+                                    <span>Гарантия на работы 5 лет</span>
+                                </li>
+                                                                <li>
+                                    <svg width="12" height="9" viewBox="0 0 12 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M11.7861 1.24419L10.7287 0.209302C10.5861 0.0697674 10.4079 0 10.2059 0C10.004 0 9.82574 0.0697674 9.68317 0.209302L4.59802 5.18605L2.32871 2.95349C2.18614 2.81395 2.00792 2.74419 1.80594 2.74419C1.60396 2.74419 1.42574 2.81395 1.28317 2.95349L0.225743 3.98837C0.0712871 4.12791 0 4.30233 0 4.5C0 4.69767 0.0712871 4.87209 0.213861 5.01163L3.01782 7.75581L4.07525 8.7907C4.21782 8.93023 4.39604 9 4.59802 9C4.8 9 4.97822 8.93023 5.12079 8.7907L6.17822 7.75581L11.7861 2.26744C11.9287 2.12791 12 1.95349 12 1.75581C12 1.55814 11.9287 1.38372 11.7861 1.24419Z"
+                                        fill="white" />
+                                    </svg>
+                                    <span>Доступный кредит и маткапитал</span>
+                                </li>
+                                                                <li>
+                                    <svg width="12" height="9" viewBox="0 0 12 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M11.7861 1.24419L10.7287 0.209302C10.5861 0.0697674 10.4079 0 10.2059 0C10.004 0 9.82574 0.0697674 9.68317 0.209302L4.59802 5.18605L2.32871 2.95349C2.18614 2.81395 2.00792 2.74419 1.80594 2.74419C1.60396 2.74419 1.42574 2.81395 1.28317 2.95349L0.225743 3.98837C0.0712871 4.12791 0 4.30233 0 4.5C0 4.69767 0.0712871 4.87209 0.213861 5.01163L3.01782 7.75581L4.07525 8.7907C4.21782 8.93023 4.39604 9 4.59802 9C4.8 9 4.97822 8.93023 5.12079 8.7907L6.17822 7.75581L11.7861 2.26744C11.9287 2.12791 12 1.95349 12 1.75581C12 1.55814 11.9287 1.38372 11.7861 1.24419Z"
+                                        fill="white" />
+                                    </svg>
+                                    <span>Строители с опытом более 15 лет</span>
+                                </li>
+                                                                <li>
+                                    <svg width="12" height="9" viewBox="0 0 12 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M11.7861 1.24419L10.7287 0.209302C10.5861 0.0697674 10.4079 0 10.2059 0C10.004 0 9.82574 0.0697674 9.68317 0.209302L4.59802 5.18605L2.32871 2.95349C2.18614 2.81395 2.00792 2.74419 1.80594 2.74419C1.60396 2.74419 1.42574 2.81395 1.28317 2.95349L0.225743 3.98837C0.0712871 4.12791 0 4.30233 0 4.5C0 4.69767 0.0712871 4.87209 0.213861 5.01163L3.01782 7.75581L4.07525 8.7907C4.21782 8.93023 4.39604 9 4.59802 9C4.8 9 4.97822 8.93023 5.12079 8.7907L6.17822 7.75581L11.7861 2.26744C11.9287 2.12791 12 1.95349 12 1.75581C12 1.55814 11.9287 1.38372 11.7861 1.24419Z"
+                                        fill="white" />
+                                    </svg>
+                                    <span>Собственное производство</span>
+                                </li>
+                                                            </ul>
+                        </div>
+												                        <div class="footer__top-item">
+                            <div class="footer-title">Информация</div>
+                            <div class="footer-text">
+                                <p>Перепечатка материалов сайта без письменного разрешения запрещена»<br />
+<br />
+Вся информация, размещённая на сайте, носит ознакомительный характер и может отличаться от действительности.</p>
+                            </div>
+                        </div>
+						                    </div>
+                </div>
+                                <div class="footer__bottom">
+                    <div class="footer__bottom-item">
+                        <p>Все права защищены</p>
+                    </div>
+                    <div class="footer__bottom-item">
+                        <p><span class="md-line-dotted" popupOpen="politika-popup">Политика конфиденциальности</span></p>
+                    </div>
+                    <div class="footer__bottom-item">
+                        <p>Сделано с любовью в <a href="https://paradigma.website/" target="_blank" class="md-line-dotted">Paradigma.website</a></p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- Политика -->
+        <div class="popup" popupID="politika-popup">
+            <div class="popup__container">
+                <div class="popup__block politika-popup">
+                    <div class="politika-content">
+                    <h2>Политика конфиденциальности</h2>
+<p>Настоящая Политика конфиденциальности персональных данных (далее – Политика конфиденциальности) действует в отношении всей информации, которую сайт , (далее – ) расположенный на доменном имени (а также его субдоменах),<br />
+может получить о Пользователе во время использования сайта (а также его субдоменов), его программ и его продуктов.</p>
+<h3>1. Определение терминов</h3>
+<p><strong>1.1 В настоящей Политике конфиденциальности используются следующие термины:</strong></p>
+<p>1.1.1. «<strong>Администрация сайта</strong>» (далее – Администрация) – уполномоченные сотрудники на управление сайтом , которые организуют и (или) осуществляют обработку персональных данных, а также определяет цели обработки<br />
+персональных данных, состав персональных данных, подлежащих обработке, действия (операции), совершаемые с персональными данными.</p>
+<p>1.1.2. «Персональные данные» — любая информация, относящаяся к прямо или косвенно определенному, или определяемому физическому лицу (субъекту персональных данных).</p>
+<p>1.1.3. «Обработка персональных данных» — любое действие (операция) или совокупность действий (операций), совершаемых с использованием средств автоматизации или без использования таких средств с персональными данными, включая сбор,<br />
+запись, систематизацию, накопление, хранение, уточнение (обновление, изменение), извлечение, использование, передачу (распространение, предоставление, доступ), обезличивание, блокирование, удаление, уничтожение персональных<br />
+данных.</p>
+<p>1.1.4. «Конфиденциальность персональных данных» — обязательное для соблюдения Оператором или иным получившим доступ к персональным данным лицом требование не допускать их распространения без согласия субъекта персональных данных<br />
+или наличия иного законного основания.</p>
+<p>1.1.5. «Сайт » — это совокупность связанных между собой веб-страниц, размещенных в сети Интернет по уникальному адресу (URL): <a href="https://constructor.paradigma.website/">https://constructor.paradigma.website/</a>, а также его субдоменах.</p>
+<p>1.1.6. «Субдомены» — это страницы или совокупность страниц, расположенные на доменах третьего уровня, принадлежащие сайту , а также другие временные страницы, внизу который указана контактная информация Администрации</p>
+<p>1.1.5. «Пользователь сайта » (далее Пользователь) – лицо, имеющее доступ к сайту , посредством сети Интернет и использующее информацию, материалы и продукты сайта .</p>
+<p>1.1.7. «Cookies» — небольшой фрагмент данных, отправленный веб-сервером и хранимый на компьютере пользователя, который веб-клиент или веб-браузер каждый раз пересылает веб-серверу в HTTP-запросе при попытке открыть страницу соответствующего<br />
+сайта.</p>
+<p>1.1.8. «IP-адрес» — уникальный сетевой адрес узла в компьютерной сети, через который Пользователь получает доступ на .</p>
+<h3>2. Общие положения</h3>
+<p>2.1. Использование сайта Пользователем означает согласие с настоящей Политикой конфиденциальности и условиями обработки персональных данных Пользователя.</p>
+<p>2.2. В случае несогласия с условиями Политики конфиденциальности Пользователь должен прекратить использование сайта .</p>
+<p>2.3. Настоящая Политика конфиденциальности применяется к сайту . не контролирует и не несет ответственность за сайты третьих лиц, на которые Пользователь может перейти по ссылкам, доступным на сайте .</p>
+<p>2.4. Администрация не проверяет достоверность персональных данных, предоставляемых Пользователем.</p>
+<h3>3. Предмет политики конфиденциальности</h3>
+<p>3.1. Настоящая Политика конфиденциальности устанавливает обязательства Администрации по неразглашению и обеспечению режима защиты конфиденциальности персональных данных, которые Пользователь предоставляет по запросу Администрации<br />
+при регистрации на сайте или при подписке на информационную e-mail рассылку.</p>
+<p>3.2. Персональные данные, разрешённые к обработке в рамках настоящей Политики конфиденциальности, предоставляются Пользователем путём заполнения форм на сайте и включают в себя следующую информацию:</p>
+<p>3.2.1. фамилию, имя, отчество Пользователя;</p>
+<p>3.2.2. контактный телефон Пользователя;</p>
+<p>3.2.3. адрес электронной почты (e-mail)</p>
+<p>3.2.4. место жительство Пользователя (при необходимости)</p>
+<p>3.2.5. фотографию (при необходимости)</p>
+<p>3.3. защищает Данные, которые автоматически передаются при посещении страниц:</p>
+<p>— IP адрес;</p>
+<p>— информация из cookies;</p>
+<p>— информация о браузере</p>
+<p>— время доступа;</p>
+<p>— реферер (адрес предыдущей страницы).</p>
+<p>3.3.1. Отключение cookies может повлечь невозможность доступа к частям сайта , требующим авторизации.</p>
+<p>3.3.2. осуществляет сбор статистики об IP-адресах своих посетителей. Данная информация используется с целью предотвращения, выявления и решения технических проблем.</p>
+<p>3.4. Любая иная персональная информация неоговоренная выше (история посещения, используемые браузеры, операционные системы и т.д.) подлежит надежному хранению и нераспространению, за исключением случаев, предусмотренных в п.п.<br />
+5.2. настоящей Политики конфиденциальности.</p>
+<h3>4. Цели сбора персональной информации пользователя</h3>
+<p>4.1. Персональные данные Пользователя Администрация может использовать в целях:</p>
+<p>4.1.1. Идентификации Пользователя, зарегистрированного на сайте для его дальнейшей авторизации.</p>
+<p>4.1.2. Предоставления Пользователю доступа к персонализированным данным сайта .</p>
+<p>4.1.3. Установления с Пользователем обратной связи, включая направление уведомлений, запросов, касающихся использования сайта , обработки запросов и заявок от Пользователя.</p>
+<p>4.1.4. Определения места нахождения Пользователя для обеспечения безопасности, предотвращения мошенничества.</p>
+<p>4.1.5. Подтверждения достоверности и полноты персональных данных, предоставленных Пользователем.</p>
+<p>4.1.6. Создания учетной записи для использования частей сайта , если Пользователь дал согласие на создание учетной записи.</p>
+<p>4.1.7. Уведомления Пользователя по электронной почте.</p>
+<p>4.1.8. Предоставления Пользователю эффективной технической поддержки при возникновении проблем, связанных с использованием сайта .</p>
+<p>4.1.9. Предоставления Пользователю с его согласия специальных предложений, новостной рассылки и иных сведений от имени сайта .</p>
+<h3>5. Способы и сроки обработки персональной информации</h3>
+<p>5.1. Обработка персональных данных Пользователя осуществляется без ограничения срока, любым законным способом, в том числе в информационных системах персональных данных с использованием средств автоматизации или без использования<br />
+таких средств.</p>
+<p>5.2. Персональные данные Пользователя могут быть переданы уполномоченным органам государственной власти Российской Федерации только по основаниям и в порядке, установленным законодательством Российской Федерации.</p>
+<p>5.3. При утрате или разглашении персональных данных Администрация вправе не информировать Пользователя об утрате или разглашении персональных данных.</p>
+<p>5.4. Администрация принимает необходимые организационные и технические меры для защиты персональной информации Пользователя от неправомерного или случайного доступа, уничтожения, изменения, блокирования, копирования, распространения,<br />
+а также от иных неправомерных действий третьих лиц.</p>
+<p>5.5. Администрация совместно с Пользователем принимает все необходимые меры по предотвращению убытков или иных отрицательных последствий, вызванных утратой или разглашением персональных данных Пользователя.</p>
+<h3>6. Права и обязанности сторон</h3>
+<p><strong>6.1. Пользователь вправе:</strong></p>
+<p>6.1.1. Принимать свободное решение о предоставлении своих персональных данных, необходимых для использования сайта , и давать согласие на их обработку.</p>
+<p>6.1.2. Обновить, дополнить предоставленную информацию о персональных данных в случае изменения данной информации.</p>
+<p>6.1.3. Пользователь имеет право на получение у Администрации информации, касающейся обработки его персональных данных, если такое право не ограничено в соответствии с федеральными законами. Пользователь вправе требовать от Администрации<br />
+уточнения его персональных данных, их блокирования или уничтожения в случае, если персональные данные являются неполными, устаревшими, неточными, незаконно полученными или не являются необходимыми для заявленной цели обработки,<br />
+а также принимать предусмотренные законом меры по защите своих прав. Для этого достаточно уведомить Администрацию по указаному E-mail адресу.</p>
+<p><strong>6.2. Администрация обязана:</strong></p>
+<p>6.2.1. Использовать полученную информацию исключительно для целей, указанных в п. 4 настоящей Политики конфиденциальности.</p>
+<p>6.2.2. Обеспечить хранение конфиденциальной информации в тайне, не разглашать без предварительного письменного разрешения Пользователя, а также не осуществлять продажу, обмен, опубликование, либо разглашение иными возможными способами<br />
+переданных персональных данных Пользователя, за исключением п.п. 5.2. настоящей Политики Конфиденциальности.</p>
+<p>6.2.3. Принимать меры предосторожности для защиты конфиденциальности персональных данных Пользователя согласно порядку, обычно используемого для защиты такого рода информации в существующем деловом обороте.</p>
+<p>6.2.4. Осуществить блокирование персональных данных, относящихся к соответствующему Пользователю, с момента обращения или запроса Пользователя, или его законного представителя либо уполномоченного органа по защите прав субъектов<br />
+персональных данных на период проверки, в случае выявления недостоверных персональных данных или неправомерных действий.</p>
+<h3>7. Ответственность сторон</h3>
+<p>7.1. Администрация, не исполнившая свои обязательства, несёт ответственность за убытки, понесённые Пользователем в связи с неправомерным использованием персональных данных, в соответствии с законодательством Российской Федерации,<br />
+за исключением случаев, предусмотренных п.п. 5.2. и 7.2. настоящей Политики Конфиденциальности.</p>
+<p>7.2. В случае утраты или разглашения Конфиденциально</p>
+                    </div>
+                    <div class="popup__close" popupClose_JS>
+                        <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M14.5191 12.1742L9.839 7.49792L14.5191 2.82162C15.1603 2.17977 15.1603 1.12948 14.5191 0.487636C13.8695 -0.162545 12.8286 -0.162545 12.179 0.487636L7.50729 5.16393L2.8272 0.487636C2.17765 -0.154209 1.13671 -0.162545 0.487162 0.487636C-0.15406 1.13782 -0.15406 2.17977 0.487162 2.82162L5.16724 7.49792L0.487162 12.1742C-0.162387 12.8161 -0.162387 13.8664 0.487162 14.5082C0.811936 14.8333 1.23664 14.9917 1.65302 14.9917C2.0694 14.9917 2.50243 14.8333 2.81888 14.5082L7.50729 9.84023L12.1874 14.5165C12.5121 14.8416 12.9285 15 13.3532 15C13.7779 15 14.2026 14.8416 14.5191 14.5165C15.1603 13.8664 15.1603 12.8161 14.5191 12.1742Z"
+                            fill="white" />
+                        </svg>
+                    </div>
+                </div>
+                <div class="popup__blur" popupClose_JS></div>
+            </div>
+        </div>
+        <!-- Заявка -->
+		        <div class="popup" popupID="order-popup">
+            <div class="popup__container">
+                <div class="popup__block main-popup" style="background-image: url('https://constructor.paradigma.website/demo/wp-content/themes/theme/assets/img/content/main-popup-bg.jpg');">
+                    <div class="main-popup__content">
+                                                	<div class="main-popup__title">Оставьте заявку<br />
+на расчет стоимости</div>
+												                        	<div class="main-popup__text">Только телефон и мы в деле.<br />
+Перезвоним через пару минут</div>
+						                        <form action="#" method="POST" class="main-popup__form md-standart-form md-popup-form" formValidate_JS data-thanks="https://constructor.paradigma.website/demo/spasibo/">
+                            <input type="hidden" name="action" value="request">
+							<input type="hidden" name="form" value="Оставьте заявку на расчет стоимости">
+                                                        <div class="form-text">Выберите из списка нужную услугу:</div>
+							                            <div class="form-container">
+                                									<select name="call_back_time" class="form-select">
+																				<option value="Строительство дома">Строительство дома</option>
+																				<option value="Другое">Другое</option>
+																			</select>
+								       <input type="text" name="phone" class="form-input" placeholder="Ваш номер телефона" phoneMask_JS required>
+							<!--	<input type="text" name="email" class="form-input" placeholder="Ваш email">-->
+                                <button class="form-btn md-main-color-btn" agreementControlBtn_JS>
+                                    <span>Оставить заявку</span>
+                                </button>
+                            </div>
+                            <div class="form-checkbox">
+                                <div agreementControl_JS class="checked">
+                                    <input type="checkbox" name="agreement" agreementControlCheckbox_JS checked>
+                                    <img src="https://constructor.paradigma.website/demo/wp-content/themes/theme/assets/img/general/check-icon.svg" alt="">
+                                </div>
+                                <p>
+                                   Cогласен с условиями <span popupOpen="politika-popup">политики конфиденциальности данных</span>                                </p>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="popup__close" popupClose_JS>
+                        <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M14.5191 12.1742L9.839 7.49792L14.5191 2.82162C15.1603 2.17977 15.1603 1.12948 14.5191 0.487636C13.8695 -0.162545 12.8286 -0.162545 12.179 0.487636L7.50729 5.16393L2.8272 0.487636C2.17765 -0.154209 1.13671 -0.162545 0.487162 0.487636C-0.15406 1.13782 -0.15406 2.17977 0.487162 2.82162L5.16724 7.49792L0.487162 12.1742C-0.162387 12.8161 -0.162387 13.8664 0.487162 14.5082C0.811936 14.8333 1.23664 14.9917 1.65302 14.9917C2.0694 14.9917 2.50243 14.8333 2.81888 14.5082L7.50729 9.84023L12.1874 14.5165C12.5121 14.8416 12.9285 15 13.3532 15C13.7779 15 14.2026 14.8416 14.5191 14.5165C15.1603 13.8664 15.1603 12.8161 14.5191 12.1742Z"
+                            fill="white" />
+                        </svg>
+                    </div>
+                </div>
+                <div class="popup__blur" popupClose_JS></div>
+            </div>
+        </div>
+
+				<div class="popup" popupID="price-popup">
+            <div class="popup__container">
+                <div class="popup__block price-popup">
+                    <div class="wrapper">
+						<div class="download-price__container" style="background-image: url('https://constructor.paradigma.website/demo/wp-content/uploads/2022/11/download-bg.jpg">
+							<div class="download-price__img-large">
+								<img src="https://constructor.paradigma.website/demo/wp-content/uploads/2022/11/download-1.png" alt="">
+							</div>
+							<div class="download-price__content">
+								<h2 class="download-price__title md-main-title" onScrollDisplay_JS><b>Скачайте<br />
+прайс-лист</b> на все<br />
+услуги в 1 клик</h2>
+								<form action="#" method="POST" class="download-price__form md-standart-form"  data-file="https://constructor.paradigma.website/demo/wp-content/uploads/2023/04/coca-cola_logo.svg.png" formValidate_JS>
+									
+									
+									<input type="hidden" name="action" value="request">
+									<input type="hidden" name="form" value="Попап скачать прайс">
+									<p class="form-text">Выберите куда вам удобнее отправить прайс?</p>
+									<div class="form-container">
+										<select name="social_type" class="form-select">
+											<option value="WhatsApp">Получить в WhatsApp</option>
+											<option value="Telegram">Получить в Telegram</option>
+											<option value="Viber">Получить в Viber</option>
+										</select>
+										<input type="text" name="phone" class="form-input" placeholder="Ваш номер телефона" phoneMask_JS required>
+										<button class="form-btn md-main-color-btn" agreementControlBtn_JS>
+											<span>Получить прайс сейчас</span>
+											<img src="https://constructor.paradigma.website/demo/wp-content/uploads/2022/11/arrow-top-right.svg" alt="">
+										</button>
+									</div>
+									<div class="form-checkbox">
+										<div agreementControl_JS class="checked">
+											<input type="checkbox" name="agreement" agreementControlCheckbox_JS checked>
+											<img src="https://constructor.paradigma.website/demo/wp-content/themes/theme/assets/img/general/check-icon.svg" alt="">
+										</div>
+										<p>Cогласен с условиями <span popupOpen="politika-popup">политики конфиденциальности данных</span></p>
+									</div>
+								</form>
+							</div>
+							<div class="download-price__circle">
+								<img src="https://constructor.paradigma.website/demo/wp-content/themes/theme/assets/img/general/pdf-circle.svg" alt="" class="pdf-circle">
+								<svg class="circle-arrow" width="18" height="20" viewBox="0 0 18 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<path d="M16.7251 11.4014C16.7251 15.439 13.4884 18.7127 9.50133 18.7127C5.51426 18.7127 2.27751 15.4349 2.27751 11.3973C2.27751 7.35977 5.51426 4.08607 9.50133 4.08607C10.0681 4.08607 10.6348 4.15478 11.1856 4.28815L8.86276 6.64037L9.76474 7.55377L13.4924 3.77487L9.76873 0L8.86276 0.913404L10.8303 2.89379C6.19274 2.1461 1.83849 5.35109 1.10414 10.0474C0.369784 14.7438 3.53469 19.1492 8.1723 19.8928C12.8099 20.6365 17.1602 17.4315 17.8945 12.7351C17.9624 12.2946 17.9983 11.846 17.9983 11.3973H16.7251V11.4014Z"
+									fill="#31B939" />
+								</svg>
+								<p>
+									Обновлен:
+									<br>
+									<span>13.07.2022</span>
+								</p>
+							</div>
+						</div>
+					</div>
+                    <div class="popup__close" popupClose_JS>
+                        <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M14.5191 12.1742L9.839 7.49792L14.5191 2.82162C15.1603 2.17977 15.1603 1.12948 14.5191 0.487636C13.8695 -0.162545 12.8286 -0.162545 12.179 0.487636L7.50729 5.16393L2.8272 0.487636C2.17765 -0.154209 1.13671 -0.162545 0.487162 0.487636C-0.15406 1.13782 -0.15406 2.17977 0.487162 2.82162L5.16724 7.49792L0.487162 12.1742C-0.162387 12.8161 -0.162387 13.8664 0.487162 14.5082C0.811936 14.8333 1.23664 14.9917 1.65302 14.9917C2.0694 14.9917 2.50243 14.8333 2.81888 14.5082L7.50729 9.84023L12.1874 14.5165C12.5121 14.8416 12.9285 15 13.3532 15C13.7779 15 14.2026 14.8416 14.5191 14.5165C15.1603 13.8664 15.1603 12.8161 14.5191 12.1742Z"
+                            fill="white" />
+                        </svg>
+                    </div>
+                </div>
+                <div class="popup__blur" popupClose_JS></div>
+            </div>
+        </div>
+
+        <!-- Скачать прайс -->
+                		<div class="download-popup-trigger"></div>
+        <div class="popup" popupID="download-popup">
+            <div class="popup__container">
+                <div class="popup__block download-popup" style="background-image: url('https://constructor.paradigma.website/demo/wp-content/uploads/2022/12/download-popup-bg.jpg');">
+                    <div class="download-popup__img">
+                        <img src="https://constructor.paradigma.website/demo/wp-content/uploads/2022/12/download-popup-1.png" alt="">
+                    </div>
+                    <div class="download-popup__content">
+                        <div class="download-popup__title">Стойте! Подождите!</div>
+                        <div class="download-popup__text">Бесплатно получите пошаговое руководство:</div>
+                        <form method="POST" class="download-popup__form md-standart-form md-popup-form" data-file="https://constructor.paradigma.website/demo/wp-content/uploads/2022/12/download-popup-1.png" data-thanks="https://constructor.paradigma.website/demo/spasibo/" formValidate_JS>
+                        <input type="hidden" name="action" value="request">
+							 <input type="hidden" name="form" value="Попап скачать прайс">
+                            <div class="form-title">“174 совета как сэкономить на строительстве дома”</div>
+                            <div class="form-text">Выберите куда вам выслать?</div>
+                            <div class="form-container">
+                                <select name="social_type" class="form-select">
+                                    <option value="whatsApp">Получить в WhatsApp</option>
+                                    <option value="Viber">Получить в Viber</option>
+                                    <option value="Telegram">Получить в Telegram</option>
+                                </select>
+                                <input type="text" name="phone" class="form-input" placeholder="Ваш номер телефона" phoneMask_JS required>
+                                <button class="form-btn md-main-color-btn" agreementControlBtn_JS>
+                                    <span>Получить сейчас (PDF 1.5 MB) </span>
+                                </button>
+                            </div>
+                            <div class="form-checkbox">
+                                <div agreementControl_JS class="checked">
+                                    <input type="checkbox" name="agreement" agreementControlCheckbox_JS checked>
+                                    <img src="https://constructor.paradigma.website/demo/wp-content/themes/theme/assets/img/general/check-icon.svg" alt="">
+                                </div>
+                                <p>
+													 Cогласен с условиями <span popupOpen="politika-popup">политики конфиденциальности данных</span>                                  
+                                </p>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="popup__close" popupClose_JS>
+                        <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M14.5191 12.1742L9.839 7.49792L14.5191 2.82162C15.1603 2.17977 15.1603 1.12948 14.5191 0.487636C13.8695 -0.162545 12.8286 -0.162545 12.179 0.487636L7.50729 5.16393L2.8272 0.487636C2.17765 -0.154209 1.13671 -0.162545 0.487162 0.487636C-0.15406 1.13782 -0.15406 2.17977 0.487162 2.82162L5.16724 7.49792L0.487162 12.1742C-0.162387 12.8161 -0.162387 13.8664 0.487162 14.5082C0.811936 14.8333 1.23664 14.9917 1.65302 14.9917C2.0694 14.9917 2.50243 14.8333 2.81888 14.5082L7.50729 9.84023L12.1874 14.5165C12.5121 14.8416 12.9285 15 13.3532 15C13.7779 15 14.2026 14.8416 14.5191 14.5165C15.1603 13.8664 15.1603 12.8161 14.5191 12.1742Z"
+                            fill="white" />
+                        </svg>
+                    </div>
+                </div>
+                <div class="popup__blur" popupClose_JS></div>
+            </div>
+        </div>
+        
+
+
+
+
+
+        <!-- Перезвоните мне -->
+		        <div class="popup" popupID="call-back-popup">
+            <div class="popup__container">
+                <div class="popup__block main-popup" style="background-image: url('https://constructor.paradigma.website/demo/wp-content/themes/theme/assets/img/content/main-popup-bg.jpg');">
+                    <div class="main-popup__content">
+						                        	<div class="main-popup__title">Перезвоните мне</div>
+												                        	<div class="main-popup__text">Только телефон и мы в деле.<br />
+Перезвоним через пару минут</div>
+						                        <form action="#" method="POST" class="main-popup__form md-standart-form md-popup-form" formValidate_JS data-thanks="https://constructor.paradigma.website/demo/spasibo/">
+							
+                            <input type="hidden" name="action" value="request">
+							<input type="hidden" name="form" value="Попап перезвоните мне">
+							                            <div class="form-text">В какое время вам позвонить?</div>
+														
+                            <div class="form-container">
+																	<select name="call_back_time" class="form-select">
+																				<option value="Сейчас">Сейчас</option>
+																				<option value="В течение часа">В течение часа</option>
+																				<option value="В течение дня">В течение дня</option>
+																				<option value="На этой неделе">На этой неделе</option>
+																			</select>
+								                                <input type="text" name="phone" class="form-input" placeholder="Ваш номер телефона" phoneMask_JS required>
+	
+								
+                                <button class="form-btn md-main-color-btn" agreementControlBtn_JS>
+                                    <span>Заказать звонок</span>
+                                </button>
+                            </div>
+                            <div class="form-checkbox">
+                                <div agreementControl_JS class="checked">
+                                    <input type="checkbox" name="agreement" agreementControlCheckbox_JS checked>
+                                    <img src="https://constructor.paradigma.website/demo/wp-content/themes/theme/assets/img/general/check-icon.svg" alt="">
+                                </div>
+                                <p>
+									
+								 Cогласен с условиями <span popupOpen="politika-popup">политики конфиденциальности данных</span>                                </p>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="popup__close" popupClose_JS>
+                        <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M14.5191 12.1742L9.839 7.49792L14.5191 2.82162C15.1603 2.17977 15.1603 1.12948 14.5191 0.487636C13.8695 -0.162545 12.8286 -0.162545 12.179 0.487636L7.50729 5.16393L2.8272 0.487636C2.17765 -0.154209 1.13671 -0.162545 0.487162 0.487636C-0.15406 1.13782 -0.15406 2.17977 0.487162 2.82162L5.16724 7.49792L0.487162 12.1742C-0.162387 12.8161 -0.162387 13.8664 0.487162 14.5082C0.811936 14.8333 1.23664 14.9917 1.65302 14.9917C2.0694 14.9917 2.50243 14.8333 2.81888 14.5082L7.50729 9.84023L12.1874 14.5165C12.5121 14.8416 12.9285 15 13.3532 15C13.7779 15 14.2026 14.8416 14.5191 14.5165C15.1603 13.8664 15.1603 12.8161 14.5191 12.1742Z"
+                            fill="white" />
+                        </svg>
+                    </div>
+                </div>
+                <div class="popup__blur" popupClose_JS></div>
+            </div>
+        </div>
+
+        <!-- Участвовать в акции -->
+        <div class="popup" popupID="promotion-popup">
+            <div class="popup__container">
+                <div class="popup__block main-popup" style="background-image: url('https://constructor.paradigma.website/demo/wp-content/themes/theme/assets/img/content/main-popup-bg.jpg');">
+                    <div class="main-popup__content">
+                        <div class="main-popup__title">Участвовать в акции</div>
+                        <div class="main-popup__text">Только телефон и вы участник акции.<br />
+Перезвоним через пару минут для уточнения деталей</div>
+                        <form action="#" method="POST" class="main-popup__form md-standart-form md-popup-form" formValidate_JS data-thanks="https://constructor.paradigma.website/demo/spasibo/">
+                            <input type="hidden" name="action" value="request">
+							<input type="hidden" name="form" value="Попап участвовать в акции">
+                            <input type="hidden" name="promotion_name" value="" hiddenValue_JS>
+                            <div class="form-container">
+								                              	<input type="text" name="name" class="form-input" placeholder="Ваше имя" required>
+							                                  <input type="text" name="phone" class="form-input" placeholder="Ваш номер телефона" phoneMask_JS required>
+							                                  <input type="email" name="email" class="form-input" placeholder="Ваш e-mail" required>                                  <button class="form-btn md-main-color-btn" agreementControlBtn_JS>
+                                    <span>Участвовать в акции</span>
+                                </button>
+                            </div>
+                            <div class="form-checkbox">
+                                <div agreementControl_JS class="checked">
+                                    <input type="checkbox" name="agreement" agreementControlCheckbox_JS checked>
+                                    <img src="https://constructor.paradigma.website/demo/wp-content/themes/theme/assets/img/general/check-icon.svg" alt="">
+                                </div>
+                                <p>
+                                     Cогласен с условиями <span popupOpen="politika-popup">политики конфиденциальности данных</span>                                </p>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="popup__close" popupClose_JS>
+                        <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M14.5191 12.1742L9.839 7.49792L14.5191 2.82162C15.1603 2.17977 15.1603 1.12948 14.5191 0.487636C13.8695 -0.162545 12.8286 -0.162545 12.179 0.487636L7.50729 5.16393L2.8272 0.487636C2.17765 -0.154209 1.13671 -0.162545 0.487162 0.487636C-0.15406 1.13782 -0.15406 2.17977 0.487162 2.82162L5.16724 7.49792L0.487162 12.1742C-0.162387 12.8161 -0.162387 13.8664 0.487162 14.5082C0.811936 14.8333 1.23664 14.9917 1.65302 14.9917C2.0694 14.9917 2.50243 14.8333 2.81888 14.5082L7.50729 9.84023L12.1874 14.5165C12.5121 14.8416 12.9285 15 13.3532 15C13.7779 15 14.2026 14.8416 14.5191 14.5165C15.1603 13.8664 15.1603 12.8161 14.5191 12.1742Z"
+                            fill="white" />
+                        </svg>
+                    </div>
+                </div>
+                <div class="popup__blur" popupClose_JS></div>
+            </div>
+        </div>
+
+
+
+
+
+
+        <!-- Заявка на услугу -->
+        <div class="popup" popupID="service-popup">
+            <div class="popup__container">
+                <div class="popup__block main-popup" style="background-image: url('https://constructor.paradigma.website/demo/wp-content/themes/theme/assets/img/content/main-popup-bg.jpg');">
+                    <div class="main-popup__content">
+                        <div class="main-popup__title">Оставить заявку на услугу</div>
+                        <div class="main-popup__text">Только телефон и мы в деле.<br />
+Перезвоним как можно скорее</div>
+                        <form action="#" method="POST" class="main-popup__form md-standart-form md-popup-form" data-thanks="https://constructor.paradigma.website/demo/spasibo/">
+                            <input type="hidden" name="action" value="request">
+							<input type="hidden" name="form" value="Попап заявка на услугу">
+                            <input type="hidden" name="service_name" value="" hiddenValue_JS formValidate_JS>
+                            <div class="form-container">
+								                               	<input type="text" name="name" class="form-input" placeholder="Ваше имя" required>
+							                                  <input type="text" name="phone" class="form-input" placeholder="Ваш номер телефона" phoneMask_JS required>
+								                              <input type="email" name="email" class="form-input" placeholder="Ваш e-mail" required>                                  <button class="form-btn md-main-color-btn" agreementControlBtn_JS>
+                                    <span>Оставить заявку</span>
+                                </button>
+                            </div>
+                            <div class="form-checkbox">
+                                <div agreementControl_JS class="checked">
+                                    <input type="checkbox" name="agreement" agreementControlCheckbox_JS checked>
+                                    <img src="https://constructor.paradigma.website/demo/wp-content/themes/theme/assets/img/general/check-icon.svg" alt="">
+                                </div>
+                                <p>
+                                    Cогласен с условиями <span popupOpen="politika-popup">политики конфиденциальности данных</span>                                </p>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="popup__close" popupClose_JS>
+                        <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M14.5191 12.1742L9.839 7.49792L14.5191 2.82162C15.1603 2.17977 15.1603 1.12948 14.5191 0.487636C13.8695 -0.162545 12.8286 -0.162545 12.179 0.487636L7.50729 5.16393L2.8272 0.487636C2.17765 -0.154209 1.13671 -0.162545 0.487162 0.487636C-0.15406 1.13782 -0.15406 2.17977 0.487162 2.82162L5.16724 7.49792L0.487162 12.1742C-0.162387 12.8161 -0.162387 13.8664 0.487162 14.5082C0.811936 14.8333 1.23664 14.9917 1.65302 14.9917C2.0694 14.9917 2.50243 14.8333 2.81888 14.5082L7.50729 9.84023L12.1874 14.5165C12.5121 14.8416 12.9285 15 13.3532 15C13.7779 15 14.2026 14.8416 14.5191 14.5165C15.1603 13.8664 15.1603 12.8161 14.5191 12.1742Z"
+                            fill="white" />
+                        </svg>
+                    </div>
+                </div>
+                <div class="popup__blur" popupClose_JS></div>
+            </div>
+        </div>
+
+
+
+        <!-- Заказать в 1 клик -->
+		        <div class="popup" popupID="product-popup">
+            <div class="popup__container">
+                <div class="popup__block main-popup" style="background-image: url('https://constructor.paradigma.website/demo/wp-content/themes/theme/assets/img/content/main-popup-bg.jpg');">
+                    <div class="main-popup__content">
+                        <div class="main-popup__title">Заказать в 1 клик                            <br></div>
+                        <div class="main-popup__text">Перезвоним как можно скорее <br />
+для уточнения деталей заказа</div>
+                        <form action="#" method="POST" class="main-popup__form md-standart-form md-popup-form" formValidate_JS data-thanks="https://constructor.paradigma.website/demo/spasibo/">
+                            <input type="hidden" name="action" value="request">
+							<input type="hidden" name="form" value="Попап заявка в 1 клик">
+                            <input type="hidden" name="product_name" value="" hiddenValue_JS>
+                            <div class="form-container">
+								  								<input type="text" name="phone" class="form-input" placeholder="Ваш номер телефона" phoneMask_JS required>
+							                                    
+                                <button class="form-btn md-main-color-btn" agreementControlBtn_JS>
+                                    <span>Заказать сейчас</span>
+                                </button>
+                            </div>
+                            <div class="form-checkbox">
+                                <div agreementControl_JS class="checked">
+                                    <input type="checkbox" name="agreement" agreementControlCheckbox_JS checked>
+                                    <img src="https://constructor.paradigma.website/demo/wp-content/themes/theme/assets/img/general/check-icon.svg" alt="">
+                                </div>
+                                <p>
+                                   Cогласен с условиями <span popupOpen="politika-popup">политики конфиденциальности данных</span>                                </p>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="popup__close" popupClose_JS>
+                        <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M14.5191 12.1742L9.839 7.49792L14.5191 2.82162C15.1603 2.17977 15.1603 1.12948 14.5191 0.487636C13.8695 -0.162545 12.8286 -0.162545 12.179 0.487636L7.50729 5.16393L2.8272 0.487636C2.17765 -0.154209 1.13671 -0.162545 0.487162 0.487636C-0.15406 1.13782 -0.15406 2.17977 0.487162 2.82162L5.16724 7.49792L0.487162 12.1742C-0.162387 12.8161 -0.162387 13.8664 0.487162 14.5082C0.811936 14.8333 1.23664 14.9917 1.65302 14.9917C2.0694 14.9917 2.50243 14.8333 2.81888 14.5082L7.50729 9.84023L12.1874 14.5165C12.5121 14.8416 12.9285 15 13.3532 15C13.7779 15 14.2026 14.8416 14.5191 14.5165C15.1603 13.8664 15.1603 12.8161 14.5191 12.1742Z"
+                            fill="white" />
+                        </svg>
+                    </div>
+                </div>
+                <div class="popup__blur" popupClose_JS></div>
+            </div>
+        </div>
+
+
+
+
+
+        <!-- Вызов замерщика -->
+	        <div class="popup" popupID="free-order-popup">
+            <div class="popup__container">
+                <div class="popup__block main-popup" style="background-image: url('https://constructor.paradigma.website/demo/wp-content/themes/theme/assets/img/content/main-popup-bg.jpg');">
+                    <div class="main-popup__content">
+                        <div class="main-popup__title">Вызвать замерщика бесплатно</div>
+                        <div class="main-popup__text">Оставьте телефон и <br />
+мы перезвоним</div>
+                        <form action="#" method="POST" class="main-popup__form md-standart-form md-popup-form" formValidate_JS data-thanks="https://constructor.paradigma.website/demo/spasibo/">
+                            <input type="hidden" name="action" value="request">
+							<input type="hidden" name="form" value="Попап вызов замерщика">
+                            <div class="form-text">В какое время вам позвонить?</div>
+                            <div class="form-container">
+								
+                                <select name="call_back_time" class="form-select">
+                                    <option value="Сейчас">Сейчас</option>
+                                    <option value="В течение часа">В течение часа</option>
+                                    <option value="В течение дня">В течение дня</option>
+                                    <option value="На этой неделе">На этой неделе</option>
+                                </select>
+								
+							<!--	<input  type="date" class="form-input">-->
+                              	<input type="text" name="name" class="form-input" placeholder="Ваше имя" required>
+							                                  <input type="text" name="phone" class="form-input" placeholder="Ваш номер телефона" phoneMask_JS required>
+								                              <input type="email" name="email" class="form-input" placeholder="Ваш e-mail" required>                                  <button class="form-btn md-main-color-btn" agreementControlBtn_JS>
+                                    <span>Жду звонка</span>
+                                </button>
+                            </div>
+                            <div class="form-checkbox">
+                                <div agreementControl_JS class="checked">
+                                    <input type="checkbox" name="agreement" agreementControlCheckbox_JS checked>
+                                    <img src="https://constructor.paradigma.website/demo/wp-content/themes/theme/assets/img/general/check-icon.svg" alt="">
+                                </div>
+                                <p>
+                                      Cогласен с условиями <span popupOpen="politika-popup">политики конфиденциальности данных</span>                                </p>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="popup__close" popupClose_JS>
+                        <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M14.5191 12.1742L9.839 7.49792L14.5191 2.82162C15.1603 2.17977 15.1603 1.12948 14.5191 0.487636C13.8695 -0.162545 12.8286 -0.162545 12.179 0.487636L7.50729 5.16393L2.8272 0.487636C2.17765 -0.154209 1.13671 -0.162545 0.487162 0.487636C-0.15406 1.13782 -0.15406 2.17977 0.487162 2.82162L5.16724 7.49792L0.487162 12.1742C-0.162387 12.8161 -0.162387 13.8664 0.487162 14.5082C0.811936 14.8333 1.23664 14.9917 1.65302 14.9917C2.0694 14.9917 2.50243 14.8333 2.81888 14.5082L7.50729 9.84023L12.1874 14.5165C12.5121 14.8416 12.9285 15 13.3532 15C13.7779 15 14.2026 14.8416 14.5191 14.5165C15.1603 13.8664 15.1603 12.8161 14.5191 12.1742Z"
+                            fill="white" />
+                        </svg>
+                    </div>
+                </div>
+                <div class="popup__blur" popupClose_JS></div>
+            </div>
+        </div>
+
+
+
+
+        <!-- Резюме -->
+		        <div class="popup" popupID="resume-popup">
+            <div class="popup__container">
+                <div class="popup__block main-popup" style="background-image: url('https://constructor.paradigma.website/demo/wp-content/themes/theme/assets/img/content/main-popup-bg.jpg');">
+                    <div class="main-popup__content">
+                        <div class="main-popup__title">Отправить резюме</div>
+                        <div class="main-popup__text">Оставьте контактные данные,<br />
+и мы перезвоним</div>
+                        <form action="#" method="POST" class="main-popup__form md-standart-form md-popup-form" formValidate_JS data-thanks="https://constructor.paradigma.website/demo/spasibo/">
+                            <input type="hidden" name="action" value="request">
+							<input type="hidden" name="form" value="Попап резюме">
+                            <div class="form-container">
+                                <input type="text" name="name" class="form-input" placeholder="Ваше имя" required>
+                                <input type="email" name="email" class="form-input" placeholder="Ваш e-mail" required>
+                                <input type="text" name="phone" class="form-input" placeholder="Ваш номер телефона" phoneMask_JS required>
+                                <label class="form-file" data-text="Ваше резюме" title="Файл в формате (.doc или .pdf)">
+                                    <input type="file" name="resume_file">
+                                    <div>
+                                        <p>Ваше резюме</p>
+                                        <svg width="22" height="23" viewBox="0 0 22 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M20.5408 3.48263C19.5941 2.48277 18.3407 1.93355 17.0073 1.93355C15.6739 1.93355 14.4139 2.48277 13.4738 3.48263L5.58688 11.8054C4.42017 13.0377 4.42017 15.0515 5.58688 16.2837C6.75359 17.5159 8.66033 17.5159 9.82704 16.2837L15.0206 10.7985C15.4139 10.3831 15.4139 9.71417 15.0206 9.30578C14.6272 8.89034 13.9939 8.89034 13.6072 9.30578L8.42032 14.7839C8.03364 15.1993 7.39361 15.1923 7.00693 14.7839C6.62025 14.3755 6.62025 13.6995 7.00693 13.2912L14.8806 4.97539C15.4473 4.37688 16.2006 4.04594 17.0006 4.04594C17.8007 4.04594 18.554 4.37688 19.1207 4.97539C20.2874 6.20761 20.2874 8.22142 19.1207 9.45365L10.5337 18.5299C8.58699 20.5859 5.41354 20.5859 3.46013 18.5299C2.51343 17.53 1.99341 16.2062 1.99341 14.798C1.99341 13.3897 2.51343 12.0589 3.46013 11.0661L12.0538 1.98988C12.4471 1.57444 12.4471 0.905519 12.0538 0.497124C11.6604 0.0816878 11.0271 0.0816878 10.6404 0.497124L2.05341 9.56631C0.726694 10.9675 0 12.8194 0 14.798C0 16.7766 0.726694 18.6285 2.05341 20.0226C3.42013 21.4661 5.21353 22.1843 7.00026 22.1843C8.79367 22.1843 10.5871 21.4661 11.9471 20.0226L20.5341 10.9534C22.4875 8.89034 22.4875 5.54573 20.5408 3.48263Z"
+                                            fill="#6C6C6C" />
+                                        </svg>
+                                    </div>
+                                </label>
+                                <button class="form-btn md-main-color-btn" agreementControlBtn_JS>
+                                    <span>Отправить сейчас</span>
+                                </button>
+                            </div>
+                            <div class="form-checkbox">
+                                <div agreementControl_JS class="checked">
+                                    <input type="checkbox" name="agreement" agreementControlCheckbox_JS checked>
+                                    <img src="https://constructor.paradigma.website/demo/wp-content/themes/theme/assets/img/general/check-icon.svg" alt="">
+                                </div>
+                                <p>
+                                      Cогласен с условиями <span popupOpen="politika-popup">политики конфиденциальности данных</span>                                </p>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="popup__close" popupClose_JS>
+                        <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M14.5191 12.1742L9.839 7.49792L14.5191 2.82162C15.1603 2.17977 15.1603 1.12948 14.5191 0.487636C13.8695 -0.162545 12.8286 -0.162545 12.179 0.487636L7.50729 5.16393L2.8272 0.487636C2.17765 -0.154209 1.13671 -0.162545 0.487162 0.487636C-0.15406 1.13782 -0.15406 2.17977 0.487162 2.82162L5.16724 7.49792L0.487162 12.1742C-0.162387 12.8161 -0.162387 13.8664 0.487162 14.5082C0.811936 14.8333 1.23664 14.9917 1.65302 14.9917C2.0694 14.9917 2.50243 14.8333 2.81888 14.5082L7.50729 9.84023L12.1874 14.5165C12.5121 14.8416 12.9285 15 13.3532 15C13.7779 15 14.2026 14.8416 14.5191 14.5165C15.1603 13.8664 15.1603 12.8161 14.5191 12.1742Z"
+                            fill="white" />
+                        </svg>
+                    </div>
+                </div>
+                <div class="popup__blur" popupClose_JS></div>
+            </div>
+        </div>
+
+
+
+        <!-- Отзыв -->
+		        <div class="popup" popupID="review-popup">
+            <div class="popup__container">
+                <div class="popup__block main-popup md-review-popup" style="background-image: url('https://constructor.paradigma.website/demo/wp-content/themes/theme/assets/img/content/main-popup-bg.jpg');">
+                    <div class="main-popup__content">
+                        <div class="main-popup__title">Оставить отзыв</div>
+                        <form action="#" method="POST" class="main-popup__form md-standart-form md-popup-form" formValidate_JS  data-thanks="https://constructor.paradigma.website/demo/spasibo/">
+                            <input type="hidden" name="action" value="request">
+							<input type="hidden" name="form" value="Попап отзыв">
+                            <div class="form-container">
+                                <div class="form-stars" formStars_JS>
+                                    <label>
+                                        <input type="radio" name="review_stars" value="1">
+                                        <svg width="16" height="15" viewBox="0 0 16 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M7.97106 0L10.4543 4.55324L15.552 5.50787L11.989 9.27656L12.6563 14.4198L7.97106 12.1957L3.28579 14.4198L3.95317 9.27656L0.390131 5.50787L5.48787 4.55324L7.97106 0Z" fill="#31B939" />
+                                        </svg>
+                                    </label>
+                                    <label>
+                                        <input type="radio" name="review_stars" value="2">
+                                        <svg width="16" height="15" viewBox="0 0 16 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M7.97106 0L10.4543 4.55324L15.552 5.50787L11.989 9.27656L12.6563 14.4198L7.97106 12.1957L3.28579 14.4198L3.95317 9.27656L0.390131 5.50787L5.48787 4.55324L7.97106 0Z" fill="#31B939" />
+                                        </svg>
+                                    </label>
+                                    <label>
+                                        <input type="radio" name="review_stars" value="3">
+                                        <svg width="16" height="15" viewBox="0 0 16 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M7.97106 0L10.4543 4.55324L15.552 5.50787L11.989 9.27656L12.6563 14.4198L7.97106 12.1957L3.28579 14.4198L3.95317 9.27656L0.390131 5.50787L5.48787 4.55324L7.97106 0Z" fill="#31B939" />
+                                        </svg>
+                                    </label>
+                                    <label>
+                                        <input type="radio" name="review_stars" value="4">
+                                        <svg width="16" height="15" viewBox="0 0 16 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M7.97106 0L10.4543 4.55324L15.552 5.50787L11.989 9.27656L12.6563 14.4198L7.97106 12.1957L3.28579 14.4198L3.95317 9.27656L0.390131 5.50787L5.48787 4.55324L7.97106 0Z" fill="#31B939" />
+                                        </svg>
+                                    </label>
+                                    <label>
+                                        <input type="radio" name="review_stars" value="5" checked>
+                                        <svg width="16" height="15" viewBox="0 0 16 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M7.97106 0L10.4543 4.55324L15.552 5.50787L11.989 9.27656L12.6563 14.4198L7.97106 12.1957L3.28579 14.4198L3.95317 9.27656L0.390131 5.50787L5.48787 4.55324L7.97106 0Z" fill="#31B939" />
+                                        </svg>
+                                    </label>
+                                </div>
+                                <input type="text" name="name" class="form-input" placeholder="Ваше Имя" required>
+                                <input type="email" name="email" class="form-input" placeholder="Ваш Email" required>
+                                <input type="text" name="phone" class="form-input" placeholder="Номер телефона" phoneMask_JS required>
+                                <input type="text" name="city" class="form-input" placeholder="Город " required>
+                                <label class="form-file" data-text="Фото проекта" title="Архив в формате (.zip, .rar или .7zip)">
+                                    <input type="file" name="project_img" multiple="multiple">
+                                    <div>
+                                        <p>Фото проекта </p>
+                                        <svg width="22" height="23" viewBox="0 0 22 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M20.5408 3.48263C19.5941 2.48277 18.3407 1.93355 17.0073 1.93355C15.6739 1.93355 14.4139 2.48277 13.4738 3.48263L5.58688 11.8054C4.42017 13.0377 4.42017 15.0515 5.58688 16.2837C6.75359 17.5159 8.66033 17.5159 9.82704 16.2837L15.0206 10.7985C15.4139 10.3831 15.4139 9.71417 15.0206 9.30578C14.6272 8.89034 13.9939 8.89034 13.6072 9.30578L8.42032 14.7839C8.03364 15.1993 7.39361 15.1923 7.00693 14.7839C6.62025 14.3755 6.62025 13.6995 7.00693 13.2912L14.8806 4.97539C15.4473 4.37688 16.2006 4.04594 17.0006 4.04594C17.8007 4.04594 18.554 4.37688 19.1207 4.97539C20.2874 6.20761 20.2874 8.22142 19.1207 9.45365L10.5337 18.5299C8.58699 20.5859 5.41354 20.5859 3.46013 18.5299C2.51343 17.53 1.99341 16.2062 1.99341 14.798C1.99341 13.3897 2.51343 12.0589 3.46013 11.0661L12.0538 1.98988C12.4471 1.57444 12.4471 0.905519 12.0538 0.497124C11.6604 0.0816878 11.0271 0.0816878 10.6404 0.497124L2.05341 9.56631C0.726694 10.9675 0 12.8194 0 14.798C0 16.7766 0.726694 18.6285 2.05341 20.0226C3.42013 21.4661 5.21353 22.1843 7.00026 22.1843C8.79367 22.1843 10.5871 21.4661 11.9471 20.0226L20.5341 10.9534C22.4875 8.89034 22.4875 5.54573 20.5408 3.48263Z"
+                                            fill="#6C6C6C" />
+                                        </svg>
+                                    </div>
+                                </label>
+                                <textarea name="message" class="form-textarea" placeholder="Ваш отзыв"></textarea>
+                                <button class="form-btn md-main-color-btn" agreementControlBtn_JS>
+                                    <span>Отправить сейчас</span>
+                                </button>
+                            </div>
+                            <div class="form-checkbox">
+                                <div agreementControl_JS class="checked">
+                                    <input type="checkbox" name="agreement" agreementControlCheckbox_JS checked>
+                                    <img src="https://constructor.paradigma.website/demo/wp-content/themes/theme/assets/img/general/check-icon.svg" alt="">
+                                </div>
+                                <p>
+                                      Cогласен с условиями <span popupOpen="politika-popup">политики конфиденциальности данных</span>                                </p>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="popup__close" popupClose_JS>
+                        <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M14.5191 12.1742L9.839 7.49792L14.5191 2.82162C15.1603 2.17977 15.1603 1.12948 14.5191 0.487636C13.8695 -0.162545 12.8286 -0.162545 12.179 0.487636L7.50729 5.16393L2.8272 0.487636C2.17765 -0.154209 1.13671 -0.162545 0.487162 0.487636C-0.15406 1.13782 -0.15406 2.17977 0.487162 2.82162L5.16724 7.49792L0.487162 12.1742C-0.162387 12.8161 -0.162387 13.8664 0.487162 14.5082C0.811936 14.8333 1.23664 14.9917 1.65302 14.9917C2.0694 14.9917 2.50243 14.8333 2.81888 14.5082L7.50729 9.84023L12.1874 14.5165C12.5121 14.8416 12.9285 15 13.3532 15C13.7779 15 14.2026 14.8416 14.5191 14.5165C15.1603 13.8664 15.1603 12.8161 14.5191 12.1742Z"
+                            fill="white" />
+                        </svg>
+                    </div>
+                </div>
+                <div class="popup__blur" popupClose_JS></div>
+            </div>
+        </div>
+        
+        
+        <section class="to-top" toTop_JS>
+            <img src="https://constructor.paradigma.website/demo/wp-content/themes/theme/assets/img/general/arrow-top.svg" alt="">
+        </section>
+
+					<div id="cookie_notification">
+				<p>Для улучшения работы сайта мы используем файлы cookie. Вы всегда можете отключить файлы cookie в настройках браузера.</p>
+				<button class="catalog__btn btn btn-primary">Хорошо</button>
+			</div>
+		
+
+ <!-- МЕССЕНДЕЖРЫ -->
+
+	 
+	<div class="widget__contacts">
+    <div class="header__seti">
+        <a href="https://api.whatsapp.com/send?phone=+79778755881&text=Хочу получить предложение по разработке сайта" target="_blank" class="contact-btn "  style="background-color:#1e9220; color: black;"><img src="https://constructor.paradigma.website/demo/wp-content/themes/theme/assets/img/whats-app.svg" alt="" style="display: block;
+    width: 2rem;
+    height: 2rem;"><span style="color:#fff;">Написать</span></a>
+
+        <div class="header__phone mobile">
+            <a href="tel:+79778755881" class="header__phone-number zphone" style="color: #fff;"><img src="https://constructor.paradigma.website/demo/wp-content/themes/theme/assets/img/phone.svg" alt="">
+Позвонить
+                </a>
+        </div>
+    </div>
+</div>
+	
+
+
+  
+        <script type="speculationrules">
+{"prefetch":[{"source":"document","where":{"and":[{"href_matches":"\/demo\/*"},{"not":{"href_matches":["\/demo\/wp-*.php","\/demo\/wp-admin\/*","\/demo\/wp-content\/uploads\/*","\/demo\/wp-content\/*","\/demo\/wp-content\/plugins\/*","\/demo\/wp-content\/themes\/theme\/*","\/demo\/*\\?(.+)"]}},{"not":{"selector_matches":"a[rel~=\"nofollow\"]"}},{"not":{"selector_matches":".no-prefetch, .no-prefetch a"}}]},"eagerness":"conservative"}]}
+</script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.umd.js?ver=1.0.0" id="fancybox-script-js"></script>
+<script type="text/javascript" src="https://constructor.paradigma.website/demo/wp-content/themes/theme/assets/js/main.js?ver=1.0.1" id="script-js"></script>
+<script type="text/javascript" src="https://constructor.paradigma.website/demo/wp-content/themes/theme/assets/js/script.js?ver=1.0.0" id="script2-js"></script>
+<!-- 		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js" integrity="sha512-pHVGpX7F/27yZ0ISY+VVjyULApbDlD0/X0rgGbTqCE7WFW5MezNTWG/dnhtbBuICzsd0WQPgpE4REBLv+UqChw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> -->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.maskedinput/1.4.1/jquery.maskedinput.min.js" integrity="sha512-d4KkQohk+HswGs6A1d6Gak6Bb9rMWtxjOa0IiY49Q3TeFd5xAzjWXDCBW9RS7m86FQ4RzM2BdHmdJnnKRYknxw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <script>
+        // Сортировка
+        $('.portfolio-sort__item').click(function () {
+            $('.portfolio-sort__item').removeClass('active');
+            $(this).addClass('active');
+            let orderby = '';
+            let order = '';
+            if($(this).data('orderby')){
+                orderby = $(this).data('orderby');
+                order = $(this).data('order');
+            }
+            $('#filter').find('input[name="orderby"]').val(orderby);
+            $('#filter').find('input[name="order"]').val(order);
+            sendFilter();
+        })
+
+        $('.portfolio-filters__open').click(function(){
+            $('.portfolio-filters').addClass('active');
+        });
+        $('.portfolio-filters__close, .portfolio-filters__btn').click(function(){
+            $('.portfolio-filters').removeClass('active');
+        });
+
+        $('.portfolio-filters__btn-reset').click(function(){
+            let form = $(this).parents('form')
+            form.find('input[type="checkbox"]').prop( "checked", false );
+            form.find('input[type="number"]').val('');
+            sendFilter();
+            return false;
+        });
+        
+        $('#filter').submit(function(){
+            sendFilter();
+        });
+
+        function sendFilter(reset = true) {
+            var filter = $('#filter');
+            $.ajax({
+                url:filter.attr('action'),
+                data:filter.serialize(), 
+                type:filter.attr('method'), 
+                beforeSend:function(xhr){
+                    filter.find('.portfolio-filters__btn-send').text('Загрузка...');
+                },
+                success:function(data){
+                    filter.find('.portfolio-filters__btn-send').text('Применить'); 
+                    $('.container-flex').html(data); 
+					$('.container-flex [singleSliderNoLoop_JS]').each(function () {
+						var $container = $(this).find('.swiper-container'),
+							$prevBtn = $(this).find('.slider-prev-btn'),
+							$nextBtn = $(this).find('.slider-next-btn'),
+							$pagination = $(this).find('.slider-pagination');
+
+						new Swiper($container, {
+							direction: 'horizontal',
+							slidesPerView: 1,
+							speed: 500,
+							observer: true,
+							observeParents: true,
+							spaceBetween: 10,
+							navigation: {
+								nextEl: $nextBtn,
+								prevEl: $prevBtn,
+							},
+							pagination: {
+								el: $pagination,
+								type: 'bullets',
+							}
+						});
+					});
+					$('.portfolio-pagination').find('.nav-links').attr('data-lastpage', $('.portfolio-maxpages').text()); 
+					resetPagination(reset);
+                }
+            });
+            return false;
+        }
+			
+		$('.portfolio-pagination a').on('click', function (e) {
+			e.preventDefault();
+			let pagination = $('.portfolio-pagination');
+			let navLinks = pagination.find('.nav-links');
+			let prevBtn = pagination.find('.prev-btn');
+			let nextBtn = pagination.find('.next-btn');
+			let page = $(this).attr('href').split('?page=')[1];
+			navLinks.attr('data-page', page)
+			prevBtn.attr('href', `?page=${+page-1}`)
+			nextBtn.attr('href', `?page=${+page+1}`)
+			if( page == 1 ){
+				prevBtn.hide()
+			}else{
+				prevBtn.show()
+			}
+			if( page == navLinks.attr('data-lastpage') ){
+				nextBtn.hide()
+			}else{
+				nextBtn.show()
+			}
+			$('#filter').find('input[name="page_num"]').val(page);
+			sendFilter(false);
+			$('.portfolio-pagination a').removeClass( 'current' );
+  			$('.portfolio-pagination .page-numbers').each(function( index ) {
+				if($(this).text() == page)
+			  	$(this).addClass( 'current' );
+			});
+			$([document.documentElement, document.body]).animate({
+				scrollTop: $(".portfolio200").offset().top
+			}, 500);
+		});
+			
+        
+			
+		function resetPagination(reset){
+			if(reset == false){
+				return;
+			}
+			$('#filter').find('input[name="page_num"]').val(1);
+			let maxPage = $('.portfolio-pagination').find('.nav-links').attr('data-lastpage'); 
+			if(maxPage == 1){
+				$('.portfolio-pagination').find('.nav-links').hide();
+			}else{
+				$('.portfolio-pagination').find('.nav-links').show();
+			}
+			$('.portfolio-pagination').find('.prev-btn').attr('href', 1);
+			$('.portfolio-pagination').find('.prev-btn').hide();
+			$('.portfolio-pagination').find('.next-btn').attr('href', 2);
+			$('.portfolio-pagination').find('.next-btn').show();
+			$('.portfolio-pagination a').removeClass( 'current' ); 
+			$('.portfolio-pagination .page-numbers').first().addClass( 'current' );
+		}
+
+
+        //Динамический поиск
+        jQuery(document).ready(function($) {
+            $('.search-form__input').on('input', function() {
+                var searchQuery = $(this).val();
+                if (searchQuery.length > 2) {
+                    console.log(searchQuery);
+                    $.ajax({
+                        url: 'https://constructor.paradigma.website/demo/wp-admin/admin-ajax.php',
+                        type: 'POST',
+                        data: {
+                            action: 'live_search',
+                            search_query: searchQuery
+                        },
+                        success: function(response) {
+                            $('.search-form-results').html(response);
+                            if( != 2534){
+                                $('.search-form-results-wrap').addClass('active');
+                            }
+                        }
+                    });
+                } else {
+                    $('.search-form-results').html('');
+                    $('.search-form-results-wrap').removeClass('active');
+                }
+            });
+        });
+
+
+        // Поиск
+        $('.header .search-form').submit(function(e){
+            e.preventDefault();
+            let value = $(this).find('.search-form__input').val();
+            let page = 'https://constructor.paradigma.website/demo/search/';
+            location.href = page + '?search=' + value;
+        });
+
+		let href = window.location.href;
+
+        if(href.includes('/search/?search')) {
+            href = new URL(href)
+            let searchVal = href.searchParams.get("search")
+            $('.search .search-form__input').val(searchVal)
+            searchFunction();
+        }
+        
+        const searchResults = $(".search .search-result");
+
+        $(".search .search-form__input").keyup(function () {
+            searchFunction()
+        });
+
+        function searchFunction() {
+            let search_value = $(".search .search-form__input").val();
+
+            if (search_value.length > 2) {
+                $.ajax({
+                    url: $('.search-form').attr('action'),
+                    type: "POST",
+                    data: {
+                        "action": "ajax_search",
+                        "term": search_value
+                    },
+                    success: function (results) {
+                        searchResults.fadeIn(200).html(results);
+						$('select').niceSelect();
+                   	 	$('.catalog__item select.item-select').trigger("change");
+                        let count = $('.search-count').text();
+                        if( count == '0'){
+                            $('.search-header').text('Ничего не найдено. Попробуйте еще раз.')
+                        }else{
+                            let result;
+                            switch (count) {
+                                case '1':
+                                    result = 'результат'
+                                    break;
+                                case '2':
+                                case '3':
+                                case '4':
+                                    result = 'результата'
+                                    break;
+                            
+                                default:
+                                    result = 'результатов'
+                                    break;
+                            }
+                            $('.search-header').html(`Найдено <span>${count}</span> ${result}`)
+                        }
+                        
+                    }
+                });
+            } else {
+                searchResults.fadeOut(200);
+            }
+        }
+
+
+
+
+
+
+		$('[phoneMask_JS]').mask('+7(999)999-99-99');
+
+        //Отправка заявок
+        $('form').on('submit', function(e){
+            e.preventDefault();
+            let thanks = 'https://constructor.paradigma.website/demo/spasibo/';
+            if($(this).data('thanks')){
+                thanks = $(this).data('thanks')
+            }
+            let inputPhone = $(this).find('input[name="phone"]')
+            if(inputPhone.val().length >= 15){
+                let formData = new FormData(this);
+                formData.append('url', document.location.href);
+                let file = $(this).data('file');
+                let btn = $(this).find('.form-btn');
+                btn.find('span').text('Загрузка...');
+                btn.text('Загрузка...');
+                $.ajax({
+                    url: 'https://constructor.paradigma.website/demo/wp-admin/admin-ajax.php',
+                    data: formData,
+                    processData: false,
+                    contentType: false,
+                    type: 'POST',
+                    success: function (response) {
+                        if (file){
+                            let link = document.createElement('a');
+                            link.setAttribute('href', file);
+                            link.setAttribute('target', '_blank');
+                            link.setAttribute('download','download');
+                            link.click();
+                        }
+                        location.href = thanks;
+                    },
+					error: function(xhr, status, error) {
+                                    $(this).find('input[name="phone"]').addClass('validate_error');
+                                    btn.find('span').text('Загрузка...');
+                                }
+                });
+            }else{
+                inputPhone.addClass('validate_error')
+                setTimeout(function(){ 
+                    inputPhone.removeClass('validate_error')
+                }, 2000);
+            }
+        })
+        </script>
+
+
+
+        </body>
+
+</html>   
