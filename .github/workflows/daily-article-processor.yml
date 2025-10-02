@@ -40,18 +40,19 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
-      - name: Create environment file
-        run: |
-          cat > .env << EOF
-          OPENAI_API_KEY=${{ secrets.OPENAI_API_KEY }}
-          UNSPLASH_ACCESS_KEY=${{ secrets.UNSPLASH_ACCESS_KEY }}
-          MAX_ARTICLES_PER_DAY=${{ github.event.inputs.max_articles || '3' }}
-          MIN_WORD_COUNT=12000
-          MAX_WORD_COUNT=18000
-          ANALYSIS_MODEL=gpt-3.5-turbo
-          WRITING_MODEL=gpt-4
-          LOG_LEVEL=INFO
-          EOF
+    - name: Create environment file
+      run: |
+        cat > .env << EOF
+        OPENAI_API_KEY=${{ secrets.OPENAI_API_KEY }}
+        UNSPLASH_ACCESS_KEY=${{ secrets.UNSPLASH_ACCESS_KEY }}
+        MAX_ARTICLES_PER_DAY=${{ github.event.inputs.max_articles || '3' }}
+        MIN_WORD_COUNT=12000
+        MAX_WORD_COUNT=18000
+        ANALYSIS_MODEL=gpt-3.5-turbo
+        WRITING_MODEL=gpt-3.5-turbo
+        USE_GPT4_FOR_COMPLEX=false
+        LOG_LEVEL=INFO
+        EOF
 
       - name: Run article processor
         run: |

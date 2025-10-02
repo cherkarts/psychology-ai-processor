@@ -19,15 +19,41 @@ class ArticleWriter:
             api_key=os.getenv('OPENAI_API_KEY'),
             timeout=300  # 5 минут для написания статьи
         )
-        self.writing_model = "gpt-4"  # Качественная модель для написания
+        # Настройки моделей для оптимизации расходов
+        self.writing_model = os.getenv('WRITING_MODEL', 'gpt-3.5-turbo')  # По умолчанию дешевая модель
+        self.use_gpt4_for_complex = os.getenv('USE_GPT4_FOR_COMPLEX', 'false').lower() == 'true'
+    
+    def _select_model_for_topic(self, theme: str) -> str:
+        """Выбираем модель в зависимости от сложности темы"""
+        if not self.use_gpt4_for_complex:
+            return self.writing_model
+        
+        # Сложные темы, требующие GPT-4
+        complex_topics = [
+            'травма', 'депрессия', 'тревожность', 'кризис', 'отношения',
+            'семья', 'дети', 'секс', 'любовь', 'развод', 'потеря',
+            'психология', 'терапия', 'лечение', 'диагностика'
+        ]
+        
+        theme_lower = theme.lower()
+        for topic in complex_topics:
+            if topic in theme_lower:
+                return "gpt-4"
+        
+        return self.writing_model
         
     def write_adapted_article(self, analysis: Dict) -> Optional[Dict]:
         """Написать адаптированную статью на основе анализа"""
         try:
             prompt = self._build_writing_prompt(analysis)
             
+            # Выбираем модель в зависимости от сложности темы
+            model_to_use = self._select_model_for_topic(analysis.get('theme', ''))
+            
+            logging.info(f"Используем модель: {model_to_use} для темы: {analysis.get('theme', '')}")
+            
             response = self.client.chat.completions.create(
-                model=self.writing_model,
+                model=model_to_use,
                 messages=[
                     {
                         "role": "system", 
@@ -43,7 +69,7 @@ class ArticleWriter:
                     },
                     {"role": "user", "content": prompt}
                 ],
-                max_tokens=4000,
+                max_tokens=4000 if model_to_use == "gpt-4" else 3500,
                 temperature=0.8,
                 top_p=0.95
             )

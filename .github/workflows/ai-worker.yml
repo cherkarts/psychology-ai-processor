@@ -1,0 +1,35 @@
+name: AI Article Worker
+
+on:
+  # schedule:
+  #   - cron: '*/10 * * * *' # каждые 10 минут (UTC) - ВРЕМЕННО ОТКЛЮЧЕНО
+  workflow_dispatch: {}
+
+jobs:
+  run-worker:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Test API connection
+        run: |
+          echo "Testing API connection..."
+          curl -v -H "User-Agent: AI-Worker/1.0 (GitHub Actions)" https://cherkas-therapy.ru/api/ai-generation.php
+
+      - name: Run worker once
+        env:
+          API_URL: https://cherkas-therapy.ru/api
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          OPENAI_PROXY_URL: ${{ secrets.OPENAI_PROXY_URL }}
+          UNSPLASH_ACCESS_KEY: ${{ secrets.UNSPLASH_ACCESS_KEY }}
+          RUN_ONCE: '1'
+        run: python ai_processor.py
