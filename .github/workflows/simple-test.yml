@@ -31,6 +31,57 @@ jobs:
         run: |
           python -m pip install --upgrade pip
           pip install -r public_html/external-ai-service/requirements.txt
+          
+      - name: Debug environment and dependencies
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          UNSPLASH_ACCESS_KEY: ${{ secrets.UNSPLASH_ACCESS_KEY }}
+          SITE_URL: ${{ secrets.SITE_URL }}
+        run: |
+          echo "🔍 DEBUGGING ENVIRONMENT:"
+          echo "Python version: $(python3 --version)"
+          echo "Working directory: $(pwd)"
+          echo "Files in current dir: $(ls -la)"
+          echo "Files in external-ai-service: $(ls -la public_html/external-ai-service/)"
+          
+          echo ""
+          echo "🔑 ENVIRONMENT VARIABLES:"
+          echo "OPENAI_API_KEY: $([ -n "$OPENAI_API_KEY" ] && echo "SET (${#OPENAI_API_KEY} chars)" || echo "NOT SET")"
+          echo "UNSPLASH_ACCESS_KEY: $([ -n "$UNSPLASH_ACCESS_KEY" ] && echo "SET (${#UNSPLASH_ACCESS_KEY} chars)" || echo "NOT SET")"
+          echo "SITE_URL: $([ -n "$SITE_URL" ] && echo "SET ($SITE_URL)" || echo "NOT SET")"
+          
+          echo ""
+          echo "📦 PYTHON PACKAGES:"
+          pip list | grep -E "(openai|requests|beautifulsoup4|python-dotenv)"
+          
+          echo ""
+          echo "🧪 TESTING IMPORTS:"
+          cd public_html/external-ai-service
+          python3 -c "
+          try:
+              from content_analyzer import ContentAnalyzer
+              print('✅ ContentAnalyzer imported successfully')
+          except Exception as e:
+              print(f'❌ ContentAnalyzer import failed: {e}')
+              
+          try:
+              from article_writer import ArticleWriter
+              print('✅ ArticleWriter imported successfully')
+          except Exception as e:
+              print(f'❌ ArticleWriter import failed: {e}')
+              
+          try:
+              from image_prompter import ImagePrompter
+              print('✅ ImagePrompter imported successfully')
+          except Exception as e:
+              print(f'❌ ImagePrompter import failed: {e}')
+              
+          try:
+              from integration_script import SiteIntegration
+              print('✅ SiteIntegration imported successfully')
+          except Exception as e:
+              print(f'❌ SiteIntegration import failed: {e}')
+          "
 
       - name: Run offline tests
         if: ${{ github.event.inputs.test_type == 'offline' }}
@@ -62,11 +113,27 @@ jobs:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
           UNSPLASH_ACCESS_KEY: ${{ secrets.UNSPLASH_ACCESS_KEY }}
           SITE_URL: ${{ secrets.SITE_URL }}
-          HTTP_PROXY: ${{ secrets.HTTP_PROXY }}
-          HTTPS_PROXY: ${{ secrets.HTTPS_PROXY }}
         run: |
           cd public_html/external-ai-service
-          python demo_processor.py
+          echo "🚀 Starting demo_processor.py..."
+          echo "Current directory: $(pwd)"
+          echo "Files in directory: $(ls -la)"
+          echo "Environment variables:"
+          echo "OPENAI_API_KEY: $([ -n "$OPENAI_API_KEY" ] && echo "SET" || echo "NOT SET")"
+          echo "UNSPLASH_ACCESS_KEY: $([ -n "$UNSPLASH_ACCESS_KEY" ] && echo "SET" || echo "NOT SET")"
+          echo "SITE_URL: $([ -n "$SITE_URL" ] && echo "SET ($SITE_URL)" || echo "NOT SET")"
+          
+          # Запускаем с подробным выводом
+          python3 demo_processor.py 2>&1 || {
+            echo "❌ demo_processor.py failed with exit code $?"
+            echo "📋 Checking for generated files:"
+            ls -la *.json *.log 2>/dev/null || echo "No output files found"
+            exit 1
+          }
+          
+          echo "✅ demo_processor.py completed successfully"
+          echo "📋 Generated files:"
+          ls -la *.json *.log 2>/dev/null || echo "No output files found"
 
       - name: Upload results
         uses: actions/upload-artifact@v4
