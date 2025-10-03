@@ -32,11 +32,31 @@ if (!$is_github_actions && !$is_local_test && !$is_test_script) {
 }
 
 try {
-  // Получаем данные
-  $input = json_decode(file_get_contents('php://input'), true);
-
+  // Получаем данные разными способами
+  $input = null;
+  
+  // Способ 1: php://input
+  $raw_input = file_get_contents('php://input');
+  if ($raw_input) {
+    $input = json_decode($raw_input, true);
+  }
+  
+  // Способ 2: $_POST (если данные пришли как form-data)
+  if (!$input && !empty($_POST)) {
+    $input = $_POST;
+  }
+  
+  // Способ 3: $_REQUEST (fallback)
+  if (!$input && !empty($_REQUEST)) {
+    $input = $_REQUEST;
+  }
+  
+  // Для отладки - логируем что получили
+  error_log("AI Article API - Raw input: " . $raw_input);
+  error_log("AI Article API - Parsed input: " . print_r($input, true));
+  
   if (!$input) {
-    echo json_encode(['success' => false, 'message' => 'Неверные данные']);
+    echo json_encode(['success' => false, 'message' => 'Неверные данные. Raw: ' . $raw_input]);
     exit();
   }
 
