@@ -46,6 +46,10 @@ jobs:
 
       - name: Run demo articles publication
         if: ${{ github.event.inputs.test_type == 'demo' }}
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          UNSPLASH_ACCESS_KEY: ${{ secrets.UNSPLASH_ACCESS_KEY }}
+          SITE_URL: ${{ secrets.SITE_URL }}
         run: |
           cd public_html/external-ai-service
           python demo_processor.py
