@@ -44,11 +44,11 @@ jobs:
           cd public_html/external-ai-service
           python test_publication.py
 
-      - name: Run demo articles publication
+      - name: Run demo articles generation and publication
         if: ${{ github.event.inputs.test_type == 'demo' }}
         run: |
           cd public_html/external-ai-service
-          python run_simple_cycle.py
+          python demo_processor.py
 
       - name: Upload results
         uses: actions/upload-artifact@v3
@@ -59,6 +59,7 @@ jobs:
             public_html/external-ai-service/*.json
             public_html/external-ai-service/*.log
             public_html/external-ai-service/test_*.log
+            public_html/external-ai-service/output/
           retention-days: 7
 
       - name: Create summary
