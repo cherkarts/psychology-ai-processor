@@ -38,13 +38,13 @@ class SiteIntegration:
                 'processing_date': article.get('processing_date', datetime.now().strftime('%Y-%m-%d'))
             }
             
-            # Отправляем на сайт
+            # Отправляем на сайт через публичный API
             response = requests.post(
-                f"{self.site_url}/admin/api/save-article.php",
+                f"{self.site_url}/upload_ai_article.php",
                 json=article_data,
                 headers={
                     'Content-Type': 'application/json',
-                    'Authorization': f'Bearer {self.admin_api_key}' if self.admin_api_key else None
+                    'User-Agent': 'GitHub-Actions/1.0'
                 },
                 timeout=30
             )
