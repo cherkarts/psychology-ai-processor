@@ -26,10 +26,11 @@ class SiteIntegration:
                 'meta_title': article['meta_title'],
                 'meta_description': article['meta_description'],
                 'tags': ','.join(article['tags']),
-                'category_id': self._get_category_id(article['category']),
-                'featured_image': article.get('featured_image', ''),
+                'category_id': self._get_category_id(article),
+                'image': article.get('featured_image', ''),  # Используем 'image' вместо 'featured_image'
+                'slug': self._generate_slug(article['title']),  # Добавляем генерацию slug
                 'is_active': 1,
-                'author': 'AI Assistant',
+                'author': 'Денис Черкас',  # Устанавливаем автора
                 'source': article.get('source', 'Psychology Today'),
                 'processing_date': article.get('processing_date', datetime.now().strftime('%Y-%m-%d'))
             }
@@ -60,17 +61,59 @@ class SiteIntegration:
             
         return False
     
-    def _get_category_id(self, category_name: str) -> int:
-        """Получить ID категории по названию"""
+    def _get_category_id(self, article: Dict) -> int:
+        """Получить ID категории из статьи или по названию"""
+        # Если в статье уже есть category_id, используем его
+        if 'category_id' in article and article['category_id']:
+            return article['category_id']
+        
+        # Иначе используем маппинг по названию
+        category_name = article.get('category', 'Психология')
         category_mapping = {
-            'Психология': 1,
-            'Саморазвитие': 2,
-            'Отношения': 3,
-            'Стресс и тревога': 4,
-            'Детская психология': 5,
-            'Семейная терапия': 6
+            'Психология': 74,
+            'Отношения': 1,
+            'Стресс и тревога': 2,
+            'Детская психология': 3,
+            'Саморазвитие': 4,
+            'Карьера и успех': 5,
+            'Психическое здоровье': 6
         }
-        return category_mapping.get(category_name, 1)  # По умолчанию "Психология"
+        return category_mapping.get(category_name, 74)  # По умолчанию "Психология" (ID 74)
+    
+    def _generate_slug(self, title: str) -> str:
+        """Генерировать красивый slug из заголовка"""
+        import re
+        
+        # Транслитерация русских букв
+        translit_map = {
+            'а': 'a', 'б': 'b', 'в': 'v', 'г': 'g', 'д': 'd', 'е': 'e', 'ё': 'yo',
+            'ж': 'zh', 'з': 'z', 'и': 'i', 'й': 'y', 'к': 'k', 'л': 'l', 'м': 'm',
+            'н': 'n', 'о': 'o', 'п': 'p', 'р': 'r', 'с': 's', 'т': 't', 'у': 'u',
+            'ф': 'f', 'х': 'h', 'ц': 'ts', 'ч': 'ch', 'ш': 'sh', 'щ': 'sch',
+            'ъ': '', 'ы': 'y', 'ь': '', 'э': 'e', 'ю': 'yu', 'я': 'ya'
+        }
+        
+        # Приводим к нижнему регистру
+        slug = title.lower()
+        
+        # Заменяем русские буквы на латинские
+        for ru, en in translit_map.items():
+            slug = slug.replace(ru, en)
+        
+        # Убираем все кроме букв, цифр, дефисов и подчеркиваний
+        slug = re.sub(r'[^a-z0-9\-_]', '-', slug)
+        
+        # Убираем множественные дефисы
+        slug = re.sub(r'-+', '-', slug)
+        
+        # Убираем дефисы в начале и конце
+        slug = slug.strip('-')
+        
+        # Ограничиваем длину
+        if len(slug) > 50:
+            slug = slug[:50].rstrip('-')
+        
+        return slug
     
     def upload_articles_from_file(self, json_file: str) -> Dict:
         """Загрузить статьи из JSON файла"""
