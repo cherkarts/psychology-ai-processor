@@ -29,7 +29,7 @@ class SiteIntegration:
                 'meta_title': article['meta_title'],
                 'meta_description': article['meta_description'],
                 'tags': ','.join(article['tags']),
-                'category_id': self._get_category_id(article['category']),
+                'category_id': self._get_category_id(article),
                 'featured_image': article.get('featured_image', ''),
                 'slug': slug,
                 'is_active': 1,
@@ -107,17 +107,24 @@ class SiteIntegration:
         
         return slug
     
-    def _get_category_id(self, category_name: str) -> int:
-        """Получить ID категории по названию"""
+    def _get_category_id(self, article: Dict) -> int:
+        """Получить ID категории из статьи или по названию"""
+        # Если в статье уже есть category_id, используем его
+        if 'category_id' in article and article['category_id']:
+            return article['category_id']
+        
+        # Иначе используем маппинг по названию
+        category_name = article.get('category', 'Психология')
         category_mapping = {
-            'Психология': 1,
-            'Саморазвитие': 2,
-            'Отношения': 3,
-            'Стресс и тревога': 4,
-            'Детская психология': 5,
-            'Семейная терапия': 6
+            'Психология': 74,
+            'Отношения': 1,
+            'Стресс и тревога': 2,
+            'Детская психология': 3,
+            'Саморазвитие': 4,
+            'Карьера и успех': 5,
+            'Психическое здоровье': 6
         }
-        return category_mapping.get(category_name, 1)  # По умолчанию "Психология"
+        return category_mapping.get(category_name, 74)  # По умолчанию "Психология" (ID 74)
     
     def upload_articles_from_file(self, json_file: str) -> Dict:
         """Загрузить статьи из JSON файла"""

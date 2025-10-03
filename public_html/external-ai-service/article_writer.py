@@ -162,7 +162,8 @@ class ArticleWriter:
             excerpt = self._generate_excerpt(cleaned_content)
             
             # Определяем категорию
-            category = self._determine_category(analysis)
+            category_data = self._determine_category(analysis)
+            category = category_data['name']  # Для обратной совместимости
             
             # Генерируем теги
             tags = self._generate_tags(analysis, cleaned_content)
@@ -177,6 +178,8 @@ class ArticleWriter:
                 'meta_title': meta_title,
                 'meta_description': meta_description,
                 'category': category,
+                'category_id': category_data['id'],  # Добавляем ID категории
+                'category_slug': category_data['slug'],  # Добавляем slug категории
                 'tags': tags,
                 'faq': faq,
                 'word_count': len(cleaned_content.replace(' ', '')),
@@ -234,20 +237,26 @@ class ArticleWriter:
             excerpt = excerpt.rsplit(' ', 1)[0] + "..."
         return excerpt
     
-    def _determine_category(self, analysis: Dict) -> str:
-        """Определить категорию статьи"""
+    def _determine_category(self, analysis: Dict) -> Dict:
+        """Определить категорию статьи и вернуть ID и название"""
         theme = analysis['main_theme'].lower()
         
-        if any(word in theme for word in ['отношения', 'любовь', 'семья', 'брак']):
-            return 'Отношения'
-        elif any(word in theme for word in ['тревога', 'депрессия', 'стресс', 'паника']):
-            return 'Стресс и тревога'
-        elif any(word in theme for word in ['дети', 'родители', 'воспитание']):
-            return 'Детская психология'
-        elif any(word in theme for word in ['рост', 'мотивация', 'привычки', 'развитие']):
-            return 'Саморазвитие'
+        # Маппинг категорий на основе темы
+        if any(word in theme for word in ['отношения', 'любовь', 'семья', 'брак', 'партнер', 'супруг']):
+            return {'id': 1, 'name': 'Отношения', 'slug': 'otnosheniya'}
+        elif any(word in theme for word in ['тревога', 'депрессия', 'стресс', 'паника', 'беспокойство', 'тревожность']):
+            return {'id': 2, 'name': 'Стресс и тревога', 'slug': 'stress-i-trevoga'}
+        elif any(word in theme for word in ['дети', 'родители', 'воспитание', 'подростки', 'ребенок']):
+            return {'id': 3, 'name': 'Детская психология', 'slug': 'detskaya-psihologiya'}
+        elif any(word in theme for word in ['рост', 'мотивация', 'привычки', 'развитие', 'саморазвитие', 'цели']):
+            return {'id': 4, 'name': 'Саморазвитие', 'slug': 'samorazvitie'}
+        elif any(word in theme for word in ['работа', 'карьера', 'профессия', 'успех', 'бизнес']):
+            return {'id': 5, 'name': 'Карьера и успех', 'slug': 'karera-i-uspeh'}
+        elif any(word in theme for word in ['здоровье', 'физическое', 'спорт', 'питание', 'тело']):
+            return {'id': 6, 'name': 'Психическое здоровье', 'slug': 'psihicheskoe-zdorove'}
         else:
-            return 'Психология'
+            # По умолчанию - общая психология (ID 74 из базы данных)
+            return {'id': 74, 'name': 'Психология', 'slug': 'psihologiya'}
     
     def _generate_tags(self, analysis: Dict, content: str) -> List[str]:
         """Генерировать теги для статьи"""
