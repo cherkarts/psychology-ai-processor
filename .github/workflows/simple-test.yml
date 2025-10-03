@@ -48,7 +48,7 @@ jobs:
         if: ${{ github.event.inputs.test_type == 'demo' }}
         run: |
           cd public_html/external-ai-service
-          python run_simple_cycle.py
+          python demo_processor.py
 
       - name: Upload results
         uses: actions/upload-artifact@v4
