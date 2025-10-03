@@ -36,11 +36,11 @@ class SiteIntegration:
             
             # Отправляем на сайт
             response = requests.post(
-                f"{self.site_url}/api/ai-save-article.php",
+                f"{self.site_url}/admin/api/save-article.php",
                 json=article_data,
                 headers={
                     'Content-Type': 'application/json',
-                    'Authorization': f'Bearer {self.admin_api_key}' if self.admin_api_key else 'Bearer default-ai-key'
+                    'Authorization': f'Bearer {self.admin_api_key}' if self.admin_api_key else None
                 },
                 timeout=30
             )

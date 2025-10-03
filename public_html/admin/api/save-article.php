@@ -219,7 +219,7 @@ try {
     // Обновление существующей статьи
     $set = ['title = ?', 'content = ?', 'excerpt = ?', 'author = ?', 'tags = ?', 'category_id = ?'];
     $values = [$title, $content, $excerpt, $author, $tagsValue, $categoryId];
-    
+
     // Добавляем slug если он есть
     if (!empty($slug)) {
       $set[] = 'slug = ?';
@@ -257,7 +257,7 @@ try {
     $fields = ['title', 'content', 'excerpt', 'author', 'tags', 'category_id'];
     $placeholders = ['?', '?', '?', '?', '?', '?'];
     $values = [$title, $content, $excerpt, $author, $tagsValue, $categoryId];
-    
+
     // Добавляем slug если он есть
     if (!empty($slug)) {
       $fields[] = 'slug';
