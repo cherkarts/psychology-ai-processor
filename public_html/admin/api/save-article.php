@@ -134,6 +134,7 @@ $content = $processText($input['content'] ?? '');
 $excerpt = $processText($input['excerpt'] ?? '');
 $author = $processText($input['author'] ?? '');
 $tags = $processText($input['tags'] ?? '');
+$slug = $processText($input['slug'] ?? '');
 $categoryId = isset($input['category_id']) ? (int) $input['category_id'] : null;
 $hasImageField = array_key_exists('image', $input);
 $image = $hasImageField ? trim($input['image']) : null;
@@ -203,6 +204,12 @@ try {
     // Обновление существующей статьи
     $set = ['title = ?', 'content = ?', 'excerpt = ?', 'author = ?', 'tags = ?', 'category_id = ?'];
     $values = [$title, $content, $excerpt, $author, $tagsValue, $categoryId];
+    
+    // Добавляем slug если он есть
+    if (!empty($slug)) {
+      $set[] = 'slug = ?';
+      $values[] = $slug;
+    }
     if ($imageCol && $hasImageField) {
       $set[] = "$imageCol = ?";
       $values[] = $image;
@@ -235,6 +242,13 @@ try {
     $fields = ['title', 'content', 'excerpt', 'author', 'tags', 'category_id'];
     $placeholders = ['?', '?', '?', '?', '?', '?'];
     $values = [$title, $content, $excerpt, $author, $tagsValue, $categoryId];
+    
+    // Добавляем slug если он есть
+    if (!empty($slug)) {
+      $fields[] = 'slug';
+      $placeholders[] = '?';
+      $values[] = $slug;
+    }
     if ($imageCol && $hasImageField) {
       $fields[] = $imageCol;
       $placeholders[] = '?';
