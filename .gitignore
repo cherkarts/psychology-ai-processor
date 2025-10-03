@@ -1,0 +1,41 @@
+# Исключаем все файлы сайта (кроме API файлов)
+public_html/
+!public_html/admin/api/save-article.php
+
+# Исключаем конфиденциальные файлы
+config.php
+*.env
+*.key
+*.pem
+
+# Исключаем временные файлы
+*.log
+*.tmp
+*.cache
+__pycache__/
+*.pyc
+*.pyo
+
+# Исключаем системные файлы
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+
+# Исключаем IDE файлы
+.vscode/
+.idea/
+*.sublime-*
+
+# Исключаем тестовые файлы
+test_*.php
+check_*.php
+debug_*.php
+fix_*.php
+cleanup/
+
+# Исключаем артефакты
+output/
+*.json
+*.zip
+*.tar.gz
