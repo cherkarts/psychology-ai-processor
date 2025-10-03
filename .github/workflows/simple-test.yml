@@ -107,21 +107,23 @@ jobs:
           cd external-ai-service
           python test_publication.py
 
-      - name: Run demo articles publication
-        if: ${{ github.event.inputs.test_type == 'demo' }}
-        env:
-          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
-          UNSPLASH_ACCESS_KEY: ${{ secrets.UNSPLASH_ACCESS_KEY }}
-          SITE_URL: ${{ secrets.SITE_URL }}
+             - name: Run demo articles publication
+               if: ${{ github.event.inputs.test_type == 'demo' }}
+               env:
+                 OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+                 UNSPLASH_ACCESS_KEY: ${{ secrets.UNSPLASH_ACCESS_KEY }}
+                 SITE_URL: ${{ secrets.SITE_URL }}
+                 ADMIN_API_KEY: ${{ secrets.ADMIN_API_KEY }}
         run: |
           cd external-ai-service
           echo "🚀 Starting demo_processor.py..."
           echo "Current directory: $(pwd)"
           echo "Files in directory: $(ls -la)"
-          echo "Environment variables:"
-          echo "OPENAI_API_KEY: $([ -n "$OPENAI_API_KEY" ] && echo "SET" || echo "NOT SET")"
-          echo "UNSPLASH_ACCESS_KEY: $([ -n "$UNSPLASH_ACCESS_KEY" ] && echo "SET" || echo "NOT SET")"
-          echo "SITE_URL: $([ -n "$SITE_URL" ] && echo "SET ($SITE_URL)" || echo "NOT SET")"
+                 echo "Environment variables:"
+                 echo "OPENAI_API_KEY: $([ -n "$OPENAI_API_KEY" ] && echo "SET" || echo "NOT SET")"
+                 echo "UNSPLASH_ACCESS_KEY: $([ -n "$UNSPLASH_ACCESS_KEY" ] && echo "SET" || echo "NOT SET")"
+                 echo "SITE_URL: $([ -n "$SITE_URL" ] && echo "SET ($SITE_URL)" || echo "NOT SET")"
+                 echo "ADMIN_API_KEY: $([ -n "$ADMIN_API_KEY" ] && echo "SET" || echo "NOT SET")"
 
           # Запускаем с подробным выводом
           python3 demo_processor.py 2>&1 || {

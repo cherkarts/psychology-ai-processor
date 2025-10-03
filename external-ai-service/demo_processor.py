@@ -165,7 +165,8 @@ def publish_articles(articles):
     print(f"\n🚀 Публикация {len(articles)} статей на сайт...")
     
     site_url = os.getenv('SITE_URL', 'https://cherkas-therapy.ru')
-    integrator = SiteIntegration(site_url)
+    admin_api_key = os.getenv('ADMIN_API_KEY')
+    integrator = SiteIntegration(site_url, admin_api_key)
     
     published_count = 0
     
