@@ -69,7 +69,7 @@ class ArticleWriter:
                     },
                     {"role": "user", "content": prompt}
                 ],
-                max_tokens=6000 if model_to_use == "gpt-4" else 5000,
+                max_tokens=4000 if model_to_use == "gpt-4" else 4000,
                 temperature=0.8,
                 top_p=0.95
             )
