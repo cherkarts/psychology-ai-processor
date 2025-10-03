@@ -10,9 +10,9 @@ on:
         default: 'demo'
         type: choice
         options:
-        - 'demo'
-        - 'offline'
-        - 'publication'
+          - 'demo'
+          - 'offline'
+          - 'publication'
 
 jobs:
   test:
@@ -34,18 +34,30 @@ jobs:
 
       - name: Run offline tests
         if: ${{ github.event.inputs.test_type == 'offline' }}
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          UNSPLASH_ACCESS_KEY: ${{ secrets.UNSPLASH_ACCESS_KEY }}
+          SITE_URL: ${{ secrets.SITE_URL }}
         run: |
           cd public_html/external-ai-service
           python test_offline.py
 
       - name: Run publication tests
         if: ${{ github.event.inputs.test_type == 'publication' }}
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          UNSPLASH_ACCESS_KEY: ${{ secrets.UNSPLASH_ACCESS_KEY }}
+          SITE_URL: ${{ secrets.SITE_URL }}
         run: |
           cd public_html/external-ai-service
           python test_publication.py
 
       - name: Run demo articles generation and publication
         if: ${{ github.event.inputs.test_type == 'demo' }}
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          UNSPLASH_ACCESS_KEY: ${{ secrets.UNSPLASH_ACCESS_KEY }}
+          SITE_URL: ${{ secrets.SITE_URL }}
         run: |
           cd public_html/external-ai-service
           python demo_processor.py
@@ -71,7 +83,7 @@ jobs:
           echo "**Date:** $(date '+%Y-%m-%d %H:%M UTC')" >> $GITHUB_STEP_SUMMARY
           echo "**Status:** ${{ job.status }}" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
-          
+
           if [ -f "public_html/external-ai-service/*.log" ]; then
             echo "### 📋 Logs" >> $GITHUB_STEP_SUMMARY
             echo '```' >> $GITHUB_STEP_SUMMARY
