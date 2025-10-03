@@ -56,16 +56,17 @@ jobs:
 
       - name: Run article processor
         run: |
+          cd public_html/external-ai-service
           python new_ai_processor.py
 
       - name: Upload generated articles
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         if: always()
         with:
           name: psychology-articles-${{ github.run_number }}
           path: |
-            psychology_articles_*.json
-            psychology_processor.log
+            public_html/external-ai-service/psychology_articles_*.json
+            public_html/external-ai-service/psychology_processor.log
           retention-days: 30
 
       - name: Commit and push results
