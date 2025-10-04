@@ -439,7 +439,7 @@ class ArticleWriter:
                     },
                     {"role": "user", "content": force_prompt}
                 ],
-                max_tokens=8000,
+                max_tokens=4000,
                 temperature=0.9
             )
             
@@ -463,7 +463,7 @@ class ArticleWriter:
                 },
                 {"role": "user", "content": prompt}
             ],
-            max_tokens=7000,
+            max_tokens=4000,
             temperature=0.8
         )
         
