@@ -223,8 +223,14 @@ class ArticleWriter:
 5. Сделай практические советы более детальными
 6. Замени расплывчатые формулировки на конкретные
 7. Добавь статистику и научные данные где уместно
+8. Добавь раздел FAQ с 3-4 вопросами и ответами
+9. Создай описание статьи (меню) в начале
+10. Создай короткое описание до 150 символов
 
-СОХРАНИ структуру статьи, но улучши содержание каждого раздела.
+СТРУКТУРА СТАТЬИ:
+- Описание (меню) в начале
+- Основные разделы с заголовками
+- FAQ раздел в конце
 
 УЛУЧШЕННАЯ СТАТЬЯ:
 """
@@ -248,6 +254,60 @@ class ArticleWriter:
             logging.error(f"Ошибка улучшения качества: {e}")
             return content
 
+    def format_article_content(self, content: str, title: str) -> Dict[str, str]:
+        """Форматирует статью: убирает лишние символы, добавляет HTML-теги, создает описание"""
+        try:
+            # Убираем лишние символы и форматируем
+            formatted_content = content
+            
+            # Убираем **Статья: и **Введение:** и т.д.
+            formatted_content = formatted_content.replace('**Статья:**', '')
+            formatted_content = formatted_content.replace('**Введение:**', '<h2>Введение</h2>')
+            formatted_content = formatted_content.replace('**Анализ причин:**', '<h2>Анализ причин</h2>')
+            formatted_content = formatted_content.replace('**Практические техники:**', '<h2>Практические техники</h2>')
+            formatted_content = formatted_content.replace('**Профилактика и выводы:**', '<h2>Профилактика и выводы</h2>')
+            formatted_content = formatted_content.replace('**Заключение:**', '<h2>Заключение</h2>')
+            formatted_content = formatted_content.replace('**FAQ:**', '<h2>Часто задаваемые вопросы</h2>')
+            formatted_content = formatted_content.replace('**Часто задаваемые вопросы:**', '<h2>Часто задаваемые вопросы</h2>')
+            
+            # Убираем лишние переносы строк
+            formatted_content = '\n'.join(line.strip() for line in formatted_content.split('\n') if line.strip())
+            
+            # Создаем короткое описание (до 150 символов)
+            # Берем первые предложения из введения
+            intro_start = formatted_content.find('<h2>Введение</h2>')
+            if intro_start != -1:
+                intro_text = formatted_content[intro_start + len('<h2>Введение</h2>'):]
+                # Берем до первого абзаца
+                first_paragraph = intro_text.split('\n')[0].strip()
+                short_description = first_paragraph[:150]
+                if len(first_paragraph) > 150:
+                    short_description = short_description.rsplit(' ', 1)[0] + '...'
+            else:
+                short_description = title[:150] + '...' if len(title) > 150 else title
+            
+            # Создаем описание (меню) в начале
+            description = f"""
+<div class="article-description">
+<p>В этой статье вы узнаете о современных методах борьбы со стрессом и тревогой. Мы рассмотрим научные данные, практические техники и дадим конкретные рекомендации для улучшения вашего психологического состояния.</p>
+</div>
+"""
+            
+            # Добавляем описание в начало статьи
+            formatted_content = description + formatted_content
+            
+            return {
+                'content': formatted_content,
+                'short_description': short_description
+            }
+            
+        except Exception as e:
+            logging.error(f"Ошибка форматирования: {e}")
+            return {
+                'content': content,
+                'short_description': title[:150] + '...' if len(title) > 150 else title
+            }
+
     def write_adapted_article_enhanced(self, analysis: Dict) -> Optional[Dict]:
         """Генерация с максимальным качеством: создание + улучшение"""
         try:
@@ -265,11 +325,16 @@ class ArticleWriter:
             print("🔧 Дополнительное улучшение качества...")
             enhanced_content = self.improve_article_quality(basic_article['content'], analysis)
             
-            # Обновляем статью улучшенным контентом
-            basic_article['content'] = enhanced_content
-            basic_article['word_count'] = len(enhanced_content.split())
+            # Этап 3: Форматирование статьи
+            print("🎨 Форматирование статьи...")
+            formatted_data = self.format_article_content(enhanced_content, basic_article['title'])
             
-            print(f"✅ Статья улучшена: {len(enhanced_content)} символов")
+            # Обновляем статью форматированным контентом
+            basic_article['content'] = formatted_data['content']
+            basic_article['short_description'] = formatted_data['short_description']
+            basic_article['word_count'] = len(formatted_data['content'].split())
+            
+            print(f"✅ Статья готова: {len(formatted_data['content'])} символов")
             return basic_article
             
         except Exception as e:
@@ -608,6 +673,7 @@ class ArticleWriter:
                 'title': title,
                 'content': html_content,
                 'excerpt': self._generate_excerpt(content),
+                'short_description': self._generate_short_description(content),
                 'meta_title': title,
                 'meta_description': self._generate_meta_description(content),
                 'category': self._determine_category(analysis),
@@ -1446,6 +1512,16 @@ class ArticleWriter:
         if len(text) > 200:
             excerpt = excerpt.rsplit(' ', 1)[0] + "..."
         return excerpt
+    
+    def _generate_short_description(self, content: str) -> str:
+        """Генерировать короткое описание для карточки (до 150 символов)"""
+        # Убираем HTML теги
+        text = re.sub(r'<[^>]+>', '', content)
+        # Берем первые 150 символов
+        short_desc = text[:150].strip()
+        if len(text) > 150:
+            short_desc = short_desc.rsplit(' ', 1)[0] + "..."
+        return short_desc
     
     def _determine_category(self, analysis: Dict) -> str:
         """Определить категорию статьи"""
