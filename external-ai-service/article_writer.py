@@ -132,6 +132,74 @@ class ArticleWriter:
             logging.error(f"Ошибка быстрой генерации: {e}")
             return None
 
+    def write_adapted_article_quality(self, analysis: Dict) -> Optional[Dict]:
+        """Генерация с акцентом на качество контента"""
+        try:
+            theme = analysis['main_theme']
+            
+            prompt = f"""
+НАПИШИ КАЧЕСТВЕННУЮ СТАТЬЮ НА ТЕМУ: "{theme}"
+
+ОСНОВНАЯ ИДЕЯ: {analysis['main_message']}
+
+ИСПОЛЬЗУЙ КОНКРЕТНЫЕ ДАННЫЕ:
+- Факты: {analysis['interesting_facts']}
+- Важные аспекты: {analysis['hidden_truths']}
+- Практические советы: {analysis['practical_advice']}
+
+СТРУКТУРА СТАТЬИ:
+
+ВВЕДЕНИЕ
+- Начни с реальной жизненной ситуации
+- Приведи статистику и масштабы проблемы
+- Объясни почему тема актуальна именно сейчас
+
+АНАЛИЗ ПРИЧИН
+- Детально разбери психологические механизмы
+- Объясни физиологические процессы в организме
+- Раскрой скрытые причины которые обычно умалчивают
+
+ПРАКТИЧЕСКИЕ ТЕХНИКИ
+- Дай пошаговые инструкции для каждой техники
+- Объясни КАК И ПОЧЕМУ это работает
+- Приведи конкретные примеры применения в жизни
+
+ПРОФИЛАКТИКА И ВЫВОДЫ
+- Расскажи о долгосрочных стратегиях
+- Объясни когда обращаться к специалисту
+- Дай мотивирующие рекомендации
+
+ТРЕБОВАНИЯ К КАЧЕСТВУ:
+- КОНКРЕТИКА: вместо "некоторые техники" - названия конкретных методов
+- ОБЪЯСНЕНИЯ: не просто "это работает", а почему это работает
+- ПРИМЕРЫ: реальные жизненные ситуации
+- ЯСНОСТЬ: простой язык без сложных терминов
+- ОБЪЕМ: каждый раздел 800-1000 символов
+
+Избегай общих фраз вроде "важно помнить", "следует отметить".
+Пиши так, как будто объясняешь другу.
+"""
+
+            response = self.client.chat.completions.create(
+                model="gpt-3.5-turbo",
+                messages=[
+                    {
+                        "role": "system", 
+                        "content": "Ты пишешь качественные психологические статьи с конкретными примерами и понятными объяснениями. Избегай общих фраз, давай практические советы."
+                    },
+                    {"role": "user", "content": prompt}
+                ],
+                max_tokens=3500,
+                temperature=0.8
+            )
+            
+            article_content = response.choices[0].message.content.strip()
+            return self._process_final_article(article_content, analysis, len(article_content))
+            
+        except Exception as e:
+            logging.error(f"Ошибка генерации: {e}")
+            return None
+
     def _analyze_theme_type(self, theme: str) -> str:
         """Определяем тип темы для выбора структуры"""
         theme_lower = theme.lower()
@@ -1411,7 +1479,7 @@ if __name__ == "__main__":
     }
     
     writer = ArticleWriter()
-    article = writer.write_adapted_article(test_analysis)
+    article = writer.write_adapted_article_quality(test_analysis)
     
     if article:
         print("Статья написана:")
