@@ -43,36 +43,237 @@ class ArticleWriter:
         return self.writing_model
         
     def write_adapted_article(self, analysis: Dict) -> Optional[Dict]:
-        """Генерация статьи по частям с учетом лимита токенов"""
+        """Адаптация ЛЮБОЙ темы с Psychology Today"""
         try:
-            # Генерируем план статьи
-            plan = self._generate_article_plan(analysis)
-            if not plan:
-                return None
+            # Берем реальную тему из анализа
+            theme = analysis['main_theme']
+            message = analysis['main_message']
             
-            # Генерируем разделы по отдельности
-            sections = []
-            total_length = 0
+            logging.info(f"Адаптируем тему: {theme}")
             
-            for i, section_title in enumerate(plan['sections']):
-                section_content = self._generate_section(analysis, section_title, i)
-                if section_content:
-                    sections.append(section_content)
-                    total_length += len(section_content)
-                    logging.info(f"Раздел {i+1} создан: {len(section_content)} символов")
-                
-                # Останавливаемся если достигли нужной длины
-                if total_length >= 5000:
-                    break
+            # 1. Анализируем тип темы для выбора структуры
+            theme_type = self._analyze_theme_type(theme)
             
-            # Объединяем все части
-            full_content = self._combine_sections(analysis, sections)
+            # 2. Генерируем подходящую структуру для этой темы
+            structure = self._generate_structure_for_theme(theme, theme_type, analysis)
             
-            return self._process_final_article(full_content, analysis, total_length)
+            # 3. Генерируем разделы по этой структуре
+            sections = self._generate_theme_sections(theme, structure, analysis)
+            
+            # 4. Собираем статью
+            full_content = self._build_theme_article(theme, sections, analysis)
+            
+            return self._process_final_article(full_content, analysis, len(full_content))
                 
         except Exception as e:
-            logging.error(f"Ошибка при написании статьи: {e}")
+            logging.error(f"Ошибка адаптации темы: {e}")
             return None
+
+    def _analyze_theme_type(self, theme: str) -> str:
+        """Определяем тип темы для выбора структуры"""
+        theme_lower = theme.lower()
+        
+        if any(word in theme_lower for word in ['stress', 'anxiety', 'worry', 'panic']):
+            return 'stress_anxiety'
+        elif any(word in theme_lower for word in ['relationship', 'love', 'marriage', 'family']):
+            return 'relationships' 
+        elif any(word in theme_lower for word in ['child', 'parent', 'teen', 'kids']):
+            return 'parenting'
+        elif any(word in theme_lower for word in ['depression', 'mental health', 'therapy']):
+            return 'mental_health'
+        elif any(word in theme_lower for word in ['happiness', 'success', 'motivation', 'goal']):
+            return 'self_improvement'
+        else:
+            return 'general'
+
+    def _generate_structure_for_theme(self, theme: str, theme_type: str, analysis: Dict) -> List[str]:
+        """Генерируем структуру под конкретный тип темы"""
+        
+        structures = {
+            'stress_anxiety': [
+                "Реальная ситуация: как стресс проявляется в жизни",
+                "Научное объяснение механизмов стресса", 
+                "Практические техники для мгновенного облегчения",
+                "Долгосрочные стратегии управления тревогой"
+            ],
+            
+            'relationships': [
+                "Типичные проблемы в отношениях на примерах",
+                "Психологические причины конфликтов", 
+                "Конкретные шаги для улучшения общения",
+                "Как сохранять здоровые отношения"
+            ],
+            
+            'parenting': [
+                "Современные вызовы в воспитании детей",
+                "Возрастные особенности и потребности",
+                "Практические методы воспитания", 
+                "Баланс между строгостью и поддержкой"
+            ],
+            
+            'mental_health': [
+                "Как распознать проблему: симптомы и признаки",
+                "Профессиональные подходы к лечению",
+                "Самопомощь и поддержка близких",
+                "Профилактика и поддержание здоровья"
+            ],
+            
+            'self_improvement': [
+                "Почему это важно для качества жизни", 
+                "Психологические барьеры и как их преодолеть",
+                "Конкретные привычки и упражнения",
+                "Как отслеживать прогресс и не сдаваться"
+            ],
+            
+            'general': [
+                "Актуальность и важность темы",
+                "Глубинный анализ проблемы", 
+                "Практические решения и методы",
+                "Выводы и рекомендации"
+            ]
+        }
+        
+        return structures.get(theme_type, structures['general'])
+
+    def _generate_theme_sections(self, theme: str, structure: List[str], analysis: Dict) -> List[str]:
+        """Генерация разделов для конкретной темы"""
+        sections = []
+        previous_content = []
+        
+        for i, section_task in enumerate(structure):
+            section_content = self._generate_section_for_theme(
+                theme, section_task, i, analysis, previous_content
+            )
+            
+            if section_content and self._is_unique_content(section_content, previous_content):
+                sections.append(section_content)
+                previous_content.append(section_content)
+                logging.info(f"Раздел {i+1} создан: {len(section_content)} символов")
+        
+        return sections
+
+    def _generate_section_for_theme(self, theme: str, section_task: str, index: int, 
+                                   analysis: Dict, previous: List[str]) -> str:
+        """Генерация одного раздела для темы"""
+        try:
+            # Собираем релевантные данные для этого раздела
+            relevant_facts = self._select_relevant_facts(analysis['interesting_facts'], section_task)
+            relevant_truths = self._select_relevant_truths(analysis['hidden_truths'], section_task)
+            relevant_advice = self._select_relevant_advice(analysis['practical_advice'], section_task)
+            
+            prompt = f"""
+ТЕМА СТАТЬИ: {theme}
+ОСНОВНАЯ ИДЕЯ: {analysis['main_message']}
+
+ЗАДАЧА ЭТОГО РАЗДЕЛА: {section_task}
+
+РЕЛЕВАНТНЫЕ ДАННЫЕ ДЛЯ ЭТОГО РАЗДЕЛА:
+- Факты: {relevant_facts}
+- Важные аспекты: {relevant_truths}
+- Советы: {relevant_advice}
+
+ПРЕДЫДУЩИЕ РАЗДЕЛЫ (НЕ ПОВТОРЯЙ):
+{chr(10).join(previous[-2:]) if previous else "Первый раздел"}
+
+ТРЕБОВАНИЯ:
+- 600-800 символов полезной информации
+- Конкретные примеры из жизни
+- Естественный язык, ориентированный на обычных людей
+- Только новая информация, не повторяющая предыдущие разделы
+
+Напиши текст этого раздела.
+"""
+
+            response = self.client.chat.completions.create(
+                model="gpt-3.5-turbo",
+                messages=[
+                    {
+                        "role": "system", 
+                        "content": f"Ты адаптируешь психологические темы для обычных людей. Пиши конкретно и полезно."
+                    },
+                    {"role": "user", "content": prompt}
+                ],
+                max_tokens=800,
+                temperature=0.7
+            )
+            
+            content = response.choices[0].message.content.strip()
+            return content if len(content) > 300 else ""
+            
+        except Exception as e:
+            logging.error(f"Ошибка генерации раздела: {e}")
+            return ""
+
+    def _select_relevant_facts(self, facts: List[str], section_task: str) -> str:
+        """Выбирает релевантные факты для раздела"""
+        relevant = []
+        task_lower = section_task.lower()
+        
+        for fact in facts:
+            fact_lower = fact.lower()
+            # Подбираем факты по ключевым словам
+            if any(keyword in task_lower for keyword in ['статистик', 'данн', 'исследован', 'научн']):
+                if any(word in fact_lower for word in ['%', 'исследовани', 'учен', 'доказа']):
+                    relevant.append(fact)
+            elif any(keyword in task_lower for keyword in ['практик', 'техник', 'метод', 'упражнен']):
+                if any(word in fact_lower for word in ['техник', 'метод', 'упражнен', 'практик']):
+                    relevant.append(fact)
+            else:
+                relevant.append(fact)  # Для общих разделов берем все
+        
+        return ", ".join(relevant[:2])  # Ограничиваем количеством
+
+    def _select_relevant_truths(self, truths: List[str], section_task: str) -> str:
+        """Выбирает релевантные скрытые аспекты"""
+        relevant = []
+        task_lower = section_task.lower()
+        
+        for truth in truths:
+            truth_lower = truth.lower()
+            # Подбираем по контексту раздела
+            if any(keyword in task_lower for keyword in ['причин', 'механизм', 'глубинн', 'анализ']):
+                if any(word in truth_lower for word in ['причин', 'механизм', 'скрыт', 'на самом']):
+                    relevant.append(truth)
+            elif any(keyword in task_lower for keyword in ['решен', 'совет', 'помощь']):
+                if any(word in truth_lower for word in ['важн', 'нужн', 'следу']):
+                    relevant.append(truth)
+        
+        return ", ".join(relevant[:2])
+
+    def _select_relevant_advice(self, advice: List[str], section_task: str) -> str:
+        """Выбирает релевантные советы"""
+        task_lower = section_task.lower()
+        
+        if any(keyword in task_lower for keyword in ['практик', 'техник', 'метод', 'упражнен', 'решен']):
+            return ", ".join(advice)  # Для практических разделов берем все советы
+        else:
+            return ", ".join(advice[:1])  # Для других - ограничиваем
+
+    def _build_theme_article(self, theme: str, sections: List[str], analysis: Dict) -> str:
+        """Сборка статьи для конкретной темы"""
+        content_parts = [theme, ""]
+        
+        for i, section in enumerate(sections):
+            # Простые заголовки для разделов
+            header = f"ЧАСТЬ {i+1}"
+            content_parts.extend([header, section, ""])
+        
+        return "\n".join(content_parts)
+
+    def _is_unique_content(self, content: str, previous: List[str]) -> bool:
+        """Проверяет уникальность контента"""
+        if not previous:
+            return True
+        
+        # Простая проверка на дублирование
+        content_words = set(content.lower().split())
+        for prev in previous[-2:]:  # Проверяем только последние 2 раздела
+            prev_words = set(prev.lower().split())
+            overlap = len(content_words & prev_words)
+            if overlap > len(content_words) * 0.3:  # Если больше 30% совпадений
+                return False
+        
+        return True
 
     def _generate_article_plan(self, analysis: Dict) -> Optional[Dict]:
         """Генерация плана статьи"""
