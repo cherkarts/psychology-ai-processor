@@ -45,6 +45,15 @@ class ArticleWriter:
     def write_adapted_article(self, analysis: Dict) -> Optional[Dict]:
         """Адаптация ЛЮБОЙ темы с Psychology Today"""
         try:
+            # Сначала пробуем быстрое решение
+            quick_result = self.write_adapted_article_quick(analysis)
+            if quick_result:
+                logging.info("Быстрая генерация успешна")
+                return quick_result
+            
+            # Если быстрое решение не сработало, используем умную адаптацию
+            logging.info("Переходим к умной адаптации")
+            
             # Берем реальную тему из анализа
             theme = analysis['main_theme']
             message = analysis['main_message']
@@ -67,6 +76,54 @@ class ArticleWriter:
                 
         except Exception as e:
             logging.error(f"Ошибка адаптации темы: {e}")
+            return None
+
+    def write_adapted_article_quick(self, analysis: Dict) -> Optional[Dict]:
+        """Быстрое решение - гарантированно 4 раздела"""
+        try:
+            theme = analysis['main_theme']
+            
+            # Генерируем 4 раздела одним запросом с четкими инструкциями
+            prompt = f"""
+Напиши статью на тему "{theme}" объемом 4000-5000 символов.
+
+ОСНОВНАЯ ИДЕЯ: {analysis['main_message']}
+
+СТРОГО СОБЛЮДАЙ СТРУКТУРУ:
+
+ЧАСТЬ 1: ВВЕДЕНИЕ (800-1000 символов)
+- Статистика и масштабы проблемы
+- Актуальность темы
+- {analysis['interesting_facts']}
+
+ЧАСТЬ 2: АНАЛИЗ (800-1000 символов)  
+- Причины и механизмы
+- {analysis['hidden_truths']}
+
+ЧАСТЬ 3: РЕШЕНИЯ (1000-1200 символов)
+- Конкретные техники и упражнения
+- {analysis['practical_advice']}
+
+ЧАСТЬ 4: ВЫВОДЫ (800-1000 символов)
+- Профилактика и рекомендации
+- Когда обращаться за помощью
+
+КАЖДУЮ ЧАСТЬ НАЧИНАЙ С "ЧАСТЬ X:" 
+ПИШИ ПЛОТНЫЙ ИНФОРМАТИВНЫЙ ТЕКСТ БЕЗ ЛИШНИХ СЛОВ.
+"""
+
+            response = self.client.chat.completions.create(
+                model="gpt-3.5-turbo",
+                messages=[{"role": "user", "content": prompt}],
+                max_tokens=3500,
+                temperature=0.7
+            )
+            
+            article_content = response.choices[0].message.content.strip()
+            return self._process_final_article(article_content, analysis, len(article_content))
+            
+        except Exception as e:
+            logging.error(f"Ошибка быстрой генерации: {e}")
             return None
 
     def _analyze_theme_type(self, theme: str) -> str:
