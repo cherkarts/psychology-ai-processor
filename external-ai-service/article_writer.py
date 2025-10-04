@@ -108,8 +108,14 @@ class ArticleWriter:
 - Профилактика и рекомендации
 - Когда обращаться за помощью
 
-КАЖДУЮ ЧАСТЬ НАЧИНАЙ С "ЧАСТЬ X:" 
-ПИШИ ПЛОТНЫЙ ИНФОРМАТИВНЫЙ ТЕКСТ БЕЗ ЛИШНИХ СЛОВ.
+ТРЕБОВАНИЯ К ФОРМАТУ:
+- КАЖДУЮ ЧАСТЬ НАЧИНАЙ С "ЧАСТЬ X:" (например, "ЧАСТЬ 1: ВВЕДЕНИЕ")
+- ПИШИ ПЛОТНЫЙ ИНФОРМАТИВНЫЙ ТЕКСТ БЕЗ ЛИШНИХ СЛОВ
+- ИСПОЛЬЗУЙ ПОДРОБНЫЕ ПРИМЕРЫ И КОНКРЕТНЫЕ ФАКТЫ
+- НЕ ИСПОЛЬЗУЙ HTML ИЛИ MARKDOWN РАЗМЕТКУ
+- ПИШИ НА РУССКОМ ЯЗЫКЕ
+
+Начни сразу с названия темы статьи, а затем следуй структуре выше.
 """
 
             response = self.client.chat.completions.create(
@@ -130,15 +136,15 @@ class ArticleWriter:
         """Определяем тип темы для выбора структуры"""
         theme_lower = theme.lower()
         
-        if any(word in theme_lower for word in ['stress', 'anxiety', 'worry', 'panic']):
+        if any(word in theme_lower for word in ['stress', 'anxiety', 'worry', 'panic', 'тревога', 'стресс']):
             return 'stress_anxiety'
-        elif any(word in theme_lower for word in ['relationship', 'love', 'marriage', 'family']):
+        elif any(word in theme_lower for word in ['relationship', 'love', 'marriage', 'family', 'отношения', 'семья', 'любовь']):
             return 'relationships' 
-        elif any(word in theme_lower for word in ['child', 'parent', 'teen', 'kids']):
+        elif any(word in theme_lower for word in ['child', 'parent', 'teen', 'kids', 'дети', 'ребенок', 'родители']):
             return 'parenting'
-        elif any(word in theme_lower for word in ['depression', 'mental health', 'therapy']):
+        elif any(word in theme_lower for word in ['depression', 'mental health', 'therapy', 'депрессия', 'психическое', 'терапия']):
             return 'mental_health'
-        elif any(word in theme_lower for word in ['happiness', 'success', 'motivation', 'goal']):
+        elif any(word in theme_lower for word in ['happiness', 'success', 'motivation', 'goal', 'счастье', 'успех', 'мотивация']):
             return 'self_improvement'
         else:
             return 'general'
@@ -491,10 +497,14 @@ class ArticleWriter:
                 
             # Заголовки разделов (прописные)
             if line.isupper() and len(line) < 100:
-                if 'ВВЕДЕНИЕ' in line:
+                if 'ВВЕДЕНИЕ' in line or 'ЧАСТЬ 1:' in line:
                     html_parts.append('<h2>Введение</h2>')
-                elif 'ЗАКЛЮЧЕНИЕ' in line:
+                elif 'ЗАКЛЮЧЕНИЕ' in line or 'ВЫВОДЫ' in line or 'ЧАСТЬ 4:' in line:
                     html_parts.append('<h2>Заключение</h2>')
+                elif 'АНАЛИЗ' in line or 'ЧАСТЬ 2:' in line:
+                    html_parts.append('<h2>Анализ</h2>')
+                elif 'РЕШЕНИЯ' in line or 'ЧАСТЬ 3:' in line:
+                    html_parts.append('<h2>Решения</h2>')
                 elif line.startswith('РАЗДЕЛ'):
                     html_parts.append(f'<h2>Часть {line.replace("РАЗДЕЛ", "").strip()}</h2>')
                 else:
@@ -513,7 +523,7 @@ class ArticleWriter:
     def _build_writing_prompt(self, analysis: Dict) -> str:
         """Финальный промпт с четкими указаниями"""
         return f"""
-НАПИШИ ДЛИННУЮ СТАТЬЮ НА ТЕМУ: "{analysis['main_theme']}"
+НАПИШИ ДЛИННЮЮ СТАТЬЮ НА ТЕМУ: "{analysis['main_theme']}"
 
 ОСНОВНАЯ ИДЕЯ: {analysis['main_message']}
 
@@ -649,7 +659,7 @@ class ArticleWriter:
 <h2>Заключение</h2>
 <p>Заключительные абзацы</p>
 """
-            
+
             # Выбираем модель
             model_to_use = self._select_model_for_topic(analysis.get('theme', ''))
             
@@ -683,7 +693,7 @@ class ArticleWriter:
         except Exception as e:
             logging.error(f"Ошибка при перегенерации статьи: {e}")
             return None
-    
+
     def _expand_content(self, content: str, analysis: Dict) -> str:
         """Принудительно расширить контент статьи"""
         try:
@@ -912,6 +922,20 @@ class ArticleWriter:
         """Извлечь заголовок из текста"""
         # Берем первую строку как заголовок
         first_line = content.split('\n')[0].strip()
+        
+        # Если первая строка это "ЧАСТЬ 1: ВВЕДЕНИЕ", то пытаемся извлечь тему из нее
+        if "ЧАСТЬ 1:" in first_line.upper():
+            # Ищем реальную тему в содержании
+            lines = content.split('\n')
+            for line in lines:
+                line = line.strip()
+                # Пропускаем служебные строки
+                if not line or line.upper().startswith("ЧАСТЬ"):
+                    continue
+                # Берем первую содержательную строку как тему
+                if len(line) > 10 and len(line) < 100:
+                    return line
+        
         if len(first_line) < 100:  # Разумная длина для заголовка
             return first_line
         return "Психологическая статья"
