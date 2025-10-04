@@ -43,21 +43,215 @@ class ArticleWriter:
         return self.writing_model
         
     def write_adapted_article(self, analysis: Dict) -> Optional[Dict]:
-        """Написать адаптированную статью"""
+        """Генерация статьи по частям с учетом лимита токенов"""
         try:
-            # Сначала пробуем обычный промпт
-            article = self._try_generate_article(analysis)
-            if article:
-                return article
+            # Генерируем план статьи
+            plan = self._generate_article_plan(analysis)
+            if not plan:
+                return None
             
-            # Если не получилось - принудительная генерация
-            logging.info("Обычная генерация не удалась, используем принудительную")
-            return self._force_long_article(analysis)
+            # Генерируем разделы по отдельности
+            sections = []
+            total_length = 0
             
+            for i, section_title in enumerate(plan['sections']):
+                section_content = self._generate_section(analysis, section_title, i)
+                if section_content:
+                    sections.append(section_content)
+                    total_length += len(section_content)
+                    logging.info(f"Раздел {i+1} создан: {len(section_content)} символов")
+                
+                # Останавливаемся если достигли нужной длины
+                if total_length >= 5000:
+                    break
+            
+            # Объединяем все части
+            full_content = self._combine_sections(analysis, sections)
+            
+            return self._process_final_article(full_content, analysis, total_length)
+                
         except Exception as e:
             logging.error(f"Ошибка при написании статьи: {e}")
             return None
-    
+
+    def _generate_article_plan(self, analysis: Dict) -> Optional[Dict]:
+        """Генерация плана статьи"""
+        try:
+            plan_prompt = f"""
+Создай детальный план для статьи на тему: "{analysis['main_theme']}"
+
+Основная идея: {analysis['main_message']}
+
+Требования к плану:
+- 4-5 основных разделов
+- Каждый раздел должен быть самодостаточным
+- План должен позволять писать каждый раздел отдельно
+- Учитывай лимит в 3000 символов на раздел
+
+Формат ответа (только названия разделов):
+1. Введение и актуальность темы
+2. [Название второго раздела]
+3. [Название третьего раздела]
+4. [Название четвертого раздела] 
+5. Заключение и основные выводы
+"""
+
+            response = self.client.chat.completions.create(
+                model="gpt-3.5-turbo",
+                messages=[
+                    {
+                        "role": "system", 
+                        "content": "Ты создаешь структурированные планы для статей."
+                    },
+                    {"role": "user", "content": plan_prompt}
+                ],
+                max_tokens=800,
+                temperature=0.7
+            )
+            
+            plan_text = response.choices[0].message.content.strip()
+            
+            # Извлекаем разделы из плана
+            sections = []
+            for line in plan_text.split('\n'):
+                line = line.strip()
+                if re.match(r'^\d+\.', line):
+                    section_title = re.sub(r'^\d+\.\s*', '', line)
+                    sections.append(section_title)
+            
+            return {'sections': sections[:5]}  # Ограничиваем 5 разделами
+            
+        except Exception as e:
+            logging.error(f"Ошибка генерации плана: {e}")
+            return None
+
+    def _generate_section(self, analysis: Dict, section_title: str, section_index: int) -> str:
+        """Генерация одного раздела"""
+        try:
+            section_prompt = f"""
+Напиши раздел статьи на тему: "{analysis['main_theme']}"
+
+РАЗДЕЛ: {section_title}
+ОСНОВНАЯ ИДЕЯ СТАТЬИ: {analysis['main_message']}
+
+ТРЕБОВАНИЯ К РАЗДЕЛУ:
+- Объем: 800-1200 символов
+- Самодостаточный текст
+- Конкретные примеры и факты
+- Практические советы если уместно
+- Естественный переход к следующему разделу
+
+ДОПОЛНИТЕЛЬНАЯ ИНФОРМАЦИЯ:
+{analysis['interesting_facts']}
+{analysis['hidden_truths']}
+
+Пиши плотный, информативный текст. Не используй разметку.
+"""
+
+            response = self.client.chat.completions.create(
+                model="gpt-3.5-turbo",
+                messages=[
+                    {
+                        "role": "system", 
+                        "content": "Ты пишешь информативные разделы статей. Каждый раздел должен быть ценным сам по себе."
+                    },
+                    {"role": "user", "content": section_prompt}
+                ],
+                max_tokens=1200,  # ~900 символов
+                temperature=0.8
+            )
+            
+            return response.choices[0].message.content.strip()
+            
+        except Exception as e:
+            logging.error(f"Ошибка генерации раздела {section_title}: {e}")
+            return ""
+
+    def _combine_sections(self, analysis: Dict, sections: List[str]) -> str:
+        """Объединение разделов в единую статью"""
+        if not sections:
+            return ""
+        
+        # Создаем заголовок
+        title = analysis['main_theme']
+        
+        # Объединяем разделы
+        full_content = f"{title}\n\n"
+        
+        for i, section in enumerate(sections):
+            if i == 0:
+                full_content += f"ВВЕДЕНИЕ\n{section}\n\n"
+            elif i == len(sections) - 1:
+                full_content += f"ЗАКЛЮЧЕНИЕ\n{section}\n\n"
+            else:
+                full_content += f"РАЗДЕЛ {i}\n{section}\n\n"
+        
+        return full_content
+
+    def _process_final_article(self, content: str, analysis: Dict, length: int) -> Dict:
+        """Финальная обработка статьи"""
+        try:
+            # Преобразуем в HTML
+            html_content = self._convert_to_simple_html(content)
+            
+            title = self._extract_title_from_text(content)
+            
+            return {
+                'title': title,
+                'content': html_content,
+                'excerpt': self._generate_excerpt(content),
+                'meta_title': title,
+                'meta_description': self._generate_meta_description(content),
+                'category': self._determine_category(analysis),
+                'tags': self._generate_tags(analysis, content),
+                'faq': [],
+                'word_count': length,
+                'original_analysis': analysis
+            }
+            
+        except Exception as e:
+            logging.error(f"Ошибка финальной обработки: {e}")
+            return None
+
+    def _convert_to_simple_html(self, content: str) -> str:
+        """Простое преобразование в HTML"""
+        lines = content.split('\n')
+        html_parts = []
+        
+        i = 0
+        while i < len(lines):
+            line = lines[i].strip()
+            if not line:
+                i += 1
+                continue
+                
+            # Заголовок статьи
+            if i == 0:
+                html_parts.append(f'<h1>{line}</h1>')
+                i += 1
+                continue
+                
+            # Заголовки разделов (прописные)
+            if line.isupper() and len(line) < 100:
+                if 'ВВЕДЕНИЕ' in line:
+                    html_parts.append('<h2>Введение</h2>')
+                elif 'ЗАКЛЮЧЕНИЕ' in line:
+                    html_parts.append('<h2>Заключение</h2>')
+                elif line.startswith('РАЗДЕЛ'):
+                    html_parts.append(f'<h2>Часть {line.replace("РАЗДЕЛ", "").strip()}</h2>')
+                else:
+                    html_parts.append(f'<h2>{line.title()}</h2>')
+                i += 1
+                continue
+                
+            # Обычный текст
+            if line and not line.isupper():
+                html_parts.append(f'<p>{line}</p>')
+                
+            i += 1
+        
+        return '\n'.join(html_parts)
+
     def _build_writing_prompt(self, analysis: Dict) -> str:
         """Финальный промпт с четкими указаниями"""
         return f"""
