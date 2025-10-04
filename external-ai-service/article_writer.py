@@ -286,13 +286,26 @@ class ArticleWriter:
             formatted_content = formatted_content.replace('Часто задаваемые вопросы', '<h2>Часто задаваемые вопросы</h2>')
             
             # Исправляем форматирование списков
-            # Заменяем нумерованные списки на маркерованные
             import re
-            # Находим нумерованные списки и заменяем на маркерованные
-            formatted_content = re.sub(r'(\d+)\.\s*\*\*(.*?)\*\*\s*(.*?)(?=\d+\.|$)', r'<li><strong>\2</strong> \3</li>', formatted_content, flags=re.DOTALL)
+            
+            # Заменяем нумерованные списки на маркерованные с правильным форматированием
+            # Паттерн для поиска: 1. **Заголовок:** Текст
+            formatted_content = re.sub(
+                r'(\d+)\.\s*\*\*(.*?)\*\*:\s*(.*?)(?=\d+\.|$)',
+                r'<li><strong>\2:</strong> \3</li>',
+                formatted_content,
+                flags=re.DOTALL
+            )
+            
+            # Также обрабатываем случаи без двоеточия
+            formatted_content = re.sub(
+                r'(\d+)\.\s*\*\*(.*?)\*\*\s+(.*?)(?=\d+\.|$)',
+                r'<li><strong>\2:</strong> \3</li>',
+                formatted_content,
+                flags=re.DOTALL
+            )
             
             # Оборачиваем списки в <ul> теги
-            # Находим последовательности <li> и оборачиваем в <ul>
             li_pattern = r'(<li>.*?</li>(?:\s*<li>.*?</li>)*)'
             formatted_content = re.sub(li_pattern, r'<ul>\1</ul>', formatted_content, flags=re.DOTALL)
             
@@ -339,6 +352,12 @@ class ArticleWriter:
             
             # Добавляем описание в начало статьи
             formatted_content = description + formatted_content
+            
+            # Добавляем заголовок статьи в начало, если его нет
+            if not formatted_content.startswith('<h1>'):
+                # Извлекаем заголовок из анализа или создаем по умолчанию
+                article_title = title if title and title != "Психологическая статья" else "Стресс и тревога в современном мире"
+                formatted_content = f'<h1>{article_title}</h1>\n\n' + formatted_content
             
             return {
                 'content': formatted_content,
@@ -1197,24 +1216,23 @@ class ArticleWriter:
             if match:
                 return match.group(1)
         
-        # Берем первую строку как заголовок, если она разумной длины
-        first_line = clean_content.split('\n')[0].strip()
+        # Ищем заголовок в начале статьи (первая строка после очистки)
+        lines = clean_content.split('\n')
+        for line in lines:
+            line = line.strip()
+            # Пропускаем пустые строки и служебные элементы
+            if not line or line.startswith('**') or line.startswith('Размер текста') or line.startswith('A-'):
+                continue
+            # Если строка разумной длины и не начинается с заглавных букв разделов
+            if (len(line) > 10 and len(line) < 150 and 
+                not line.startswith('Введение') and 
+                not line.startswith('Анализ') and
+                not line.startswith('Практические') and
+                not line.startswith('Профилактика') and
+                not line.startswith('Часто задаваемые')):
+                return line
         
-        # Если первая строка это "ЧАСТЬ 1: ВВЕДЕНИЕ", то пытаемся извлечь тему из нее
-        if "ЧАСТЬ 1:" in first_line.upper():
-            # Ищем реальную тему в содержании
-            lines = clean_content.split('\n')
-            for line in lines:
-                line = line.strip()
-                # Пропускаем служебные строки
-                if not line or line.upper().startswith("ЧАСТЬ"):
-                    continue
-                # Берем первую содержательную строку как тему
-                if len(line) > 10 and len(line) < 100:
-                    return line
-        
-        if len(first_line) < 100:  # Разумная длина для заголовка
-            return first_line
+        # Если ничего не найдено, возвращаем заголовок по умолчанию
         return "Психологическая статья"
 
     def _convert_to_html(self, content: str) -> str:
