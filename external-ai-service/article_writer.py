@@ -43,126 +43,112 @@ class ArticleWriter:
         return self.writing_model
         
     def write_adapted_article(self, analysis: Dict) -> Optional[Dict]:
-        """Написать адаптированную статью на основе анализа"""
+        """Написать адаптированную статью"""
         try:
-            prompt = self._build_writing_prompt(analysis)
+            # Сначала пробуем обычный промпт
+            article = self._try_generate_article(analysis)
+            if article:
+                return article
             
-            # Выбираем модель в зависимости от сложности темы
-            model_to_use = self._select_model_for_topic(analysis.get('theme', ''))
-            
-            logging.info(f"Используем модель: {model_to_use} для темы: {analysis.get('theme', '')}")
-            
-            response = self.client.chat.completions.create(
-                model=model_to_use,
-                messages=[
-                    {
-                        "role": "system", 
-                        "content": """Ты пишешь ЦЕЛЬНЫЕ психологические статьи. 
-Важно: одна тема = одна статья, без повторений. 
-Используй естественные примеры, говори как опытный психолог с обычными людьми."""
-                    },
-                    {"role": "user", "content": prompt}
-                ],
-                max_tokens=4000,
-                temperature=0.7,  # Снижаем температуру для более структурированного ответа
-                top_p=0.9
-            )
-            
-            article_content = response.choices[0].message.content.strip()
-            
-            # ВАЖНО: Проверяем структуру перед обработкой
-            if not self._validate_article_structure(article_content):
-                logging.warning("Статья содержит дубликаты, перегенерируем...")
-                return self._regenerate_article_with_strict_rules(analysis)
-            
-            if not self._check_content_duplication(article_content):
-                logging.warning("Найдены дублирующиеся параграфы, перегенерируем...")
-                return self._regenerate_article_with_strict_rules(analysis)
-            
-            return self._process_article_content(article_content, analysis)
+            # Если не получилось - принудительная генерация
+            logging.info("Обычная генерация не удалась, используем принудительную")
+            return self._force_long_article(analysis)
             
         except Exception as e:
             logging.error(f"Ошибка при написании статьи: {e}")
             return None
     
     def _build_writing_prompt(self, analysis: Dict) -> str:
-        """Построить промпт для написания ЦЕЛЬНОЙ статьи"""
+        """Упрощенный промпт без HTML"""
         return f"""
-НАПИШИ ОЧЕНЬ ДЛИННУЮ СТАТЬЮ на тему: "{analysis['main_theme']}"
+ТЕМА: {analysis['main_theme']}
+ОСНОВНАЯ ИДЕЯ: {analysis['main_message']}
 
-Основная идея: {analysis['main_message']}
+НАПИШИ ОЧЕНЬ ДЛИННУЮ И ДЕТАЛЬНУЮ СТАТЬЮ.
 
-ТРЕБОВАНИЕ: МИНИМУМ 6000 символов! 
+ТРЕБОВАНИЯ К ОБЪЕМУ:
+- АБСОЛЮТНЫЙ МИНИМУМ: 6000 символов
+- ИДЕАЛЬНЫЙ ОБЪЕМ: 8000-10000 символов
+- ЕСЛИ СТАТЬЯ БУДЕТ КОРОЧЕ 6000 СИМВОЛОВ - ОНА БУДЕТ ОТКЛОНЕНА
 
-Пиши максимально подробно:
-- Каждый раздел 3-4 абзаца
-- Каждый абзац 5-7 предложений  
-- Много примеров из жизни
-- Детальные практические советы
+РАЗДЕЛЫ СТАТЬИ (пиши каждый раздел очень подробно):
 
-Структура:
-<h1>Заголовок</h1>
-<h2>Введение</h2>
-[3-4 абзаца]
-<h2>Анализ проблемы</h2>  
-[4-5 абзацев]
-<h2>Решения</h2>
-[5-6 абзацев]
-<h2>Вопросы-ответы</h2>
-[3-4 вопроса]
-<h2>Заключение</h2>
-[2-3 абзаца]
+1. ВВЕДЕНИЕ (3-4 абзаца по 5-7 предложений каждый)
+   - Начни с реальной жизненной ситуации
+   - Объясни, почему эта тема важна
+   - Опиши масштаб проблемы
 
-НЕ ЭКОНОМЬ НА СЛОВАХ! ПИШИ ОЧЕНЬ ПОДРОБНО!
+2. ГЛУБОКИЙ АНАЛИЗ ПРОБЛЕМЫ (4-5 развернутых абзацев)
+   - Детально разбери причины и механизмы
+   - Используй факты: {analysis['interesting_facts']}
+   - Раскрой скрытые аспекты: {analysis['hidden_truths']}
+
+3. ПРАКТИЧЕСКИЕ РЕШЕНИЯ (5-6 очень подробных абзацев)
+   - Подробно опиши каждый совет: {analysis['practical_advice']}
+   - Для каждой техники дай пошаговую инструкцию
+   - Добавь конкретные примеры применения
+
+4. ЧАСТО ЗАДАВАЕМЫЕ ВОПРОСЫ (3-4 вопроса с развернутыми ответами)
+   - Каждый ответ должен содержать 2-3 абзаца
+
+5. ЗАКЛЮЧЕНИЕ (2-3 мотивирующих абзаца)
+   - Подведи итоги
+   - Дай напутствие
+
+КОНКРЕТНЫЕ УКАЗАНИЯ ПО ОБЪЕМУ:
+- Каждый абзац = 5-7 предложений
+- Каждое предложение = 10-15 слов
+- Не используй маркированные списки - только сплошной текст
+- Пиши максимально развернуто и подробно
+
+ПРИМЕР ПРАВИЛЬНОГО АБЗАЦА:
+"Когда мы говорим о проблемах в отношениях, важно понимать, что они редко возникают на пустом месте, а обычно являются следствием глубоких эмоциональных процессов, которые развивались месяцами или даже годами. Многие пары ошибочно полагают, что достаточно просто помириться после ссоры, но на самом деле настоящая работа начинается тогда, когда мы пытаемся понять коренные причины конфликтов. Эти причины часто связаны с неудовлетворенными потребностями в безопасности, принятии и уважении, которые каждый партнер приносит из своего прошлого опыта. Без осознания этих глубинных механизмов любые попытки наладить отношения будут лишь временным решением, не затрагивающим суть проблемы."
+
+НАЧНИ С ЗАГОЛОВКА СТАТЬИ И ПИШИ СПЛОШНЫМ ТЕКСТОМ БЕЗ HTML-РАЗМЕТКИ!
 """
     
     def _process_article_content(self, content: str, analysis: Dict) -> Dict:
-        """Обработать написанную статью"""
+        """Обработка статьи без HTML"""
         try:
-            # Извлекаем заголовок
-            title = self._extract_title(content)
-            
             # Очищаем контент
-            cleaned_content = self._clean_html_content(content)
+            cleaned_content = self._clean_plain_content(content)
             
-            # Проверяем минимальную длину
-            content_length = len(cleaned_content.replace(' ', ''))
+            # ПРОВЕРКА ДЛИНЫ
+            content_length = len(cleaned_content)
+            logging.info(f"Длина статьи: {content_length} символов")
+            
+            # Если статья короткая - немедленно перегенерируем
             if content_length < 6000:
-                logging.warning(f"Статья слишком короткая: {content_length} символов (минимум 6000)")
-                # Перегенерируем с более строгими правилами
-                return self._regenerate_article_with_strict_rules(analysis)
+                logging.warning(f"Статья слишком короткая: {content_length} символов")
+                return self._force_long_article(analysis)
+            
+            # Проверяем структуру
+            if not self._validate_article_structure(cleaned_content):
+                logging.warning("Проблемы со структурой статьи")
+                return self._force_long_article(analysis)
             
             # Генерируем метаданные
+            title = self._extract_title_from_text(cleaned_content)
             meta_title = self._generate_meta_title(title, analysis)
             meta_description = self._generate_meta_description(cleaned_content)
             excerpt = self._generate_excerpt(cleaned_content)
             
-            # Определяем категорию
+            # Определяем категорию и теги
             category = self._determine_category(analysis)
-            
-            # Генерируем теги
             tags = self._generate_tags(analysis, cleaned_content)
             
-            # Создаем FAQ
-            faq = self._generate_faq(analysis, cleaned_content)
-            
-            # Принудительно расширяем контент если он все еще короткий
-            if content_length < 7000:
-                cleaned_content = self._expand_content(cleaned_content, analysis)
-                content_length = len(cleaned_content.replace(' ', ''))
-                logging.info(f"Контент расширен: {content_length} символов")
-            else:
-                logging.info(f"Статья создана: {content_length} символов")
+            # Преобразуем в HTML (добавляем разметку постфактум)
+            html_content = self._convert_to_html(cleaned_content)
             
             return {
                 'title': title,
-                'content': cleaned_content,
+                'content': html_content,
                 'excerpt': excerpt,
                 'meta_title': meta_title,
                 'meta_description': meta_description,
                 'category': category,
                 'tags': tags,
-                'faq': faq,
+                'faq': [],
                 'word_count': content_length,
                 'original_analysis': analysis
             }
@@ -319,41 +305,170 @@ class ArticleWriter:
             return content
     
     def _validate_article_structure(self, content: str) -> bool:
-        """Проверить, что статья цельная без дубликатов"""
-        # Ищем дублирующиеся разделы
-        sections = re.findall(r'<h[12][^>]*>(.*?)</h[12]>', content, re.IGNORECASE | re.DOTALL)
+        """Упрощенная проверка структуры"""
+        # Считаем абзацы (разделы по пустым строкам)
+        paragraphs = [p for p in content.split('\n\n') if p.strip()]
         
-        # Проверяем на повторяющиеся заголовки
-        unique_sections = set()
-        for section in sections:
-            clean_section = re.sub(r'<[^>]+>', '', section).strip().lower()
-            if clean_section in unique_sections:
-                logging.warning(f"Найден дублирующийся раздел: {clean_section}")
-                return False
-            unique_sections.add(clean_section)
+        # Минимум 8 абзацев для длинной статьи
+        if len(paragraphs) < 8:
+            logging.warning(f"Слишком мало абзацев: {len(paragraphs)}")
+            return False
         
-        # Проверяем минимальное количество разделов
-        if len(unique_sections) < 4:
-            logging.warning(f"Слишком мало разделов: {len(unique_sections)}")
+        # Проверяем длину
+        if len(content) < 6000:
+            logging.warning(f"Статья слишком короткая: {len(content)} символов")
             return False
         
         return True
 
     def _check_content_duplication(self, content: str) -> bool:
-        """Проверить контент на дублирование абзацев"""
-        paragraphs = re.findall(r'<p[^>]*>(.*?)</p>', content, re.IGNORECASE | re.DOTALL)
+        """Упрощенная проверка на дублирование"""
+        paragraphs = [p for p in content.split('\n\n') if p.strip()]
         
-        # Проверяем уникальность первых 100 символов каждого параграфа
+        # Проверяем первые 100 символов каждого абзаца на уникальность
         paragraph_starts = set()
         for p in paragraphs:
-            clean_p = re.sub(r'<[^>]+>', '', p).strip()[:100]
-            if clean_p and len(clean_p) > 20:  # Игнорируем очень короткие параграфы
-                if clean_p in paragraph_starts:
-                    logging.warning("Найдены дублирующиеся параграфы")
+            start = p[:100].strip()
+            if len(start) > 30:  # Игнорируем очень короткие
+                if start in paragraph_starts:
+                    logging.warning("Найдены дублирующиеся абзацы")
                     return False
-                paragraph_starts.add(clean_p)
+                paragraph_starts.add(start)
         
         return True
+
+    def _clean_plain_content(self, content: str) -> str:
+        """Очистка простого текста"""
+        # Убираем ```markdown и подобное
+        content = re.sub(r'^```[a-z]*\s*', '', content, flags=re.MULTILINE)
+        content = re.sub(r'^```\s*$', '', content, flags=re.MULTILINE)
+        
+        # Убираем лишние пробелы
+        content = re.sub(r' +', ' ', content)
+        content = re.sub(r'\n\s*\n', '\n\n', content)
+        
+        return content.strip()
+
+    def _extract_title_from_text(self, content: str) -> str:
+        """Извлечь заголовок из текста"""
+        # Берем первую строку как заголовок
+        first_line = content.split('\n')[0].strip()
+        if len(first_line) < 100:  # Разумная длина для заголовка
+            return first_line
+        return "Психологическая статья"
+
+    def _convert_to_html(self, content: str) -> str:
+        """Преобразовать простой текст в HTML"""
+        paragraphs = [p for p in content.split('\n\n') if p.strip()]
+        
+        if not paragraphs:
+            return "<p>" + content + "</p>"
+        
+        html_parts = []
+        
+        # Первый параграф - заголовок
+        if paragraphs:
+            html_parts.append(f"<h1>{paragraphs[0]}</h1>")
+        
+        # Остальные параграфы
+        for i, paragraph in enumerate(paragraphs[1:], 1):
+            if i == 1:
+                html_parts.append(f"<h2>Введение</h2>")
+            elif i == len(paragraphs) - 1:
+                html_parts.append(f"<h2>Заключение</h2>")
+            
+            html_parts.append(f"<p>{paragraph}</p>")
+        
+        return '\n\n'.join(html_parts)
+
+    def _force_long_article(self, analysis: Dict) -> Dict:
+        """Принудительно генерируем длинную статью"""
+        try:
+            logging.info("ПРИНУДИТЕЛЬНАЯ генерация длинной статьи")
+            
+            force_prompt = f"""
+ТЕМА: {analysis['main_theme']}
+ИДЕЯ: {analysis['main_message']}
+
+ТЫ ДОЛЖЕН НАПИСАТЬ ОЧЕНЬ ДЛИННУЮ СТАТЬЮ!
+
+ТРЕБОВАНИЕ: АБСОЛЮТНЫЙ МИНИМУМ 7000 СИМВОЛОВ!
+
+РАСПИШИ КАЖДУЮ МЫСЛЬ МАКСИМАЛЬНО ПОДРОБНО:
+
+1. ВВЕДЕНИЕ (4 абзаца по 7-8 предложений)
+   - Начни с детального описания реальной ситуации
+   - Объясни почему эта проблема актуальна для многих людей
+   - Опиши эмоциональные переживания человека
+   - Расскажи о масштабах проблемы в современном обществе
+
+2. АНАЛИЗ (6 абзацев по 6-8 предложений)  
+   - Детально разбери психологические механизмы
+   - Используй научные факты: {analysis['interesting_facts']}
+   - Раскрой скрытые аспекты: {analysis['hidden_truths']}
+   - Объясни почему проблема возникает
+   - Опиши как она развивается со временем
+   - Расскажи о последствиях без решения
+
+3. РЕШЕНИЯ (8 абзацев по 5-7 предложений)
+   - Подробно опиши каждый совет: {analysis['practical_advice']}
+   - Для каждой техники дай пошаговое руководство
+   - Добавь конкретные примеры из разных жизненных ситуаций
+   - Объясни почему каждый метод работает
+   - Предупреди о возможных трудностях
+   - Дай советы по преодолению сопротивления
+   - Расскажи как отслеживать прогресс
+   - Объясни когда нужно обращаться к специалисту
+
+4. ВОПРОСЫ-ОТВЕТЫ (4 развернутых ответа по 2-3 абзаца каждый)
+
+5. ЗАКЛЮЧЕНИЕ (3 мотивирующих абзаца по 6-7 предложений)
+
+НЕ ЭКОНОМЬ НА СЛОВАХ! ПИШИ МАКСИМАЛЬНО РАЗВЕРНУТО!
+КАЖДОЕ ПРЕДЛОЖЕНИЕ ДОЛЖНО БЫТЬ ИНФОРМАТИВНЫМ И ПОЛНЫМ!
+
+НАЧНИ С ЗАГОЛОВКА И ПИШИ СПЛОШНЫМ ТЕКСТОМ!
+"""
+
+            response = self.client.chat.completions.create(
+                model="gpt-3.5-turbo",
+                messages=[
+                    {
+                        "role": "system", 
+                        "content": "Ты пишешь ОЧЕНЬ ДЛИННЫЕ статьи. Твоя единственная задача - объем и детализация. Не экономь на словах!"
+                    },
+                    {"role": "user", "content": force_prompt}
+                ],
+                max_tokens=8000,
+                temperature=0.9
+            )
+            
+            article_content = response.choices[0].message.content.strip()
+            return self._process_article_content(article_content, analysis)
+            
+        except Exception as e:
+            logging.error(f"Ошибка при принудительной генерации: {e}")
+            return None
+
+    def _try_generate_article(self, analysis: Dict) -> Optional[Dict]:
+        """Попытка обычной генерации"""
+        prompt = self._build_writing_prompt(analysis)
+        
+        response = self.client.chat.completions.create(
+            model="gpt-3.5-turbo",
+            messages=[
+                {
+                    "role": "system", 
+                    "content": "Ты пишешь длинные, детальные психологические статьи. Главное - объем и полезность."
+                },
+                {"role": "user", "content": prompt}
+            ],
+            max_tokens=7000,
+            temperature=0.8
+        )
+        
+        article_content = response.choices[0].message.content.strip()
+        return self._process_article_content(article_content, analysis)
 
     def _regenerate_article_with_strict_rules(self, analysis: Dict) -> Dict:
         """Перегенерировать статью с более строгими правилами"""
