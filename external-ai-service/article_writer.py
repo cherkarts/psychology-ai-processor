@@ -305,6 +305,22 @@ class ArticleWriter:
                 flags=re.DOTALL
             )
             
+            # Обрабатываем случаи с дефисом в начале: - **Заголовок:** Текст
+            formatted_content = re.sub(
+                r'-\s*\*\*(.*?)\*\*:\s*(.*?)(?=-\s*\*\*|$)',
+                r'<li><strong>\1:</strong> \2</li>',
+                formatted_content,
+                flags=re.DOTALL
+            )
+            
+            # Обрабатываем случаи с дефисом без двоеточия: - **Заголовок** Текст
+            formatted_content = re.sub(
+                r'-\s*\*\*(.*?)\*\*\s+(.*?)(?=-\s*\*\*|$)',
+                r'<li><strong>\1:</strong> \2</li>',
+                formatted_content,
+                flags=re.DOTALL
+            )
+            
             # Оборачиваем списки в <ul> теги
             li_pattern = r'(<li>.*?</li>(?:\s*<li>.*?</li>)*)'
             formatted_content = re.sub(li_pattern, r'<ul>\1</ul>', formatted_content, flags=re.DOTALL)
@@ -325,7 +341,7 @@ class ArticleWriter:
             formatted_content = '\n'.join(lines)
             
             # Создаем короткое описание (до 150 символов)
-            # Берем первые предложения из введения, НЕ включая название
+            # Берем первые предложения из введения, НЕ включая название и слово "Введение"
             intro_start = formatted_content.find('<h2>Введение</h2>')
             if intro_start != -1:
                 intro_text = formatted_content[intro_start + len('<h2>Введение</h2>'):]
@@ -333,12 +349,16 @@ class ArticleWriter:
                 first_paragraph = intro_text.split('\n')[0].strip()
                 # Убираем HTML теги для короткого описания
                 clean_text = re.sub(r'<[^>]+>', '', first_paragraph)
+                # Убираем слово "Введение" из начала
+                clean_text = re.sub(r'^Введение\s*', '', clean_text, flags=re.IGNORECASE)
                 short_description = clean_text[:150]
                 if len(clean_text) > 150:
                     short_description = short_description.rsplit(' ', 1)[0] + '...'
             else:
                 # Если нет введения, берем из начала статьи
                 clean_text = re.sub(r'<[^>]+>', '', formatted_content)
+                # Убираем слово "Введение" из начала
+                clean_text = re.sub(r'^Введение\s*', '', clean_text, flags=re.IGNORECASE)
                 short_description = clean_text[:150]
                 if len(clean_text) > 150:
                     short_description = short_description.rsplit(' ', 1)[0] + '...'
@@ -1230,6 +1250,9 @@ class ArticleWriter:
                 not line.startswith('Практические') and
                 not line.startswith('Профилактика') and
                 not line.startswith('Часто задаваемые')):
+                # Исправляем "бой или беги" на "Бей или беги"
+                if 'бой или беги' in line.lower():
+                    line = line.replace('бой или беги', 'Бей или беги')
                 return line
         
         # Если ничего не найдено, возвращаем заголовок по умолчанию
