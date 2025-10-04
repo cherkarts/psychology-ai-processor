@@ -59,102 +59,94 @@ class ArticleWriter:
             return None
     
     def _build_writing_prompt(self, analysis: Dict) -> str:
-        """Упрощенный промпт без HTML"""
+        """Финальный промпт с четкими указаниями"""
         return f"""
-ТЕМА: {analysis['main_theme']}
+НАПИШИ ДЛИННУЮ СТАТЬЮ НА ТЕМУ: "{analysis['main_theme']}"
+
 ОСНОВНАЯ ИДЕЯ: {analysis['main_message']}
 
-НАПИШИ ОЧЕНЬ ДЛИННУЮ И ДЕТАЛЬНУЮ СТАТЬЮ.
+ТРЕБОВАНИЯ:
+- ОБЪЕМ: МИНИМУМ 6000 символов
+- ФОРМАТ: ЧИСТЫЙ ТЕКСТ БЕЗ РАЗМЕТКИ
+- СТИЛЬ: Естественный, как будто пишешь для блога
 
-ТРЕБОВАНИЯ К ОБЪЕМУ:
-- АБСОЛЮТНЫЙ МИНИМУМ: 6000 символов
-- ИДЕАЛЬНЫЙ ОБЪЕМ: 8000-10000 символов
-- ЕСЛИ СТАТЬЯ БУДЕТ КОРОЧЕ 6000 СИМВОЛОВ - ОНА БУДЕТ ОТКЛОНЕНА
+СТРУКТУРА (соблюдай точно):
 
-РАЗДЕЛЫ СТАТЬИ (пиши каждый раздел очень подробно):
+ЗАГОЛОВОК СТАТЬИ
+(пустая строка)
 
-1. ВВЕДЕНИЕ (3-4 абзаца по 5-7 предложений каждый)
-   - Начни с реальной жизненной ситуации
-   - Объясни, почему эта тема важна
-   - Опиши масштаб проблемы
+ВВЕДЕНИЕ
+(3-4 абзаца о важности темы, начни с реальной жизненной ситуации)
 
-2. ГЛУБОКИЙ АНАЛИЗ ПРОБЛЕМЫ (4-5 развернутых абзацев)
-   - Детально разбери причины и механизмы
-   - Используй факты: {analysis['interesting_facts']}
-   - Раскрой скрытые аспекты: {analysis['hidden_truths']}
+ПРОБЛЕМА И АНАЛИЗ  
+(4-5 абзацев, глубокий разбор причин и механизмов)
 
-3. ПРАКТИЧЕСКИЕ РЕШЕНИЯ (5-6 очень подробных абзацев)
-   - Подробно опиши каждый совет: {analysis['practical_advice']}
-   - Для каждой техники дай пошаговую инструкцию
-   - Добавь конкретные примеры применения
+ПРАКТИЧЕСКИЕ РЕШЕНИЯ
+(5-6 абзацев с конкретными техниками и примерами)
 
-4. ЧАСТО ЗАДАВАЕМЫЕ ВОПРОСЫ (3-4 вопроса с развернутыми ответами)
-   - Каждый ответ должен содержать 2-3 абзаца
+ЧАСТЫЕ ВОПРОСЫ
+(3-4 вопроса с развернутыми ответами)
 
-5. ЗАКЛЮЧЕНИЕ (2-3 мотивирующих абзаца)
-   - Подведи итоги
-   - Дай напутствие
+ЗАКЛЮЧЕНИЕ
+(2-3 мотивирующих абзаца)
 
-КОНКРЕТНЫЕ УКАЗАНИЯ ПО ОБЪЕМУ:
-- Каждый абзац = 5-7 предложений
-- Каждое предложение = 10-15 слов
-- Не используй маркированные списки - только сплошной текст
-- Пиши максимально развернуто и подробно
+ПРАВИЛА:
+- НИКАКОЙ HTML-РАЗМЕТКИ
+- НИКАКОГО MARKDOWN (**жирный** и т.д.)
+- НИКАКИХ ЗВЕЗДОЧЕК, РАЗДЕЛИТЕЛЕЙ
+- ТОЛЬКО ЧИСТЫЙ ТЕКСТ С АБЗАЦАМИ
+- Абзацы разделяй одной пустой строкой
+- Заголовки разделов пиши ПРОПИСНЫМИ буквами
 
-ПРИМЕР ПРАВИЛЬНОГО АБЗАЦА:
-"Когда мы говорим о проблемах в отношениях, важно понимать, что они редко возникают на пустом месте, а обычно являются следствием глубоких эмоциональных процессов, которые развивались месяцами или даже годами. Многие пары ошибочно полагают, что достаточно просто помириться после ссоры, но на самом деле настоящая работа начинается тогда, когда мы пытаемся понять коренные причины конфликтов. Эти причины часто связаны с неудовлетворенными потребностями в безопасности, принятии и уважении, которые каждый партнер приносит из своего прошлого опыта. Без осознания этих глубинных механизмов любые попытки наладить отношения будут лишь временным решением, не затрагивающим суть проблемы."
+ПРИМЕР ПРАВИЛЬНОГО ФОРМАТА:
+Заголовок статьи
 
-НАЧНИ С ЗАГОЛОВКА СТАТЬИ И ПИШИ СПЛОШНЫМ ТЕКСТОМ БЕЗ HTML-РАЗМЕТКИ!
+ВВЕДЕНИЕ
+Текст первого абзаца введения...
+
+Текст второго абзаца введения...
+
+ПРОБЛЕМА И АНАЛИЗ
+Текст первого абзаца анализа...
+
+Начни писать сразу с заголовка статьи!
 """
     
     def _process_article_content(self, content: str, analysis: Dict) -> Dict:
-        """Обработка статьи без HTML"""
+        """Обработка чистого текста"""
         try:
-            # Очищаем контент
-            cleaned_content = self._clean_plain_content(content)
+            # Очищаем от любой разметки
+            cleaned_content = self._clean_all_markup(content)
             
-            # ПРОВЕРКА ДЛИНЫ
+            # Проверяем длину
             content_length = len(cleaned_content)
             logging.info(f"Длина статьи: {content_length} символов")
             
-            # Если статья короткая - немедленно перегенерируем
-            if content_length < 6000:
-                logging.warning(f"Статья слишком короткая: {content_length} символов")
-                return self._force_long_article(analysis)
+            if content_length < 4000:
+                logging.warning(f"Статья короткая: {content_length}")
+                return self._generate_with_gpt4(analysis)
             
-            # Проверяем структуру
-            if not self._validate_article_structure(cleaned_content):
-                logging.warning("Проблемы со структурой статьи")
-                return self._force_long_article(analysis)
+            # Преобразуем в правильный HTML
+            html_content = self._convert_plain_to_proper_html(cleaned_content)
             
             # Генерируем метаданные
-            title = self._extract_title_from_text(cleaned_content)
-            meta_title = self._generate_meta_title(title, analysis)
-            meta_description = self._generate_meta_description(cleaned_content)
-            excerpt = self._generate_excerpt(cleaned_content)
-            
-            # Определяем категорию и теги
-            category = self._determine_category(analysis)
-            tags = self._generate_tags(analysis, cleaned_content)
-            
-            # Преобразуем в HTML (добавляем разметку постфактум)
-            html_content = self._convert_to_html(cleaned_content)
+            title = self._extract_clean_title(cleaned_content)
             
             return {
                 'title': title,
                 'content': html_content,
-                'excerpt': excerpt,
-                'meta_title': meta_title,
-                'meta_description': meta_description,
-                'category': category,
-                'tags': tags,
+                'excerpt': self._generate_excerpt(cleaned_content),
+                'meta_title': title,
+                'meta_description': self._generate_meta_description(cleaned_content),
+                'category': self._determine_category(analysis),
+                'tags': self._generate_tags(analysis, cleaned_content),
                 'faq': [],
                 'word_count': content_length,
                 'original_analysis': analysis
             }
             
         except Exception as e:
-            logging.error(f"Ошибка при обработке контента статьи: {e}")
+            logging.error(f"Ошибка обработки: {e}")
             return None
     
     def _regenerate_longer_article(self, analysis: Dict) -> Dict:
@@ -336,6 +328,121 @@ class ArticleWriter:
                 paragraph_starts.add(start)
         
         return True
+
+    def _clean_all_markup(self, content: str) -> str:
+        """Очистка от всей разметки"""
+        # Убираем HTML теги
+        content = re.sub(r'<[^>]+>', '', content)
+        # Убираем Markdown (**жирный**)
+        content = re.sub(r'\*\*([^*]+)\*\*', r'\1', content)
+        content = re.sub(r'\*([^*]+)\*', r'\1', content)
+        # Убираем лишние пустые строки
+        content = re.sub(r'\n\s*\n', '\n\n', content)
+        return content.strip()
+
+    def _convert_plain_to_proper_html(self, content: str) -> str:
+        """Преобразование чистого текста в красивый HTML"""
+        lines = content.split('\n')
+        html_parts = []
+        
+        i = 0
+        while i < len(lines):
+            line = lines[i].strip()
+            
+            if not line:
+                i += 1
+                continue
+                
+            # Заголовок статьи (первая непустая строка)
+            if i == 0:
+                html_parts.append(f'<h1>{line}</h1>')
+                i += 1
+                continue
+                
+            # Заголовки разделов (прописные буквы)
+            if (line.isupper() and 
+                any(keyword in line for keyword in ['ВВЕДЕНИЕ', 'ПРОБЛЕМА', 'РЕШЕНИЯ', 'ВОПРОСЫ', 'ЗАКЛЮЧЕНИЕ', 'АНАЛИЗ'])):
+                
+                # Определяем уровень заголовка
+                if 'ВВЕДЕНИЕ' in line:
+                    html_parts.append(f'<h2>Введение</h2>')
+                elif any(x in line for x in ['ПРОБЛЕМА', 'АНАЛИЗ']):
+                    html_parts.append(f'<h2>Проблема и анализ</h2>')
+                elif 'РЕШЕНИЯ' in line:
+                    html_parts.append(f'<h2>Практические решения</h2>')
+                elif 'ВОПРОСЫ' in line:
+                    html_parts.append(f'<h2>Частые вопросы</h2>')
+                elif 'ЗАКЛЮЧЕНИЕ' in line:
+                    html_parts.append(f'<h2>Заключение</h2>')
+                else:
+                    html_parts.append(f'<h2>{line.title()}</h2>')
+                    
+                i += 1
+                continue
+                
+            # Обычные абзацы
+            if line and not line.isupper():
+                # Собираем многострочный абзац
+                paragraph = line
+                i += 1
+                while i < len(lines) and lines[i].strip() and not lines[i].strip().isupper():
+                    paragraph += ' ' + lines[i].strip()
+                    i += 1
+                
+                # Форматируем вопросы-ответы
+                if paragraph.strip().startswith('*') or paragraph.strip().endswith('?'):
+                    html_parts.append(f'<p><strong>{paragraph.strip(" *")}</strong></p>')
+                else:
+                    html_parts.append(f'<p>{paragraph}</p>')
+                continue
+                
+            i += 1
+        
+        return '\n\n'.join(html_parts)
+
+    def _extract_clean_title(self, content: str) -> str:
+        """Извлечь чистый заголовок"""
+        first_line = content.split('\n')[0].strip()
+        # Убираем остатки разметки
+        title = re.sub(r'[**]', '', first_line)
+        return title[:100]  # Ограничиваем длину
+
+    def _generate_with_gpt4(self, analysis: Dict) -> Dict:
+        """Генерация через GPT-4 как запасной вариант"""
+        try:
+            simple_prompt = f"""
+Напиши длинную статью на тему "{analysis['main_theme']}".
+
+Основная идея: {analysis['main_message']}
+
+Требования:
+- Объем: минимум 5000 символов
+- Формат: чистый текст без любой разметки
+- Структура: Заголовок, Введение, Основная часть, Решения, Заключение
+- Абзацы разделяй одной пустой строкой
+
+Пиши естественно и подробно.
+"""
+
+            response = self.client.chat.completions.create(
+                model="gpt-4",
+                messages=[
+                    {
+                        "role": "system", 
+                        "content": "Ты пишешь качественные статьи в чистом текстовом формате. Без разметки, без форматирования."
+                    },
+                    {"role": "user", "content": simple_prompt}
+                ],
+                max_tokens=4000,
+                temperature=0.7
+            )
+            
+            article_content = response.choices[0].message.content.strip()
+            return self._process_article_content(article_content, analysis)
+            
+        except Exception as e:
+            logging.error(f"Ошибка GPT-4: {e}")
+            return None
 
     def _clean_plain_content(self, content: str) -> str:
         """Очистка простого текста"""
