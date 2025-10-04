@@ -75,7 +75,7 @@ def create_demo_articles():
         
         try:
             # Генерируем статью
-            article_data = writer.write_adapted_article_quality(analysis)
+            article_data = writer.write_adapted_article_enhanced(analysis)
             
             if article_data:
                 # Добавляем метаданные

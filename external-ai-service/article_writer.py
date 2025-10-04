@@ -194,10 +194,86 @@ class ArticleWriter:
             )
             
             article_content = response.choices[0].message.content.strip()
-            return self._process_final_article(article_content, analysis, len(article_content))
+            
+            # Улучшаем качество статьи
+            print("🔧 Улучшение качества статьи...")
+            improved_content = self.improve_article_quality(article_content, analysis)
+            
+            return self._process_final_article(improved_content, analysis, len(improved_content))
             
         except Exception as e:
             logging.error(f"Ошибка генерации: {e}")
+            return None
+
+    def improve_article_quality(self, content: str, analysis: Dict) -> str:
+        """Улучшает качество сгенерированной статьи"""
+        try:
+            improve_prompt = f"""
+УЛУЧШИ КАЧЕСТВО ЭТОЙ СТАТЬИ:
+
+ТЕМА: {analysis['main_theme']}
+ИСХОДНЫЙ ТЕКСТ:
+{content}
+
+ЗАДАЧИ УЛУЧШЕНИЯ:
+1. Исправь фактические ошибки и неточности
+2. Добавь конкретные примеры и детали
+3. Убери общие фразы ("важно помнить", "следует отметить")
+4. Добавь объяснения ПРИЧИН и МЕХАНИЗМОВ
+5. Сделай практические советы более детальными
+6. Замени расплывчатые формулировки на конкретные
+7. Добавь статистику и научные данные где уместно
+
+СОХРАНИ структуру статьи, но улучши содержание каждого раздела.
+
+УЛУЧШЕННАЯ СТАТЬЯ:
+"""
+
+            response = self.client.chat.completions.create(
+                model="gpt-3.5-turbo",
+                messages=[
+                    {
+                        "role": "system",
+                        "content": "Ты эксперт по улучшению психологических статей. Делаешь текст более конкретным, научным и практичным."
+                    },
+                    {"role": "user", "content": improve_prompt}
+                ],
+                max_tokens=3000,
+                temperature=0.7
+            )
+            
+            return response.choices[0].message.content.strip()
+            
+        except Exception as e:
+            logging.error(f"Ошибка улучшения качества: {e}")
+            return content
+
+    def write_adapted_article_enhanced(self, analysis: Dict) -> Optional[Dict]:
+        """Генерация с максимальным качеством: создание + улучшение"""
+        try:
+            theme = analysis['main_theme']
+            
+            # Этап 1: Генерация базовой статьи
+            print(f"📝 Генерация базовой статьи на тему: {theme}")
+            basic_article = self.write_adapted_article_quality(analysis)
+            
+            if not basic_article:
+                print("❌ Не удалось сгенерировать базовую статью")
+                return None
+            
+            # Этап 2: Дополнительное улучшение качества
+            print("🔧 Дополнительное улучшение качества...")
+            enhanced_content = self.improve_article_quality(basic_article['content'], analysis)
+            
+            # Обновляем статью улучшенным контентом
+            basic_article['content'] = enhanced_content
+            basic_article['word_count'] = len(enhanced_content.split())
+            
+            print(f"✅ Статья улучшена: {len(enhanced_content)} символов")
+            return basic_article
+            
+        except Exception as e:
+            logging.error(f"Ошибка улучшенной генерации: {e}")
             return None
 
     def _analyze_theme_type(self, theme: str) -> str:
