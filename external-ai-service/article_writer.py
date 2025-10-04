@@ -285,22 +285,50 @@ class ArticleWriter:
             formatted_content = formatted_content.replace('**Часто задаваемые вопросы**', '<h2>Часто задаваемые вопросы</h2>')
             formatted_content = formatted_content.replace('Часто задаваемые вопросы', '<h2>Часто задаваемые вопросы</h2>')
             
+            # Исправляем форматирование списков
+            # Заменяем нумерованные списки на маркерованные
+            import re
+            # Находим нумерованные списки и заменяем на маркерованные
+            formatted_content = re.sub(r'(\d+)\.\s*\*\*(.*?)\*\*\s*(.*?)(?=\d+\.|$)', r'<li><strong>\2</strong> \3</li>', formatted_content, flags=re.DOTALL)
+            
+            # Оборачиваем списки в <ul> теги
+            # Находим последовательности <li> и оборачиваем в <ul>
+            li_pattern = r'(<li>.*?</li>(?:\s*<li>.*?</li>)*)'
+            formatted_content = re.sub(li_pattern, r'<ul>\1</ul>', formatted_content, flags=re.DOTALL)
+            
+            # Исправляем форматирование FAQ
+            # Находим FAQ раздел и исправляем его
+            faq_start = formatted_content.find('<h2>Часто задаваемые вопросы</h2>')
+            if faq_start != -1:
+                faq_section = formatted_content[faq_start:]
+                # Заменяем нумерованные списки в FAQ на правильное форматирование
+                faq_section = re.sub(r'(\d+)\.\s*\*\*(.*?)\*\*\s*(.*?)(?=\d+\.|$)', r'<li><strong>\2</strong> \3</li>', faq_section, flags=re.DOTALL)
+                # Оборачиваем в <ul>
+                faq_section = re.sub(r'(<li>.*?</li>(?:\s*<li>.*?</li>)*)', r'<ul>\1</ul>', faq_section, flags=re.DOTALL)
+                formatted_content = formatted_content[:faq_start] + faq_section
+            
             # Убираем лишние переносы строк и пустые строки
             lines = [line.strip() for line in formatted_content.split('\n') if line.strip()]
             formatted_content = '\n'.join(lines)
             
             # Создаем короткое описание (до 150 символов)
-            # Берем первые предложения из введения
+            # Берем первые предложения из введения, НЕ включая название
             intro_start = formatted_content.find('<h2>Введение</h2>')
             if intro_start != -1:
                 intro_text = formatted_content[intro_start + len('<h2>Введение</h2>'):]
                 # Берем до первого абзаца
                 first_paragraph = intro_text.split('\n')[0].strip()
-                short_description = first_paragraph[:150]
-                if len(first_paragraph) > 150:
+                # Убираем HTML теги для короткого описания
+                clean_text = re.sub(r'<[^>]+>', '', first_paragraph)
+                short_description = clean_text[:150]
+                if len(clean_text) > 150:
                     short_description = short_description.rsplit(' ', 1)[0] + '...'
             else:
-                short_description = title[:150] + '...' if len(title) > 150 else title
+                # Если нет введения, берем из начала статьи
+                clean_text = re.sub(r'<[^>]+>', '', formatted_content)
+                short_description = clean_text[:150]
+                if len(clean_text) > 150:
+                    short_description = short_description.rsplit(' ', 1)[0] + '...'
             
             # Создаем красивое описание (меню) в начале
             description = f"""
@@ -1146,13 +1174,36 @@ class ArticleWriter:
 
     def _extract_title_from_text(self, content: str) -> str:
         """Извлечь заголовок из текста"""
-        # Берем первую строку как заголовок
-        first_line = content.split('\n')[0].strip()
+        import re
+        
+        # Убираем HTML теги для поиска заголовка
+        clean_content = re.sub(r'<[^>]+>', '', content)
+        
+        # Ищем заголовок в кавычках
+        title_match = re.search(r'"([^"]+)"', clean_content)
+        if title_match:
+            return title_match.group(1)
+        
+        # Ищем заголовок после "Статья:" или "Тема:"
+        title_patterns = [
+            r'Статья:\s*"([^"]+)"',
+            r'Тема:\s*"([^"]+)"',
+            r'НА ТЕМУ:\s*"([^"]+)"',
+            r'СТАТЬЯ НА ТЕМУ:\s*"([^"]+)"'
+        ]
+        
+        for pattern in title_patterns:
+            match = re.search(pattern, clean_content, re.IGNORECASE)
+            if match:
+                return match.group(1)
+        
+        # Берем первую строку как заголовок, если она разумной длины
+        first_line = clean_content.split('\n')[0].strip()
         
         # Если первая строка это "ЧАСТЬ 1: ВВЕДЕНИЕ", то пытаемся извлечь тему из нее
         if "ЧАСТЬ 1:" in first_line.upper():
             # Ищем реальную тему в содержании
-            lines = content.split('\n')
+            lines = clean_content.split('\n')
             for line in lines:
                 line = line.strip()
                 # Пропускаем служебные строки
