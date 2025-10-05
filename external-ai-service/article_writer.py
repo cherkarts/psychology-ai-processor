@@ -340,8 +340,8 @@ class ArticleWriter:
             lines = [line.strip() for line in formatted_content.split('\n') if line.strip()]
             formatted_content = '\n'.join(lines)
             
-            # Создаем короткое описание (до 150 символов)
-            # Берем первые предложения из введения, НЕ включая название и слово "Введение"
+            # Создаем короткое описание (до 150 символов) для карточки статьи
+            # Берем первые предложения из введения, НЕ включая служебные элементы
             intro_start = formatted_content.find('<h2>Введение</h2>')
             if intro_start != -1:
                 intro_text = formatted_content[intro_start + len('<h2>Введение</h2>'):]
@@ -349,16 +349,36 @@ class ArticleWriter:
                 first_paragraph = intro_text.split('\n')[0].strip()
                 # Убираем HTML теги для короткого описания
                 clean_text = re.sub(r'<[^>]+>', '', first_paragraph)
-                # Убираем слово "Введение" из начала
+                
+                # Убираем служебные элементы и примеры
                 clean_text = re.sub(r'^Введение\s*', '', clean_text, flags=re.IGNORECASE)
+                clean_text = re.sub(r'^\*\*Пример\*\*:\s*', '', clean_text, flags=re.IGNORECASE)
+                clean_text = re.sub(r'^\*\*Пример\*\*\s*', '', clean_text, flags=re.IGNORECASE)
+                clean_text = re.sub(r'^Пример:\s*', '', clean_text, flags=re.IGNORECASE)
+                clean_text = re.sub(r'^\*\*.*?\*\*:\s*', '', clean_text)  # Убираем любые **текст:**
+                clean_text = re.sub(r'^\*\*.*?\*\*\s*', '', clean_text)  # Убираем любые **текст**
+                
+                # Убираем лишние пробелы
+                clean_text = clean_text.strip()
+                
                 short_description = clean_text[:150]
                 if len(clean_text) > 150:
                     short_description = short_description.rsplit(' ', 1)[0] + '...'
             else:
                 # Если нет введения, берем из начала статьи
                 clean_text = re.sub(r'<[^>]+>', '', formatted_content)
-                # Убираем слово "Введение" из начала
+                
+                # Убираем служебные элементы
                 clean_text = re.sub(r'^Введение\s*', '', clean_text, flags=re.IGNORECASE)
+                clean_text = re.sub(r'^\*\*Пример\*\*:\s*', '', clean_text, flags=re.IGNORECASE)
+                clean_text = re.sub(r'^\*\*Пример\*\*\s*', '', clean_text, flags=re.IGNORECASE)
+                clean_text = re.sub(r'^Пример:\s*', '', clean_text, flags=re.IGNORECASE)
+                clean_text = re.sub(r'^\*\*.*?\*\*:\s*', '', clean_text)
+                clean_text = re.sub(r'^\*\*.*?\*\*\s*', '', clean_text)
+                
+                # Убираем лишние пробелы
+                clean_text = clean_text.strip()
+                
                 short_description = clean_text[:150]
                 if len(clean_text) > 150:
                     short_description = short_description.rsplit(' ', 1)[0] + '...'
@@ -1623,8 +1643,22 @@ class ArticleWriter:
     
     def _generate_short_description(self, content: str) -> str:
         """Генерировать короткое описание для карточки (до 150 символов)"""
+        import re
+        
         # Убираем HTML теги
         text = re.sub(r'<[^>]+>', '', content)
+        
+        # Убираем служебные элементы и примеры
+        text = re.sub(r'^Введение\s*', '', text, flags=re.IGNORECASE)
+        text = re.sub(r'^\*\*Пример\*\*:\s*', '', text, flags=re.IGNORECASE)
+        text = re.sub(r'^\*\*Пример\*\*\s*', '', text, flags=re.IGNORECASE)
+        text = re.sub(r'^Пример:\s*', '', text, flags=re.IGNORECASE)
+        text = re.sub(r'^\*\*.*?\*\*:\s*', '', text)  # Убираем любые **текст:**
+        text = re.sub(r'^\*\*.*?\*\*\s*', '', text)  # Убираем любые **текст**
+        
+        # Убираем лишние пробелы
+        text = text.strip()
+        
         # Берем первые 150 символов
         short_desc = text[:150].strip()
         if len(text) > 150:
